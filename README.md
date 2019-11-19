@@ -27,18 +27,52 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|nickname|string|null: false|
-|email|string|null: false|
-|password|string|null: false|
-|first_name|string|null: false|
-|last_name|string|null: false|
-|birthday|string|null: false|
-|postal_code|string|null: false|
-|prefectures|string|null: false|
-|city|string|null: false|
-|address|string|null: false|
+|nickname|
+|email|
+|password|
+|first_name|
+|last_name|
+|birthday|
+|postal_code|
+|prefectures|
+|city|string|
+|address|
 
 ### Association
 <!-- - has_many :
 - has_many :users_groups
 - has_many :users, through: :users_groups -->
+
+# itemsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|name|
+|delivery_fee|
+|price|
+|text|
+
+# purchase_historyテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|seller_id|
+|buyer_id|
+|item_id|
+
+# messageテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|text|
+
+# reviewテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|rate|
+|evaluation|
+|text|
+
+11/19
+catgory brand 支払い情報
