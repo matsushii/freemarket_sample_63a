@@ -74,5 +74,11 @@ Things you may want to cover:
 |evaluation|
 |text|
 
+# photosテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|image|
+
 11/19
 catgory brand 支払い情報
