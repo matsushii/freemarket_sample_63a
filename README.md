@@ -22,3 +22,23 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+# usersテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|nickname|string|null: false|
+|email|string|null: false|
+|password|string|null: false|
+|first_name|string|null: false|
+|last_name|string|null: false|
+|birthday|string|null: false|
+|postal_code|string|null: false|
+|prefectures|string|null: false|
+|city|string|null: false|
+|address|string|null: false|
+
+### Association
+<!-- - has_many :
+- has_many :users_groups
+- has_many :users, through: :users_groups -->
