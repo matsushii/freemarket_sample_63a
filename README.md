@@ -27,7 +27,6 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|prefectures|
 |nickname|varchar|null: false|
 |email|varchar|null: false|
 |password|varchar|null: false|
