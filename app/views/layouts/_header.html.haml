@@ -1,17 +1,18 @@
- .header
-    .header-top
-      .header__upper
-        .header__upper__logo
-          mercari
-          .header__upper__logo--text
-        .header__upper__form
-          .header__upper__form--text
-            %input.inputform{placeholder: "何かお探しですか？"}
-          .header__upper__form--icon
-              
+.header
+  .header-top
+    .header__upper
+      .header__upper__logo
+        %p.toplogo
+          = link_to("mercari")
+        .header__upper__logo--text
+      .header__upper__form
+        .header__upper__form--text
+          %input.inputform{placeholder: "何かお探しですか？"}
+        .header__upper__form--icon
+            
 
     .header__lower
-      .header__lower_left
+      .header__lower__left
         .catogory__search
           .icon
             =fa_icon "pencil-square-o"
@@ -22,47 +23,56 @@
             =fa_icon "pencil-square-o"
           %span.category_link
             = link_to("ブランドからから探す")
+
       .header__lower__right
-        .header__lower--good
+        .header__lower__right--good
           .icon
-          .text
-        .header__lower--news
+            =fa_icon "pencil-square-o"
+          %span.category_link
+            = link_to("いいね！一覧")
+        .header__lower__right--news
           .icon
-          .text
-        .header__lower--todo
+            =fa_icon "pencil-square-o"
+          %span.category_link
+            = link_to("お知らせ")
+        .header__lower__right--todo
           .icon
-          .text
-        .header__lower--mypage
+            =fa_icon "pencil-square-o"
+          %span.category_link
+            = link_to("やることリスト")
+        .header__lower__right--mypage
           .icon
-          .text
+            =fa_icon "pencil-square-o"
+          %span.category_link
+            = link_to("マイページ")
 
 
-  .footer
-    .footer__upper
-      .footer__upper
-        %h3 スマホでかんたんフリマアプリ
-        %h2 今すぐ無料ダウンロード！
-        .footer__upper__logo
-          .footer__upper__logo--merkari
-          .footer__upper__logo--appstore
-          .footer__upper__logo--googleplay
-    .footer__lower__left--index
-      text
-      .footer__lower__left--icon
-        .icon__twitter
-        .icon__facebook
-    .footer__lower__left--help
-    .footer__lower__left--privacy
-    .footer__lower__left--null
-    .footer__lower__left--country
-  .bottom
-    .bottom__left
-      .bottom__left__logo
-      .bottom__left__text
-    .bottom__center
-      .bottom__center__logo
-      .bottom__center__text
+  -# .footer
+  -#   .footer__upper
+  -#     .footer__upper
+  -#       %h3 スマホでかんたんフリマアプリ
+  -#       %h2 今すぐ無料ダウンロード！
+  -#       .footer__upper__logo
+  -#         .footer__upper__logo--merkari
+  -#         .footer__upper__logo--appstore
+  -#         .footer__upper__logo--googleplay
+  -#   .footer__lower__left--index
+  -#     text
+  -#     .footer__lower__left--icon
+  -#       .icon__twitter
+  -#       .icon__facebook
+  -#   .footer__lower__left--help
+  -#   .footer__lower__left--privacy
+  -#   .footer__lower__left--null
+  -#   .footer__lower__left--country
+  -# .bottom
+  -#   .bottom__left
+  -#     .bottom__left__logo
+  -#     .bottom__left__text
+  -#   .bottom__center
+  -#     .bottom__center__logo
+  -#     .bottom__center__text
 
-  .seller__btn
-    .seller__btn__text
-    .seller__btn__icon
+  -# .seller__btn
+  -#   .seller__btn__text
+  -#   .seller__btn__icon

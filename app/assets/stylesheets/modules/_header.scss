@@ -2,6 +2,12 @@
   color:blue;
 }
 
+.toplogo {
+  line-height:40px;
+  text-align:center;
+  font-size:30px;
+  font-weight:bold;
+}
 .header {
   height:100px;
   width:100%;
@@ -18,11 +24,10 @@
       width:134px;
       height:40px;
       margin:0 45px 0 0;
-      background-color:yellow;
       box-sizing:border-box;
       }
     }
-    &__upper__form{
+    .header__upper__form{
       width:521px;
       height:40px;
      
@@ -32,7 +37,6 @@
         // padding:0 42px 0 10px;
         box-sizing:border-box;
         width:830px;
-        background:black;
         .inputform {
           height:40px;
           border-radius:3px;
@@ -40,7 +44,9 @@
           font-size:16px;
           font-style:inherit;
           padding-left:6px;
-          // background: #f5f5f5;
+          background: #f5f5f5;
+          width:830px;
+
         }
       }
     }
@@ -56,62 +62,68 @@
 
 
   .header__lower {
-    margin:0 130px;
     height:40px;
     padding-top:16px;
-    
-
+    .header__lower__left {
+      display:flex;  
+      float:left;
       .catogory__search {
         width:150px;
         height:36px;
-        background-color:gray;
         line-height:36px;
         display:flex;
         .icon{
           font-size:15px;
         }
-          
+      }   
         
 
       }
       .brand__search  {
         width:150px;
         height:36px;
-        background-color:gray;
         line-height:36px;
         display:flex;
         
       }
       
+      .header__lower__right {
+        display:flex;
+        float:right;
+        width:700px;;
       &--good {
-        background-color:gray;
-        width:127px;
+        width:25%;
         height:36px;
         margin-left:100px;
         padding:0 24px;
+        display:flex;
+        line-height:36px;
       }
       
       &--news {
-        background-color:gray;
-        width:110px;
+        width:25%;
         height:36px;
         padding:0 24px;
+        display:flex;
+        line-height:36px;
       }
       
       &--todo {
-        background-color:gray;
-        width:160px;
+        width:25%;
         height:36px;
         padding:0 24px;
+        display:flex;
+        line-height:36px;
       }
       
       &--mypage {
-        background-color:gray;
-        width:144px;
+        width:25%;
         height:36px;
         padding:0 24px;
+        display:flex;
+        line-height:36px;
       }
-      
+     }
     }
     
     
