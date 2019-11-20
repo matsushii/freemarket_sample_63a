@@ -1,0 +1,56 @@
+.wrapper {
+  background-color:gray;
+  height:100vh;
+  color:blue;
+}
+
+.header {
+  background-color:blue;
+  height:100px;
+  width:100%;
+  
+  .header__upper {
+    margin:0 130px;
+    width:700px;
+    height:40px;
+    display:flex;
+    padding-top:8px;
+    &__logo {
+      width:134px;
+      height:36px;
+      padding:8px 0;
+      margin:0 45px 0 0;
+      background-color:yellow;
+      }
+    }
+    &__upper__form{
+      // display:flex;
+      width:521px;
+      height:40px;
+      
+      
+      &--text {
+        // width:841px;
+        height:40px;
+        border:1px black white;
+        .inputform {
+          width:841px;
+          height:40px;
+        }
+      }
+    }
+  }
+
+
+.footer {
+  background-color:red;
+  height:100px;
+  width:100%;
+  position:fixed;
+  bottom:0;
+}
+
+.header__lower {
+  
+
+}
