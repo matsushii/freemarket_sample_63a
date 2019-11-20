@@ -20,6 +20,14 @@
 - has_many :likes
 - has_many :messages
 - has_many :comments
+- has_many :profiles
+
+## profilesテーブル
+|Column|Type|Otions|
+|------|----|------|
+|user_id|references|null: false, foreign_key :true|
+### Association
+- belongs_to :user
 
 ## itemsテーブル
 |Column|Type|Options|
@@ -28,86 +36,122 @@
 |delivery-fee|integer|null: false|
 |price|integer|null: false|
 |text|string|null: false|
+|user_id|references|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
-- belongs_to :purchase-history
+- has_one :purchase-history
 - has_many :likes
 - has_one :review
-- has_many :photos
+- has_many :images
 - has_many :comments
 - has_many :messages
 - belongs_to :brand
 - belongs_to :category
 
+## imagesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|image|string|null :false|
+### Association
+belongs_to :item
+
+## likesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|references|null: false, foreign_key: true|
+|item_id|references|null: false, foreign_key: true|
+### Association
+belongs_to :user
+belongs_to :item
+
 ## purchase_historiesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|seller_id|integer|null: false|
-|buyer_id|integer|null: false|
-|item_id|integer|null: false|
+|user_id|references|null: false, foreign_key: true|
+|item_id|references|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
 - belongs_to :item
 - has_one :review
 
-## messageテーブル
-
+## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |text|string|null: false|
+|user_id|references|null: false, foreign_key: true|
+|item_id|references|null: false, foreign_key: true|
+### Association
+- belongs_to :user
+- belongs_to :item
 
-## reviewテーブル
+## commentsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|text|string|null: false|
+|user_id|references|null: false, foreign_key: true|
+|item_id|references|null: false, foreign_key: true|
+### Association
+- belongs_to :user
+- belongs_to :item
 
+## 未確定なので、実装はおまちください
+## reviewsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |rate|integer|null: false|
 |evaluation|integer|null: false|
 |text|string|null: false|
-
-## photosテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|image|string|null: false|
-
-## items_brandsテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|items_id|reference|null: false, foreign_key: true|
-|brand_id|reference|null: false, foreign_key: true|
+### Association
+- belongs_to :item
+- belongs_to :purchase_history
 
 ## brandテーブル
-
 |Column|Type|Options|
 |------|----|-------|
 |name|varchar|null: false|
+### Association
+- has_many :items
+- has_many :categories, through :brands_categories
+- has_many :brands_categories
 
-## items_catsテーブル
-
+## brands_categoriesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|item_id|reference|null: false, foreign_key: true|
-|top_cats_id|reference|null: false, foreign_key: true|
-|middle_cats_id|reference|null: false, foreign_key: true|
-|bottom_cats_id|reference|null: false, foreign_key: true|
+|brand_id|references|null: false, foreign_key: true|
+|category_id|references|null: false, foreign_key: true|
+### Association
+- belongs_to :brand
+- belongs_to :category
 
+## categoriesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|top_cat_id|reference|null: false, foreign_key: true|
+|middle_cat_id|reference|null: false, foreign_key: true|
+|bottom_cat_id|reference|null: false, foreign_key: true|
+### Association
+- has_many :items
+- belongs_to :top_cat
+- belongs_to :middle_cat
+- belongs_to :bottom_cat
 
 ## top_catsテーブル
-
 |Column|Type|Options|
 |------|----|-------|
 |name|varchar|null: false|
+### Association
+- has_many :categories
 
 ## middle_catsテーブル
-
 |Column|Type|Options|
 |------|----|-------|
 |name|varchar|null: false|
+### Association
+- has_many :categories
 
 ## bottom_catsテーブル
-
 |Column|Type|Options|
 |------|----|-------|
 |name|varchar|null: false|
-
+### Association
+- has_many :categories
