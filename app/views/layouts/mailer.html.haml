@@ -1,0 +1,68 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=utf-8", "http-equiv" => "Content-Type"}/
+    :css
+      /* Email styles need to be inline */
+  %body
+    .header
+      .header__upper
+        .header__upper__logo
+          mercari
+          .header__upper__logo--text
+        .header__upper__form
+          .header__upper__form--text
+            %input.inputform
+          .header__upper__form--icon
+            
+
+        .header__lower
+          .header__lower__left
+            .catogory__search
+            .brand__search
+          .header__lower__right
+            .header__lower__right--good
+              .icon
+              .text
+            .header__lower__right--news
+              .icon
+              .text
+            .header__lower__right--todo
+              .icon
+              .text
+            .header__lower__right--mypage
+              .icon
+              .text
+              
+
+
+    .footer
+      .footer__upper
+        .footer__upper
+          %h3 スマホでかんたんフリマアプリ
+          %h2 今すぐ無料ダウンロード！
+          .footer__upper__logo
+            .footer__upper__logo--merkari
+            .footer__upper__logo--appstore
+            .footer__upper__logo--googleplay
+      .footer__lower__left--index
+        text
+        .footer__lower__left--icon
+          .icon__twitter
+          .icon__facebook
+      .footer__lower__left--help
+      .footer__lower__left--privacy
+      .footer__lower__left--null
+      .footer__lower__left--country
+    .bottom
+      .bottom__left
+        .bottom__left__logo
+        .bottom__left__text
+      .bottom__center
+        .bottom__center__logo
+        .bottom__center__text
+
+    .seller__btn
+      .seller__btn__text
+      .seller__btn__icon
+    = yield
