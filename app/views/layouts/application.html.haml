@@ -15,12 +15,16 @@
           .header__upper__logo--text
         .header__upper__form
           .header__upper__form--text
-            %input.inputform
+            %input.inputform{placeholder: "何かお探しですか？"}
           .header__upper__form--icon
             
 
       .header__lower
         .catogory__search
+          .iicon
+            =fa_icon "pencil-square-o"
+          %span.category_link
+            = link_to("カテゴリーから探す")
         .brand__search
         .header__lower--good
           .icon
