@@ -1,6 +1,6 @@
 # Freemarket_sample DB設計
-テスト
-## usersテーブル
+
+## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
 |nickname|varchar|null: false|
@@ -14,7 +14,7 @@
 |city|string|null: false|
 |address|integer|null: false|
 |building|string||
-### Association
+### Association
 - has_many :items
 - has_many :purchase-histories
 - has_many :likes
@@ -29,7 +29,7 @@
 ### Association
 - belongs_to :user
 
-## itemsテーブル
+## itemsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|varchar|null: false|
@@ -64,7 +64,7 @@ belongs_to :item
 belongs_to :user
 belongs_to :item
 
-## purchase_historiesテーブル
+## purchase_historiesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|references|null: false, foreign_key: true|
@@ -74,7 +74,7 @@ belongs_to :item
 - belongs_to :item
 - has_one :review
 
-## messagesテーブル
+## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |text|string|null: false|
@@ -84,7 +84,7 @@ belongs_to :item
 - belongs_to :user
 - belongs_to :item
 
-## commentsテーブル
+## commentsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |text|string|null: false|
@@ -95,7 +95,7 @@ belongs_to :item
 - belongs_to :item
 
 ## 未確定なので、実装はおまちください
-## reviewsテーブル
+## reviewsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |rate|integer|null: false|
@@ -105,7 +105,7 @@ belongs_to :item
 - belongs_to :item
 - belongs_to :purchase_history
 
-## brandテーブル
+## brandテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|varchar|null: false|
@@ -123,7 +123,7 @@ belongs_to :item
 - belongs_to :brand
 - belongs_to :category
 
-## categoriesテーブル
+## categoriesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |top_cat_id|reference|null: false, foreign_key: true|
@@ -135,21 +135,21 @@ belongs_to :item
 - belongs_to :middle_cat
 - belongs_to :bottom_cat
 
-## top_catsテーブル
+## top_catsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|varchar|null: false|
 ### Association
 - has_many :categories
 
-## middle_catsテーブル
+## middle_catsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|varchar|null: false|
 ### Association
 - has_many :categories
 
-## bottom_catsテーブル
+## bottom_catsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|varchar|null: false|
