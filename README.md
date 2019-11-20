@@ -17,7 +17,6 @@
 - has_many :comments
 - has_many :profiles
 
-
 ## profilesテーブル
 |Column|Type|Otions|
 |------|----|------|
@@ -29,7 +28,6 @@
 |building|string||
 ### Association
 - belongs_to :user, optional: true
-
 
 ## itemsテーブル
 |Column|Type|Options|
@@ -50,14 +48,12 @@
 - belongs_to :brand
 - belongs_to :category
 
-
 ## imagesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |image|string|null :false|
 ### Association
 belongs_to :item
-
 
 ## likesテーブル
 |Column|Type|Options|
@@ -67,7 +63,6 @@ belongs_to :item
 ### Association
 belongs_to :user
 belongs_to :item
-
 
 ## purchase_historiesテーブル
 |Column|Type|Options|
@@ -79,7 +74,6 @@ belongs_to :item
 - belongs_to :item
 - has_one :review
 
-
 ## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -89,7 +83,6 @@ belongs_to :item
 ### Association
 - belongs_to :user
 - belongs_to :item
-
 
 ## commentsテーブル
 |Column|Type|Options|
@@ -101,9 +94,8 @@ belongs_to :item
 - belongs_to :user
 - belongs_to :item
 
-
 ## reviewsテーブル
-未確定なので、実装はおまちください
+#### 未確定なので、実装はおまちください
 |Column|Type|Options|
 |------|----|-------|
 |rate|integer|null: false|
@@ -112,7 +104,6 @@ belongs_to :item
 ### Association
 - belongs_to :item
 - belongs_to :purchase_history
-
 
 ## brandテーブル
 |Column|Type|Options|
@@ -123,7 +114,6 @@ belongs_to :item
 - has_many :categories, through :brands_categories
 - has_many :brands_categories
 
-
 ## brands_categoriesテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -132,7 +122,6 @@ belongs_to :item
 ### Association
 - belongs_to :brand
 - belongs_to :category
-
 
 ## categoriesテーブル
 |Column|Type|Options|
@@ -146,7 +135,6 @@ belongs_to :item
 - belongs_to :middle_cat
 - belongs_to :bottom_cat
 
-
 ## top_catsテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -154,14 +142,12 @@ belongs_to :item
 ### Association
 - has_many :categories
 
-
 ## middle_catsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|varchar|null: false|
 ### Association
 - has_many :categories
-
 
 ## bottom_catsテーブル
 |Column|Type|Options|
