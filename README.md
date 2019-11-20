@@ -1,72 +1,62 @@
-# README
+# Freemarket_sample DB設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-# usersテーブル
-
+## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|nickname|varchar|null: false|
-|email|varchar|null: false|
-|password|varchar|null: false|
-|first_name|varchar|null: false|
-|last_name|varchar|null: false|
-|birthday|string|null: false|
-|postal_code|integer|null: false|
-|prefectures|string|null: false|
-|city|string|string|null: false|
-|address|integer|null: false|
-
+|nickname|varchar|null: false|
+|email|varchar|null: false|
+|password|varchar|null: false|
+|first_name|varchar|null: false|
+|last_name|varchar|null: false|
+|birthday|string|null: false|
+|zip-code|integer|null: false|
+|prefecture|string|null: false|
+|city|string|null: false|
+|address|integer|null: false|
+|building|string||
 ### Association
-<!-- - has_many :
-- has_many :users_groups
-- has_many :users, through: :users_groups -->
+- has_many :items
+- has_many :purchase-histories
+- has_many :likes
+- has_many :messages
+- has_many :comments
 
-# itemsテーブル
-
+## itemsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|varchar|null: false|
-|delivery_fee|integer|null: false|
-|price|integer|null: false|
-|text|string|null: false|
+|name|varchar|null: false|
+|delivery-fee|integer|null: false|
+|price|integer|null: false|
+|text|string|null: false|
+### Association
+- belongs_to :user
+- belongs_to :purchase-history
+- has_many :likes
+- has_one :review
+- has_many :photos
+- has_many :comments
+- has_many :messages
+- belongs_to :brand
+- belongs_to :category
 
-# purchase_historyテーブル
-
+## purchase_historiesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |seller_id|integer|null: false|
 |buyer_id|integer|null: false|
 |item_id|integer|null: false|
+### Association
+- belongs_to :user
+- belongs_to :item
+- has_one :review
 
-# messageテーブル
+## messageテーブル
 
 |Column|Type|Options|
 |------|----|-------|
 |text|string|null: false|
 
-# reviewテーブル
+## reviewテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -74,26 +64,26 @@ Things you may want to cover:
 |evaluation|integer|null: false|
 |text|string|null: false|
 
-# photosテーブル
+## photosテーブル
 
 |Column|Type|Options|
 |------|----|-------|
 |image|string|null: false|
 
-# items_brandsテーブル
+## items_brandsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
 |items_id|reference|null: false, foreign_key: true|
 |brand_id|reference|null: false, foreign_key: true|
 
-# brandテーブル
+## brandテーブル
 
 |Column|Type|Options|
 |------|----|-------|
 |name|varchar|null: false|
 
-# items_catsテーブル
+## items_catsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -103,19 +93,19 @@ Things you may want to cover:
 |bottom_cats_id|reference|null: false, foreign_key: true|
 
 
-# top_catsテーブル
+## top_catsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
 |name|varchar|null: false|
 
-# middle_catsテーブル
+## middle_catsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
 |name|varchar|null: false|
 
-# bottom_catsテーブル
+## bottom_catsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
