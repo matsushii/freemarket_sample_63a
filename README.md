@@ -9,11 +9,6 @@
 |first_name|varchar|null: false|
 |last_name|varchar|null: false|
 |birthday|string|null: false|
-|zip-code|integer|null: false|
-|prefecture|string|null: false|
-|city|string|null: false|
-|address|integer|null: false|
-|building|string||
 ### Association
 - has_many :items
 - has_many :purchase-histories
@@ -22,12 +17,19 @@
 - has_many :comments
 - has_many :profiles
 
+
 ## profilesテーブル
 |Column|Type|Otions|
 |------|----|------|
 |user_id|references|null: false, foreign_key :true|
+|zip-code|integer|null: false|
+|prefecture|string|null: false|
+|city|string|null: false|
+|address|integer|null: false|
+|building|string||
 ### Association
-- belongs_to :user
+- belongs_to :user, optional: true
+
 
 ## itemsテーブル
 |Column|Type|Options|
@@ -48,12 +50,14 @@
 - belongs_to :brand
 - belongs_to :category
 
+
 ## imagesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |image|string|null :false|
 ### Association
 belongs_to :item
+
 
 ## likesテーブル
 |Column|Type|Options|
@@ -63,6 +67,7 @@ belongs_to :item
 ### Association
 belongs_to :user
 belongs_to :item
+
 
 ## purchase_historiesテーブル
 |Column|Type|Options|
@@ -74,6 +79,7 @@ belongs_to :item
 - belongs_to :item
 - has_one :review
 
+
 ## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -83,6 +89,7 @@ belongs_to :item
 ### Association
 - belongs_to :user
 - belongs_to :item
+
 
 ## commentsテーブル
 |Column|Type|Options|
@@ -94,8 +101,9 @@ belongs_to :item
 - belongs_to :user
 - belongs_to :item
 
-## 未確定なので、実装はおまちください
+
 ## reviewsテーブル
+未確定なので、実装はおまちください
 |Column|Type|Options|
 |------|----|-------|
 |rate|integer|null: false|
@@ -104,6 +112,7 @@ belongs_to :item
 ### Association
 - belongs_to :item
 - belongs_to :purchase_history
+
 
 ## brandテーブル
 |Column|Type|Options|
@@ -114,6 +123,7 @@ belongs_to :item
 - has_many :categories, through :brands_categories
 - has_many :brands_categories
 
+
 ## brands_categoriesテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -122,6 +132,7 @@ belongs_to :item
 ### Association
 - belongs_to :brand
 - belongs_to :category
+
 
 ## categoriesテーブル
 |Column|Type|Options|
@@ -135,6 +146,7 @@ belongs_to :item
 - belongs_to :middle_cat
 - belongs_to :bottom_cat
 
+
 ## top_catsテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -142,12 +154,14 @@ belongs_to :item
 ### Association
 - has_many :categories
 
+
 ## middle_catsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|varchar|null: false|
 ### Association
 - has_many :categories
+
 
 ## bottom_catsテーブル
 |Column|Type|Options|
