@@ -27,16 +27,17 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|nickname|
-|email|
-|password|
-|first_name|
-|last_name|
-|birthday|
-|postal_code|
 |prefectures|
-|city|string|
-|address|
+|nickname|varchar|null: false|
+|email|varchar|null: false|
+|password|varchar|null: false|
+|first_name|varchar|null: false|
+|last_name|varchar|null: false|
+|birthday|string|null: false|
+|postal_code|integer|null: false|
+|prefectures|string|null: false|
+|city|string|string|null: false|
+|address|integer|null: false|
 
 ### Association
 <!-- - has_many :
@@ -47,38 +48,77 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|name|
-|delivery_fee|
-|price|
-|text|
+|name|varchar|null: false|
+|delivery_fee|integer|null: false|
+|price|integer|null: false|
+|text|string|null: false|
 
 # purchase_historyテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|seller_id|
-|buyer_id|
-|item_id|
+|seller_id|integer|null: false|
+|buyer_id|integer|null: false|
+|item_id|integer|null: false|
 
 # messageテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|text|
+|text|string|null: false|
 
 # reviewテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|rate|
-|evaluation|
-|text|
+|rate|integer|null: false|
+|evaluation|integer|null: false|
+|text|string|null: false|
 
 # photosテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|image|
+|image|string|null: false|
 
-11/19
-catgory brand 支払い情報
+# items_brandsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|items_id|reference|null: false, foreign_key: true|
+|brand_id|reference|null: false, foreign_key: true|
+
+# brandテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|name|varchar|null: false|
+
+# items_catsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|item_id|reference|null: false, foreign_key: true|
+|top_cats_id|reference|null: false, foreign_key: true|
+|middle_cats_id|reference|null: false, foreign_key: true|
+|bottom_cats_id|reference|null: false, foreign_key: true|
+
+
+# top_catsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|name|varchar|null: false|
+
+# middle_catsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|name|varchar|null: false|
+
+# bottom_catsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|name|varchar|null: false|
+
