@@ -6,10 +6,11 @@
   height:100px;
   width:100%;
   border-bottom:1px solid gray;
-  
+  .header-top {
+    width:1020px;
+    margin:0 auto;
+
   .header__upper {
-    margin:0 130px;
-    width:700px;
     height:40px;
     display:flex;
     padding-top:8px;
@@ -30,53 +31,56 @@
         height:40px;
         // padding:0 42px 0 10px;
         box-sizing:border-box;
+        width:830px;
+        background:black;
         .inputform {
-          width:830px;
           height:40px;
           border-radius:3px;
           line-height:4px;
           font-size:16px;
           font-style:inherit;
           padding-left:6px;
-          background: #f5f5f5;
+          // background: #f5f5f5;
         }
       }
     }
   }
+  }
+
+  .category_link {
+    font-size:7px;
+    font-weight:bold;
+    color:black;
+    
+  }
+
 
   .header__lower {
     margin:0 130px;
     height:40px;
     padding-top:16px;
-    display:flex;
+    
 
-      .icon{
-        font-size:5px;
-      }
       .catogory__search {
         width:150px;
         height:36px;
         background-color:gray;
         line-height:36px;
         display:flex;
-        
-        .category_link {
-          font-size:7px;
-          font-weight:bold;
-          color:black;
-          .ca{
-            text-decoration:none;
-
-          }
-
+        .icon{
+          font-size:15px;
         }
+          
+        
 
       }
       .brand__search  {
-        background-color:gray;
         width:150px;
         height:36px;
-        padding:0 24px;
+        background-color:gray;
+        line-height:36px;
+        display:flex;
+        
       }
       
       &--good {
