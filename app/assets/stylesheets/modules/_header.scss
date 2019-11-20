@@ -54,16 +54,17 @@
   }
 
   .category_link {
-    font-size:7px;
+    font-size:10px;
     font-weight:bold;
-    color:black;
-    
   }
 
+  .icon{
+    font-size:25px;
+  }
 
   .header__lower {
     height:40px;
-    padding-top:16px;
+    padding-top:10px;
     .header__lower__left {
       display:flex;  
       float:left;
@@ -72,9 +73,7 @@
         height:36px;
         line-height:36px;
         display:flex;
-        .icon{
-          font-size:15px;
-        }
+        
       }   
         
 
@@ -90,12 +89,12 @@
       .header__lower__right {
         display:flex;
         float:right;
-        width:700px;;
+        width:600px;;
       &--good {
         width:25%;
         height:36px;
         margin-left:100px;
-        padding:0 24px;
+        padding:0 10px;
         display:flex;
         line-height:36px;
       }
@@ -103,7 +102,7 @@
       &--news {
         width:25%;
         height:36px;
-        padding:0 24px;
+        padding:0 10px;
         display:flex;
         line-height:36px;
       }
@@ -111,7 +110,7 @@
       &--todo {
         width:25%;
         height:36px;
-        padding:0 24px;
+        padding:0 10px;
         display:flex;
         line-height:36px;
       }
@@ -119,7 +118,7 @@
       &--mypage {
         width:25%;
         height:36px;
-        padding:0 24px;
+        padding:0 10px;
         display:flex;
         line-height:36px;
       }
