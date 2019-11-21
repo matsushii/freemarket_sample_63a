@@ -5,14 +5,14 @@
         %p スマホでかんたんフリマアプリ
       .footer__upper__left--text2
         %p 今すぐ無料ダウンロード！
-    .footer__upper__right
-      .footer__upper__right--logo
-        %p
-          = link_to("merkari","https://www.mercari.com/jp/")
-        %p
-          = link_to("AppStore","https://apps.apple.com/jp/app/id667861049?l=ja")
-        %p
-          = link_to("GoogleStore","https://apps.apple.com/jp/app/id667861049?l=ja")
+      .footer__upper__right
+        .footer__upper__right--logo
+          %p
+            = link_to("merkari","https://www.mercari.com/jp/")
+          %p
+            = link_to("AppStore","https://apps.apple.com/jp/app/id667861049?l=ja")
+          %p
+            = link_to("GoogleStore","https://apps.apple.com/jp/app/id667861049?l=ja")
         
   .footer__lower__wrapper 
     .footer__lower
@@ -25,10 +25,12 @@
           %li 公式ブログ
           %li メルカリロゴ利用ガイドライン
         .footer__lower__mercari--icon
-          .footer_icon
-            =fa_icon "facebook-square"
           .footer__icon
-            =fa_icon "twitter"
+            =link_to("https://twitter.com/mercari_jp") do
+              =fa_icon "twitter", class: "icon_upper"
+          .footer__icon
+            =link_to("https://www.facebook.com/mercarijp") do
+              =fa_icon "facebook-square", class: "icon_lower"
 
       .footer__lower--help.footer__lower--size
         %ul
@@ -61,4 +63,9 @@
           %li 日本
           %li United States
 
- 
+.sell_btn
+  =link_to("https://www.facebook.com/mercarijp") do
+    %p 出品
+    .sell_icon
+      =link_to("https://www.facebook.com/mercarijp") do
+        =fa_icon "camera", class: "icon_lower"
