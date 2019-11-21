@@ -1,0 +1,68 @@
+.container {
+  background-color: $lightgray;
+  .news {
+
+  }
+  .contents {
+    width: 100vw;
+    overflow: hidden;
+    .content {
+      margin: 0 auto;
+      width: 80%;
+      color: $black;
+      &__banner {
+        width: 100vw;
+        padding: 56px 0 30px;
+        margin-left: calc(50% - 50vw);
+        text-align: center;
+        font-size: 1.6rem;
+        font-weight: bold;
+        background-color: $white;
+        &__cats {
+          &__list {
+            margin: 10px;
+            text-align: center;
+            &__tag {
+              display: inline-block;
+              padding: 5px 16px;
+              border-radius: 15px;
+              background-color: $lightgray;
+              font-size: 14px;
+            }
+          }
+        }
+      }
+      &__box {
+        padding: 42px 0 100px;
+        &__header {
+          padding-bottom: 16px;
+          display: flex;
+          justify-content: space-between;
+          font-weight: bold;
+          &__title {
+            margin-bottom: 16px;
+            font-size: 1.4rem;
+          }
+          &__more {
+            color: $lightblue;
+            font-size: 0.9rem;
+          }
+        }
+        &__items { 
+          &__lists {
+            margin: -10px;
+            &__list {
+              .product {
+                &__link {
+                  &__thumbnail {
+    
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
