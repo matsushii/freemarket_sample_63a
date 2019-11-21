@@ -1,4 +1,5 @@
 # Freemarket_sample DB設計
+すでにマージしてしまっているので、こちらの文章だけ追記しました。
 
 ## usersテーブル
 |Column|Type|Options|
