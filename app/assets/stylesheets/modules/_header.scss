@@ -2,14 +2,21 @@
   color:blue;
 }
 
+.toplogo {
+  line-height:40px;
+  text-align:center;
+  font-size:30px;
+  font-weight:bold;
+}
 .header {
   height:100px;
   width:100%;
   border-bottom:1px solid gray;
-  
+  .header-top {
+    width:1020px;
+    margin:0 auto;
+
   .header__upper {
-    margin:0 130px;
-    width:700px;
     height:40px;
     display:flex;
     padding-top:8px;
@@ -17,11 +24,10 @@
       width:134px;
       height:40px;
       margin:0 45px 0 0;
-      background-color:yellow;
       box-sizing:border-box;
       }
     }
-    &__upper__form{
+    .header__upper__form{
       width:521px;
       height:40px;
      
@@ -30,8 +36,8 @@
         height:40px;
         // padding:0 42px 0 10px;
         box-sizing:border-box;
+        width:830px;
         .inputform {
-          width:830px;
           height:40px;
           border-radius:3px;
           line-height:4px;
@@ -39,85 +45,101 @@
           font-style:inherit;
           padding-left:6px;
           background: #f5f5f5;
+          width:830px;
+
         }
       }
     }
   }
+  }
+
+  
+  .icon{
+    font-size:25px;
+  }
+  
+  a {
+    text-decoration:none;
+    color:black;
+  }
 
   .header__lower {
-    margin:0 130px;
     height:40px;
-    padding-top:16px;
-    display:flex;
+    padding-top:10px;
 
-      .icon{
-        font-size:5px;
-      }
+    
+    .header__lower__left {
+      display:flex;  
+      float:left;
       .catogory__search {
         width:150px;
         height:36px;
-        background-color:gray;
         line-height:36px;
         display:flex;
         
-        .category_link {
-          font-size:7px;
-          font-weight:bold;
-          color:black;
-          .ca{
-            text-decoration:none;
-
+      }   
+          .category_link {
+            font-size:10px;
+            font-weight:bold;
           }
-
-        }
+        
 
       }
       .brand__search  {
-        background-color:gray;
         width:150px;
         height:36px;
-        padding:0 24px;
+        line-height:36px;
+        display:flex;
+        
       }
       
+      .header__lower__right {
+        display:flex;
+        float:right;
+        width:600px;;
       &--good {
-        background-color:gray;
-        width:127px;
+        width:25%;
         height:36px;
         margin-left:100px;
-        padding:0 24px;
+        padding:0 10px;
+        display:flex;
+        line-height:36px;
       }
       
       &--news {
-        background-color:gray;
-        width:110px;
+        width:25%;
         height:36px;
-        padding:0 24px;
+        padding:0 10px;
+        display:flex;
+        line-height:36px;
       }
       
       &--todo {
-        background-color:gray;
-        width:160px;
+        width:25%;
         height:36px;
-        padding:0 24px;
+        padding:0 10px;
+        display:flex;
+        line-height:36px;
       }
       
       &--mypage {
-        background-color:gray;
-        width:144px;
+        width:25%;
         height:36px;
-        padding:0 24px;
+        padding:0 10px;
+        display:flex;
+        line-height:36px;
       }
-      
+      .category_link {
+        font-size:10px;
+        
+      }
+     }
+     
+    
     }
     
+
+    
     
 
-
-  .footer {
-  background-color:red;
-  height:100px;
-  width:100%;
-  position:fixed;
-  bottom:0;
-}
-
+ 

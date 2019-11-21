@@ -2,75 +2,16 @@
 %html
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %title View2
+    %title
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-    .header
-      .header__upper
-        .header__upper__logo
-          mercari
-          .header__upper__logo--text
-        .header__upper__form
-          .header__upper__form--text
-            %input.inputform{placeholder: "何かお探しですか？"}
-          .header__upper__form--icon
-            
-
-      .header__lower
-        .catogory__search
-          .iicon
-            =fa_icon "pencil-square-o"
-          %span.category_link
-            = link_to("カテゴリーから探す")
-        .brand__search
-        .header__lower--good
-          .icon
-          .text
-        .header__lower--news
-          .icon
-          .text
-        .header__lower--todo
-          .icon
-          .text
-        .header__lower--mypage
-          .icon
-          .text
-            
-
-
-    .footer
-      .footer__upper
-        .footer__upper
-          %h3 スマホでかんたんフリマアプリ
-          %h2 今すぐ無料ダウンロード！
-          .footer__upper__logo
-            .footer__upper__logo--merkari
-            .footer__upper__logo--appstore
-            .footer__upper__logo--googleplay
-      .footer__lower__left--index
-        text
-        .footer__lower__left--icon
-          .icon__twitter
-          .icon__facebook
-      .footer__lower__left--help
-      .footer__lower__left--privacy
-      .footer__lower__left--null
-      .footer__lower__left--country
-    .bottom
-      .bottom__left
-        .bottom__left__logo
-        .bottom__left__text
-      .bottom__center
-        .bottom__center__logo
-        .bottom__center__text
-
-    .seller__btn
-      .seller__btn__text
-      .seller__btn__icon
+    = render "layouts/header"
+    = render "layouts/footer"
     = yield
+
           
 
     

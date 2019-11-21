@@ -1,0 +1,98 @@
+.footer {
+  position:fixed;
+  bottom:0;
+  width:100%;
+  &__upper {
+    background-color:rgba(255,0,0,0.5);
+    display:flex;
+    padding:0 250px;
+    height:260px;
+    background-image: url('christmasA7_03359_TP_V4.jpg');
+    &__left {
+      color:#333333;
+      width:40%;
+      
+      &--text1 {
+        font-size:20px;
+        margin:0 0 15px;
+      }
+      &--text2 {
+        font-size:20px;
+        margin:0 0 20px;
+      }
+    }
+        &__right {
+          width:60%;
+          &--logo {
+            display:flex;
+            
+            p, a {
+              font-size:20px;
+              font-weight:bold;
+              width:33%;
+              color:white;
+            }
+          }
+        }
+    }
+  }
+
+  .footer__lower__wrapper {
+    height:300px;
+    padding:0 100px;
+    background-color:#222222;
+    .footer__lower {
+      background-color:#222222;
+      display:flex;
+      &--mercari {
+        width:20%;
+      }
+      &--help {
+        width:20%;
+        
+      }
+      &--privacy {
+        width:20%;
+        
+      }
+      &--null {
+        width:20%;
+        
+      }
+      &--country {
+        width:20%;
+
+      }
+
+      &--size {
+        margin-top:18px;
+        padding:0 40px 0 0;
+      }
+
+      li {
+        padding-top:12px;
+        color:white;
+        font-weight:bold;
+        font-size:12px;
+        color:rgba(255,255,255,0.7);
+      }
+
+      .top{
+        font-size:16px;
+        color:white;
+        font-weight:bold;
+        // font-size:12px;
+        // color:rgba(255,255,255,0.7);
+      }
+
+      .null{
+        padding-top:30px;
+      }
+    }
+
+    .footer_icon {
+      width:26px;
+      height:26px;
+      color:white;
+    }
+  }
