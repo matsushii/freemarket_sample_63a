@@ -1,0 +1,52 @@
+%header
+  .container
+    .container__top
+      .container__top__logo
+        = link_to root_path do
+          = image_tag 'sample_logo.png', size: "134x36", class: "logo-image"
+      = form_tag("/", method: "get", class: "container__top__form") do
+        = text_field_tag(:q, '', class: "container__top__form--field", placeholder: "何かお探しですか？")
+        = label :search, '', class: "container__top__form--search-btn" do
+          = fa_icon "search", id: 'btn'
+          = submit_tag("Search", class: "container__top__form--search-btn--hidden")
+    .container__bottom
+      .container__bottom__left
+        .catogory-search
+          .catogory-search__link
+            = link_to root_path do
+              %i.fa.fa-list-ul
+              カテゴリーから探す
+          .catogory-search__dropdown
+            %ul.gnav
+              %li
+                = link_to root_path do
+                  TOP categories
+                %ul
+                  %li
+                    = link_to root_path do
+                      Middle categories
+                    %ul
+                      %li
+                        = link_to root_path do
+                          bottom categories
+        .brand-search
+          .brand-search__link
+            = link_to root_path do
+              %i.fa.fa-tag
+              ブランドから探す
+      %ul.container__bottom__right
+        %li.container__bottom__right__list-left
+          = link_to root_path do
+            %i.fa.fa-heart-o
+            いいね！一覧
+        %li.container__bottom__right__list-center
+          = link_to root_path do
+            %i.fa.fa-bell-o
+            お知らせ
+        %li.container__bottom__right__list-center
+          = link_to root_path do
+            %i.fa.fa-check
+            やることリスト
+        %li.container__bottom__right__list-right
+          = link_to root_path do
+            マイページ

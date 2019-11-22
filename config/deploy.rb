@@ -18,7 +18,6 @@ set :unicorn_pid, -> { "#{shared_path}/tmp/pids/unicorn.pid" }
 set :unicorn_config_path, -> { "#{current_path}/config/unicorn.rb" }
 set :keep_releases, 5
 
-
 server "52.194.61.165", user: "ec2-user", roles: %w{app db web}
 
 set :rails_env, "production"
