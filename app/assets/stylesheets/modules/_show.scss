@@ -106,6 +106,12 @@
           }
           .footer {
             display:flex;
+            a {
+              font-size:14px;
+              text-decoration:none;
+              line-height: 33px;
+              color:black;
+            }
             &__likes {
               height:33px;
               width:120px;
@@ -124,41 +130,24 @@
                 
               }
             }
-            .footer__notes  {
+            &__notes  {
               height:33px;
               width:180px;
               display:flex;
               background-color:#F5F5F5;
-              .footer__notes--icon {
+              &--icon {
                 line-height: 33px;
               }
-              .footer__notes--text {
-                a {
-                  font-size:14px;
-                  text-decoration:none;
-                  line-height: 33px;
-                  color:black;
-                }
-
+              &--text {
               }
             }
-            .footer__right  {
+            &__right  {
               display:flex;
-              float:right;
-              .footer__right--icon {
-
+              &--icon {
+                line-height: 33px;
               }
-              .footer__right--text {
-                
-                
+              &--text {
               }
-            }
-             .left {
-              font-size:24px;
-              line-height:60px;
-              color:white;
-              font-weight:600;
-              text-decoration:none;
             }
           }
   }
