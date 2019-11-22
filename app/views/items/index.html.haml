@@ -1,7 +1,7 @@
 .container
-  aa
   .news
-    bb
+    .news__title
+      ニュースは今後実装します...
   .contents
     .content
       .content__banner
@@ -115,3 +115,8 @@
                       = image_tag 'sample_item.jpg', size: "180x180", class: "product__link__thumbnail__info--image"
                     %figcaption.product__caption
                       %span.product__caption--text 【国内正規品】jiu-hoortey　バッグ　赤
+  .sell_btn
+    = link_to root_path do
+      %p 出品
+      .sell_icon
+        =fa_icon "camera", class: "icon_lower"

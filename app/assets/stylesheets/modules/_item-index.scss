@@ -1,7 +1,14 @@
 .container {
   background-color: $lightgray;
   .news {
-
+    height: 390px;
+    background-size: auto;
+    &__title {
+      line-height: 390px;
+      margin: 0 auto;
+      text-align: center;
+      color: $black;
+    }
   }
   .contents {
     width: 100vw;
@@ -23,11 +30,12 @@
             margin: 10px;
             text-align: center;
             &__tag {
-              display: inline-block;
               padding: 5px 16px;
               border-radius: 15px;
+              display: inline-block;
               background-color: $lightgray;
               font-size: 14px;
+              cursor: pointer;
             }
           }
         }
@@ -93,6 +101,25 @@
           }
         }
       }
+    }
+  }
+  .sell_btn{
+    height: 160px;
+    width: 160px;
+    border-radius: 80px;
+    bottom: 32px;
+    right: 32px;
+    background-color: $red;
+    position: fixed;
+    text-align: center;
+    p {
+      padding: 32px 0 0;
+      font-size: 22px;
+      color: white;
+      .icon_lower {
+        font-size: 60px;
+        color: white;
+        }
     }
   }
 }
