@@ -1,0 +1,67 @@
+.details
+  .detail
+    .detail__header
+      商品詳細テスト
+    .detail__body
+      .detail__body--left
+        .items-photo__upper
+        .items-photo__lower__top
+          .items-photo__lower__top--slide
+          .items-photo__lower__top--slide
+          .items-photo__lower__top--slide
+          .items-photo__lower__top--slide
+          .items-photo__lower__top--slide
+          .items-photo__lower__top--slide
+          .items-photo__lower__top--slide
+          .items-photo__lower__top--slide
+          .items-photo__lower__top--slide
+          .items-photo__lower__top--slide
+      .detail__body--right
+        %table 
+          %tr
+            %td.cat 出品者
+            %td.tag= link_to 'user.name', root_path
+          %tr
+            %td.cat カテゴリー
+            %td.tag= link_to '> キッズ靴 ', root_path
+            
+          %tr
+            %td.cat ブランド
+            %td.tag ラブレボリューション
+          %tr
+            %td.cat 商品のサイズ
+            %td.tag 16cm ・ 16.5cm
+          %tr
+            %td.cat 商品の状態
+            %td.tag 未使用に近い
+          %tr
+            %td.cat 配送料の負担
+            %td.tag 送料込み（出品者負担）
+          %tr
+            %td.cat 配送の方法
+            %td.tag らくらくメルカリ便
+          %tr
+            %td.cat 配送元地域
+            %td.tag= link_to '> 茨城県 ', root_path
+          %tr
+            %td.cat 発送日の目安
+            %td.tag 2~3日程度
+
+      .item__price
+        %span.item__price__bold ¥2,800
+        %span.item__price__tax (税込)
+        %span.item__price__fee 送料込み
+      .item-buy-btn 
+        .buy-text= link_to '購入画面に進む ', root_path
+      .item-description
+        ディスクリプションです
+        ディスクリプションです
+        ディスクリプションです
+        ディスクリプションです
+        ディスクリプションです
+        ディスクリプションです
+      .footer
+        .footer__likes
+        .footer__notes
+        .footer__message
+
