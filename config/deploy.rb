@@ -18,14 +18,11 @@ set :unicorn_pid, -> { "#{shared_path}/tmp/pids/unicorn.pid" }
 set :unicorn_config_path, -> { "#{current_path}/config/unicorn.rb" }
 set :keep_releases, 5
 
-# server "db.example.com", user: "deploy", roles: %w{db}
+
 server "52.194.61.165", user: "ec2-user", roles: %w{app db web}
 
 set :rails_env, "production"
 set :unicorn_rack_env, "production"
-
-# role-based syntax
-# ==================
 
 after 'deploy:publishing', 'deploy:restart'
 namespace :deploy do
