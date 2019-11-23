@@ -230,3 +230,16 @@
       }
     }
   }
+  .icons {
+    height: 82px;
+    margin: 8px 290px;
+    background-color :white;
+    padding: 24px 0;
+    font-size: 44px;
+    line-height: 82px;
+    text-align:center;
+    &__bar {
+      margin-top: 16px;
+      font-size: 44px;
+    }
+  }
