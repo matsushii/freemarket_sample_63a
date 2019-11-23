@@ -65,7 +65,7 @@
           .footer__likes--icon
             =fa_icon "heart"
           .footer__likes--text
-            = link_to 'いいね', root_path
+            = link_to 'いいね！', root_path
         .footer__notes
           .footer__notes--icon
             =fa_icon "flag"
@@ -77,3 +77,23 @@
           .footer__right--text
             = link_to 'あんしん・あんぜんへの取り組み', root_path
             
+  .comments
+    .comments__header
+      相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+    %textarea.comments__middle
+    %button.comments__footer
+      %span コメントする
+
+  .link
+    .link__bar
+      .link__bar__left
+        .link__bar__left--icon
+          =fa_icon "angle-left"
+        .link__bar__left--text
+          = link_to ' 専用*9本', root_path
+      .link__bar__right
+        .link__bar__right--text
+          = link_to 'レディーアップルシード コート 95 美品', root_path
+        .link__bar__right--icon
+          =fa_icon "angle-right"
+        
