@@ -43,8 +43,13 @@
           table {
             width: 100%;
 
-            .cat {
+            th {
+              min-height: 40px;
+              font-size: 14px;
+              text-align: left;
+              padding: 8px;
               background-color: #F5F5F5;
+              border: 1px solid #f5f5f5;
             }
             td {
               min-height: 40px;
@@ -60,6 +65,22 @@
               font-size: 14px;
               text-align: left;
               padding: 8px;
+            }
+            .eva__icon {
+              font-size:16px;
+              display: flex;
+              .fa.fa-smile-o{
+                width:33%;
+                color: #ef5185;
+              }
+              .fa.fa-meh-o{
+                width:33%;
+                color: #fba933;
+              }
+              .fa.fa-frown-o{
+                width:33%;
+                color:#6ab5d8;
+              }
             }
           }
         }

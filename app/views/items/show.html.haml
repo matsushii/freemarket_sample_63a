@@ -17,35 +17,47 @@
           .items-photo__lower__top--slide
           .items-photo__lower__top--slide
       .detail__body--right
-        %table 
+        %table
           %tr
-            %td.cat 出品者
-            %td.tag= link_to 'user.name', root_path
+            %th 出品者
+            %td
+              = link_to 'user.name', root_path
+              .eva__icon
+                .eva__icon__smile
+                  %i.fa.fa-smile-o
+                  80
+                .eva__icon__meh-o
+                  %i.fa.fa-meh-o
+                  50
+                .eva__icon__frown
+                  %i.fa.fa-frown-o
+                  30
           %tr
-            %td.cat カテゴリー
-            %td.tag= link_to '> キッズ靴 ', root_path
-            
+            %th カテゴリー
+            %td
+              = link_to '> メンズ ', root_path
           %tr
-            %td.cat ブランド
-            %td.tag ラブレボリューション
+            %th ブランド
+            %td 
+              = link_to 'ラブ', root_path
           %tr
-            %td.cat 商品のサイズ
-            %td.tag 16cm ・ 16.5cm
+            %th 商品のサイズ
+            %td 16cm ・ 16.5cm
           %tr
-            %td.cat 商品の状態
-            %td.tag 未使用に近い
+            %th 商品の状態
+            %td 未使用に近い
           %tr
-            %td.cat 配送料の負担
-            %td.tag 送料込み（出品者負担）
+            %th 配送料の負担
+            %td 送料込み（出品者負担）
           %tr
-            %td.cat 配送の方法
-            %td.tag らくらくメルカリ便
+            %th 配送の方法
+            %td らくらくメルカリ便
           %tr
-            %td.cat 配送元地域
-            %td.tag= link_to '> 茨城県 ', root_path
+            %th 配送元地域
+            %td= link_to '> 茨城県 ', root_path
           %tr
-            %td.cat 発送日の目安
-            %td.tag 2~3日程度
+            %th 発送日の目安
+            %td 2~3日程度
 
       .item__price
         %span.item__price__bold ¥2,800
