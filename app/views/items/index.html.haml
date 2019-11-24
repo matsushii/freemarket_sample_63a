@@ -19,102 +19,90 @@
       .content__box
         .content__box__header
           .content__box__header__title
+            メンズ新着アイテム(商品一覧)
+          .content__box__header__more
+            もっと見る
+            = fa_icon "chevron-right"
+        .content__box__items
+          %ul.content__box__items__lists
+            - @mens_items.each do |men_item|
+              %li.content__box__items__lists__list
+                .product
+                  = link_to root_path, class: "product--link" do
+                    %figure.product__link__thumbnail
+                      .product__link__thumbnail__info
+                        %span.product__link__thumbnail__info--price ¥#{men_item.price.to_s(:delimited)}
+                        = image_tag 'sample_item.jpg', size: "180x180", class: "product__link__thumbnail__info--image"
+                      %figcaption.product__caption
+                        %span.product__caption--text #{men_item.text}
+      .content__box
+        .content__box__header
+          .content__box__header__title
             レディース新着アイテム(商品一覧)
           .content__box__header__more
             もっと見る
             = fa_icon "chevron-right"
         .content__box__items
           %ul.content__box__items__lists
-            %li.content__box__items__lists__list
-              .product
-                = link_to root_path, class: "product--link" do
-                  %figure.product__link__thumbnail
-                    .product__link__thumbnail__info
-                      %span.product__link__thumbnail__info--price $5,000
-                      = image_tag 'sample_item.jpg', size: "180x180", class: "product__link__thumbnail__info--image"
-                    %figcaption.product__caption
-                      %span.product__caption--text 【国内正規品】jiu-hoortey　バッグ　赤
-            %li.content__box__items__lists__list
-              .product
-                = link_to root_path, class: "product--link" do
-                  %figure.product__link__thumbnail
-                    .product__link__thumbnail__info
-                      %span.product__link__thumbnail__info--price $5,000
-                      = image_tag 'sample_item.jpg', size: "180x180", class: "product__link__thumbnail__info--image"
-                    %figcaption.product__caption
-                      %span.product__caption--text 【国内正規品】jiu-hoortey　バッグ　赤
-            %li.content__box__items__lists__list
-              .product
-                = link_to root_path, class: "product--link" do
-                  %figure.product__link__thumbnail
-                    .product__link__thumbnail__info
-                      %span.product__link__thumbnail__info--price $5,000
-                      = image_tag 'sample_item.jpg', size: "180x180", class: "product__link__thumbnail__info--image"
-                    %figcaption.product__caption
-                      %span.product__caption--text 【国内正規品】jiu-hoortey　バッグ　赤
-            %li.content__box__items__lists__list
-              .product
-                = link_to root_path, class: "product--link" do
-                  %figure.product__link__thumbnail
-                    .product__link__thumbnail__info
-                      %span.product__link__thumbnail__info--price $5,000
-                      = image_tag 'sample_item.jpg', size: "180x180", class: "product__link__thumbnail__info--image"
-                    %figcaption.product__caption
-                      %span.product__caption--text 【国内正規品】jiu-hoortey　バッグ　赤
-            %li.content__box__items__lists__list
-              .product
-                = link_to root_path, class: "product--link" do
-                  %figure.product__link__thumbnail
-                    .product__link__thumbnail__info
-                      %span.product__link__thumbnail__info--price $5,000
-                      = image_tag 'sample_item.jpg', size: "180x180", class: "product__link__thumbnail__info--image"
-                    %figcaption.product__caption
-                      %span.product__caption--text 【国内正規品】jiu-hoortey　バッグ　赤
-            %li.content__box__items__lists__list
-              .product
-                = link_to root_path, class: "product--link" do
-                  %figure.product__link__thumbnail
-                    .product__link__thumbnail__info
-                      %span.product__link__thumbnail__info--price $5,000
-                      = image_tag 'sample_item.jpg', size: "180x180", class: "product__link__thumbnail__info--image"
-                    %figcaption.product__caption
-                      %span.product__caption--text 【国内正規品】jiu-hoortey　バッグ　赤
-            %li.content__box__items__lists__list
-              .product
-                = link_to root_path, class: "product--link" do
-                  %figure.product__link__thumbnail
-                    .product__link__thumbnail__info
-                      %span.product__link__thumbnail__info--price $5,000
-                      = image_tag 'sample_item.jpg', size: "180x180", class: "product__link__thumbnail__info--image"
-                    %figcaption.product__caption
-                      %span.product__caption--text 【国内正規品】jiu-hoortey　バッグ　赤
-            %li.content__box__items__lists__list
-              .product
-                = link_to root_path, class: "product--link" do
-                  %figure.product__link__thumbnail
-                    .product__link__thumbnail__info
-                      %span.product__link__thumbnail__info--price $5,000
-                      = image_tag 'sample_item.jpg', size: "180x180", class: "product__link__thumbnail__info--image"
-                    %figcaption.product__caption
-                      %span.product__caption--text 【国内正規品】jiu-hoortey　バッグ　赤
-            %li.content__box__items__lists__list
-              .product
-                = link_to root_path, class: "product--link" do
-                  %figure.product__link__thumbnail
-                    .product__link__thumbnail__info
-                      %span.product__link__thumbnail__info--price $5,000
-                      = image_tag 'sample_item.jpg', size: "180x180", class: "product__link__thumbnail__info--image"
-                    %figcaption.product__caption
-                      %span.product__caption--text 【国内正規品】jiu-hoortey　バッグ　赤
-            %li.content__box__items__lists__list
-              .product
-                = link_to root_path, class: "product--link" do
-                  %figure.product__link__thumbnail
-                    .product__link__thumbnail__info
-                      %span.product__link__thumbnail__info--price $5,000
-                      = image_tag 'sample_item.jpg', size: "180x180", class: "product__link__thumbnail__info--image"
-                    %figcaption.product__caption
-                      %span.product__caption--text 【国内正規品】jiu-hoortey　バッグ　赤
+            - @ladies_items.each do |lady_item|
+              %li.content__box__items__lists__list
+                .product
+                  = link_to root_path, class: "product--link" do
+                    %figure.product__link__thumbnail
+                      .product__link__thumbnail__info
+                        %span.product__link__thumbnail__info--price ¥#{lady_item.price.to_s(:delimited)}
+                        = image_tag 'sample_item.jpg', size: "180x180", class: "product__link__thumbnail__info--image"
+                      %figcaption.product__caption
+                        %span.product__caption--text #{lady_item.text}
+      .content__box
+        .content__box__header
+          .content__box__header__title
+            家電・スマホ・カメラ新着アイテム(商品一覧)
+          .content__box__header__more
+            もっと見る
+            = fa_icon "chevron-right"
+        .content__box__items
+          %ul.content__box__items__lists
+            - @e_appliances_items.each do |e_appliance_item|
+              %li.content__box__items__lists__list
+                .product
+                  = link_to root_path, class: "product--link" do
+                    %figure.product__link__thumbnail
+                      .product__link__thumbnail__info
+                        %span.product__link__thumbnail__info--price ¥#{e_appliance_item.price.to_s(:delimited)}
+                        = image_tag 'sample_item.jpg', size: "180x180", class: "product__link__thumbnail__info--image"
+                      %figcaption.product__caption
+                        %span.product__caption--text #{e_appliance_item.text}
+      .content__box
+        .content__box__header
+          .content__box__header__title
+            おもちゃ・ホビー・グッズ(商品一覧)
+          .content__box__header__more
+            もっと見る
+            = fa_icon "chevron-right"
+        .content__box__items
+          %ul.content__box__items__lists
+            - @hobbies_items.each do |hobby_item|
+              %li.content__box__items__lists__list
+                .product
+                  = link_to root_path, class: "product--link" do
+                    %figure.product__link__thumbnail
+                      .product__link__thumbnail__info
+                        %span.product__link__thumbnail__info--price ¥#{hobby_item.price.to_s(:delimited)}
+                        = image_tag 'sample_item.jpg', size: "180x180", class: "product__link__thumbnail__info--image"
+                      %figcaption.product__caption
+                        %span.product__caption--text #{hobby_item.text}
+            -# #ここからフロント原本
+            -# %li.content__box__items__lists__list
+            -#   .product
+            -#     = link_to root_path, class: "product--link" do
+            -#       %figure.product__link__thumbnail
+            -#         .product__link__thumbnail__info
+            -#           %span.product__link__thumbnail__info--price $5,000
+            -#           = image_tag 'sample_item.jpg', size: "180x180", class: "product__link__thumbnail__info--image"
+            -#         %figcaption.product__caption
+            -#           %span.product__caption--text 【国内正規品】jiu-hoortey　バッグ　赤
+            -# ここまで原本
   .sell_btn
     = link_to root_path do
       %p 出品
