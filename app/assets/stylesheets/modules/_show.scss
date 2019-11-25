@@ -74,12 +74,12 @@
                 color: #ef5185;
               }
               .fa.fa-meh-o{
-                width:33%;
+                width: 33%;
                 color: #fba933;
               }
               .fa.fa-frown-o{
-                width:33%;
-                color:#6ab5d8;
+                width: 33%;
+                color: #6ab5d8;
               }
             }
           }
@@ -153,7 +153,7 @@
               display: flex;
               background-color: #F5F5F5;
               border-radius: 40px;
-              float:left;
+              float: left;
               &--icon {
                 line-height: 33px;
                 margin-left: 16px;
@@ -170,10 +170,10 @@
             }
             &__right  {
               display: flex;
-              float:right;
+              float: right;
               &--icon {
                 line-height: 33px;
-                color:#0099E8;
+                color: #0099E8;
               }
               &--text {
                 a {
@@ -181,7 +181,7 @@
                   text-decoration: none;
                   line-height: 33px;
                   margin-left: 8px;
-                  color:#0099E8;
+                  color: #0099E8;
                 }
               }
             }
@@ -191,33 +191,33 @@
 .comments {
   height: 260px;
   margin: 8px 290px;
-  background-color:white;
+  background-color: white;
   padding: 20px 40px;
   box-sizing: border-box;
     &__header {
       height: 44px;
       padding: 10px;
       background-color: #FFF6DE;
-      font-size:14px;
+      font-size: 14px;
     } 
     &__middle {
       height: 104px;
       width: 620px;
-      margin-top:8px;
+      margin-top: 8px;
       padding: 10px;
-      border:1px solid #ccc;
+      border: 1px solid #ccc;
       box-sizing: border-box;
     }
     &__footer{
       height: 50px;
       width: 620px;
-      border:1px solid #aaaaaa;
+      border: 1px solid #aaaaaa;
       background-color: gray;
       box-sizing: border-box;
       span {
-        text-align:center;
-        color:white;
-        font-size:14px;  
+        text-align: center;
+        color: white;
+        font-size: 14px;  
       }
     }
   }
@@ -225,8 +225,8 @@
     height: 46px;
     margin: 8px 290px;
     &__bar {
-      line-height:46px;
-      color:#0099E8;
+      line-height: 46px;
+      color: #0099E8;
       a {
         font-size: 14px;
         text-decoration: none;
@@ -235,18 +235,18 @@
         color:#0099E8;
       }
       &__left {
-        float:left;
-        display:flex;
+        float: left;
+        display: flex;
         &__licon {
-          font-size:14px;
+          font-size: 14px;
         }
       }
       &__right {
-        float:right;
-        display:flex;
+        float: right;
+        display: flex;
         &--icon {
-          font-size:14px;
-          margin-left:6px;
+          font-size: 14px;
+          margin-left: 6px;
         }
       }
     }
@@ -258,18 +258,60 @@
     padding: 24px 0;
     font-size: 44px;
     line-height: 82px;
-    text-align:center;
+    text-align: center;
     &__bar {
       margin-top: 16px;
       font-size: 44px;
       .facebook {
-        color:#3B5998;
+        color: #3B5998;
       }
       .twitter {
-        color:#1DA1F2;
+        color: #1DA1F2;
       }
       .pinterest {
-        color:#BD081C;
+        color: #BD081C;
       }
     }
   }
+  .item__boxes {
+    width: 700px;
+    margin: 0 auto;
+    &__header {
+      margin: 24px 0 8px;
+      height: 30px;
+      a {
+        font-size: 22px;
+        text-decoration: none;
+        line-height: 30px;
+        margin-left: 8px;
+        color: #0099E8;
+      }
+      
+    }
+    &__main {
+      &__lists {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        &__content {
+          box-sizing: border-box;
+          width: 33%;
+          margin: 0 auto;
+          // padding: 15px 5px;
+          &--image {
+            &--size {
+              object-fit: cover;
+            }
+          }
+          &__footer {
+            height:110px;
+            &--text {
+            }
+            &--price {
+            }
+          }
+        }
+      }
+    }
+  }
+    
