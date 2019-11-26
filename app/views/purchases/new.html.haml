@@ -26,7 +26,7 @@
         .body__main__note
           この商品はゆうゆうメルカリ便を利用しているためアプリからのみ購入出来ます
         .body__main__buy--btn
-          購入する
+          = link_to '購入する ', "/items/#{@item.id}/purchases", method: "post"
         .body__main__info
           アプリをお持ちでない方は以下よりインストールしてご利用いただけます。
         .body__main__logo
