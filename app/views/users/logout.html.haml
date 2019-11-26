@@ -1,0 +1,7 @@
+.background
+  .show-container.clearfix
+    = render "users/side"
+    .logout-container
+      = link_to destroy_user_session_path, method: "delete", class: "logout-container__link" do
+        .logout-container__link__button
+          %p ログアウト
