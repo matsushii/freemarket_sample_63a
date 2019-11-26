@@ -1,0 +1,174 @@
+.container {
+  .contents {
+    .content {
+      overflow: scroll;
+      &__header {
+        &__logo {
+
+        }
+      }
+      &__main {
+        &__box {
+          &__header {
+
+          }
+          &__upload {
+            .header {
+              &__main {
+
+              }
+              &__require {
+
+              }
+              &___label {
+
+              }
+            }
+            .container {
+              .item-images {
+                .image {
+
+                }
+                .edit {
+
+                }
+                .delete {
+
+                }
+              }
+              .image-upload {
+                .box {
+
+                }
+                .guide {
+
+                }
+              }
+            }
+          }
+          &__product {
+            .name-box {
+              &__label{
+
+              }
+              &__require{
+
+              }
+              &__form{
+
+              }
+            }
+            .disc-box {
+              &__label{
+
+              }
+              &__require{
+                
+              }
+              &__form{
+                
+              }
+            }
+          }
+          &__detail {
+            .side {
+
+            }
+            .container {
+              .catBox {
+                &__header {
+                  .label {
+
+                  }
+                  .require{
+
+                  }
+                }
+                &__select {
+                  .topCat {
+
+                  }
+                  .midCat {
+
+                  }
+                  .botCat {
+
+                  }
+                }
+              }
+              .sizeBox {
+                &__header {
+                  .label {
+
+                  }
+                  .require {
+
+                  }
+                }
+                &__select {
+                  
+                }
+              }
+              .brandBox {
+                &__header {
+                  .label {
+
+                  }
+                  .arbitary{
+
+                  }
+                } 
+                &__form {
+
+                }
+              }
+              .status-box {
+                &__header {
+                  .label {
+
+                  }
+                  .require {
+
+                  }
+                }
+                &__select{
+
+                }
+              }
+            }
+          }
+          &__delivery {
+            
+          }
+          &__price {
+            
+          }
+          &__btn {
+            
+          }
+        }
+      }
+      &__footer {
+        position: absolute;
+        right : 0;
+        bottom : 0;
+        left : 0;
+        z-index: 1;
+        padding :40px 0;
+        &__navigation {
+
+        }
+        &__logo {
+
+        }
+        &__copyright {
+
+        }
+      }
+    }
+  }
+}
+
+.require{
+
+}
