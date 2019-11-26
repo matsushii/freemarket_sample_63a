@@ -1,0 +1,84 @@
+.background {
+  .clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+  .show-container {
+    margin: 40px 130px 0px;
+    padding-bottom: 40px;
+    &__side {
+      width: 280px;
+      height: 100%;
+      margin-right: 40px;
+      float: left;
+      .mypage-nav {
+        &__ul {
+          list-style: none;
+          background-color: #fff;
+          &__li {
+            width: 248px;
+            padding: 16px;
+            line-height: 16px;
+            font-size: smaller;
+            border-top: 1px solid $lightgray;
+          }
+        }
+        &__head {
+          margin: 40px 0 8px;
+          font-size: 16px;
+          font-weight: bold;
+        }
+      }
+    }
+    &__main {
+      width: calc(100% - 320px);
+      float: right;
+      &__user-icon {
+        height: 200px;
+        padding: 20px;
+        box-sizing: border-box;
+        position: relative;
+        background: linear-gradient(to top, #87d6d2d9, #aa97d9e1), url(sample_background.jpg);
+        background-size: cover;
+        text-align: center;
+        &__link {
+          width: 100%;
+          position: absolute;
+          top: 50%;
+          left: 0;
+          transform: translateY(-50%);
+          display: inline-block;
+          font-size: smaller;
+          &__image {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto;
+            >img {
+              border-radius: 50%;
+            }
+          }
+          &__nickname {
+            margin-top: 8px;
+          }
+          &__statuses {
+            margin-top: 8px;
+            display: inline-flex;
+            &--rate {
+    
+            }
+            &--item {
+              margin-left: 16px;
+            }
+          }
+        }
+      }
+      &__notice-todo {
+  
+      }
+      &__purchased {
+        margin-top: 40px;
+      }
+    }
+  }
+}
