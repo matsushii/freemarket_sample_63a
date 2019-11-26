@@ -3,19 +3,18 @@
     .content
       .content__header
         .content__header__logo
-          = link_to('mercari', {https://www.mercari.com/jp/})
+          .image
+            = image_tag "/assets/sample_log.png", size: "185x49"
       .content__main
-        .content__main__product
+        .content__main__box
           .content__main__box__header
-          %h2 商品情報を入力
+            %h1.main 商品の情報を入力
           .content__main__box__upload
             .header
-              .header__main
-              出品画像
-              .header__require
-              必須
-              .header__label
-              %p 最大10枚までアップロードできます
+              .header__box
+                %h2.main 出品画像
+                %span.require 必須
+                %p.label 最大10枚までアップロードできます
             .container
               .items-images
                 .image
@@ -26,31 +25,30 @@
                 削除
               .image-upload
                 .box
-                .guide
-                ドラッグ&ドロップ
-                またはクリックしてファイルをアップロード
+                .image-upload--btn
+                  = form_with model: @item, local: true do |f|
+                    = f.file_field :name
           .content__main__box__product
             .name-box
-              .name-box__label
-              商品名
-              .name-box__require
-              必須
-              .name-box__form
+              = form_with model: @item, local: true do |f|
+                = f.label "商品名", class: "label"
+                %span.require 必須
+                = f.text_field :name ,class: "name-filed", placeholder: "商品名（必須40文字以内）" 
             .disc-box
-              .disc-box__label
-              商品説明
-              .disc-box__require
-              必須
-              .disc-box__form
+              = form_with model: @item, local: true do |f|
+                = f.label "商品の説明", class: "label"
+                %span.require 必須
+                = f.text_area :text, class: "textarea", placeholder: "商品の説明（必須1000文字以内）"
           .content__main__box__detail
             .side
             .container
+              .side
+              商品の詳細
               .cat-box
                 .cat-box__header
                   .label
                   カテゴリー
-                  .require
-                  必須
+                  %span.require 必須
                 .cat-box__select
                   .topCat
                   .midCat
@@ -59,65 +57,61 @@
                 .size-box__header
                   .label
                   サイズ
-                  .require
-                  必須
-               .size-box__select
+                  %span.require 必須
+                .size-box__select
               .brand-box
                 .brand-box__header
                   .label
                   ブランド
-                  .arbitary
-                  任意
+                  %span.arbitary 任意
                 .brand-box__form
               .status-box
                 .status-box__header
                   .label
                   商品の状態
-                  .require
-                  必須
+                  %span.require 必須
                 .status-box__select
           .content__main__box__delivery
             .side
             .container
               .burden-box
                 .label
-                発送料の負担
-                .require
-                必須
+                配送料の負担
+                %span.require 必須
               .region-box
                 .label
                 発送元の地域
-                .require
-                必須
+                %span.require 必須
               .days-box
                 .label
                 発送までの日数
-                .require
-                必須
+                %span.require 必須
           .content__main__box__price
-            .side
+            %h3.side 販売価格(300〜9,999,999)    
             .container
               .price-box
-                .price-box__label
-                価格
-                .price-box__require
-                必須
-                .price-box__form
+                = form_with model: @item, local: true do |f|
+                  = f.label "価格", class: "label"
+                  %span.require 必須
+                  .right 
+                  ¥
+                  = f.text_field :price, class: "price-filed", placeholder: "（例）300" 
               .fee
-                .fee__right
                 .fee__left
                 販売手数料(10%)
+                .fee__right
               .profit
               販売履歴         
           .content__main__box__btn
             .attention
-            禁止されている出品、行為を必ずご確認ください。
-            またブランド品でシリアルナンバー等がある場合はご記載ください。偽ブランドの販売は犯罪であり処罰される可能性があります。
-            また、出品をもちまして加盟店規約に同意したことになります。
+            %p 禁止されている出品、行為を必ずご確認ください。
+            %p またブランド品でシリアルナンバー等がある場合はご記載ください。偽ブランドの販売は犯罪であり処罰される可能性があります。
+            %p また、出品をもちまして加盟店規約に同意したことになります。
             .exhibit__btn
-            出品
+              = form_with model: @item, local: true do |f|
+                = f.submit "出品する", class: "form__submit"
             .return__btn
-            戻る
+
       .content__footer
         .content__footer__navigation
           .policy
