@@ -52,19 +52,20 @@
               %span.bold 0
       %section.show-container__main__notice-todo
         %ul.mypage-tabs
-          %li
-            %h3
+          %li.mypage-tabs__li
+            %h3.mypage-tabs__li__title
               = link_to user_path(current_user) do
                 お知らせ
-          %li
-            %h3
+          %li.mypage-tabs__li
+            %h3.mypage-tabs__li__title
               = link_to user_path(current_user) do
                 やることリスト
         .tab-content
           %ul.tab-content__notification
-            %li
+            %li.tab-content__notification__list
               = link_to user_path(current_user) do
                 %figure
                 .tab-content__notification__body
+                  後日実装します...
       %section.show-container__main__purchased
-        購入した商品
+        購入した商品　後日実装します...

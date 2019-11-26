@@ -74,7 +74,42 @@
         }
       }
       &__notice-todo {
-  
+        .mypage-tabs {
+          width: 100%;
+          display: inline-flex;
+          &__li {
+            width: 50%;
+            text-align: center;
+            display: inline-block;
+            vertical-align: top;
+            &__title {
+              line-height: 74px;
+              >a {
+                width: 100%;
+                text-align: center;
+                display: inline-block;
+                font-weight: bold;
+                background-color: $tabgray;
+              }
+            }
+          }
+        }
+        .tab-content {
+          padding: 0;
+          margin: 0;
+          &__notification {
+
+            &__list {
+              border-bottom: 1px solid $lightgray;
+              >a {
+                width: 100%;
+                height: 100%;
+                line-height: 100%;
+                background-color: $white;
+              }
+            }
+          }
+        }
       }
       &__purchased {
         margin-top: 40px;
