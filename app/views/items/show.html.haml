@@ -21,7 +21,7 @@
           %tr
             %th 出品者
             %td
-              = link_to 'user.name', root_path
+              = link_to "#{@item.name}", root_path
               .evaluate__icon
                 .evaluate__icon__smile
                   %i.fa.fa-smile-o
@@ -64,7 +64,7 @@
         %span.item__price__tax (税込)
         %span.item__price__fee 送料込み
       .item-buy-btn 
-        .buy-text= link_to '購入画面に進む ', root_path
+        .buy-text= link_to '購入画面に進む ', "/items/#{@item.id}/purchases/new"
       .item-description
         ディスクリプションです
         ディスクリプションです
