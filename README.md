@@ -155,5 +155,3 @@ belongs_to :item
 |name|varchar|null: false|
 ### Association
 - has_many :categories
-
-initial
