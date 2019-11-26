@@ -1,0 +1,21 @@
+.logout-container {
+  width: 572px;
+  padding: 64px;
+  background-color: $white;
+  float: right;
+  &__link {
+    width: 320px;
+    margin: 0 auto;
+    display: block;
+    &__button {
+      height: 48px;
+      // display: inline-block;
+      background-color: $red;
+      >p {
+        text-align: center;
+        line-height: 48px;
+        color: $white;
+      }
+    }
+  }
+}
