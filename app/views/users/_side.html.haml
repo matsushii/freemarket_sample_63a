@@ -1,0 +1,36 @@
+.show-container__side
+  %nav.mypage-nav
+    %ul.mypage-nav__ul
+      = link_to user_path(current_user) do
+        %li.mypage-nav__ul__li
+          マイページ
+      = link_to user_path(current_user) do
+        %li.mypage-nav__ul__li
+          お知らせ
+      = link_to user_path(current_user) do
+        %li.mypage-nav__ul__li
+          やることリスト
+    %h3.mypage-nav__head メルペイ
+    %ul.mypage-nav__ul
+      %li.mypage-nav__ul__li
+        売上・振込申請
+      %li.mypage-nav__ul__li
+        ポイント
+    %h3.mypage-nav__head 設定
+    %ul.mypage-nav__ul
+      = link_to user_path(current_user) do
+        %li.mypage-nav__ul__li
+          プロフィール
+      %li.mypage-nav__ul__li
+        発送元・お届け先住所変更
+      %li.mypage-nav__ul__li
+        支払い方法
+      %li.mypage-nav__ul__li
+        メール/パスワード
+      %li.mypage-nav__ul__li
+        本人情報
+      %li.mypage-nav__ul__li
+        電話番号の確認
+      = link_to destroy_user_session_path do
+        %li.mypage-nav__ul__li
+          ログアウト
