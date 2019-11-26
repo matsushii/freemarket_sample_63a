@@ -1,0 +1,225 @@
+.details
+  .detail
+    .detail__header
+      商品詳細テスト
+    .detail__body
+      .detail__body--left
+        .items-photo__upper
+        .items-photo__lower__top
+          .items-photo__lower__top--slide
+          .items-photo__lower__top--slide
+          .items-photo__lower__top--slide
+          .items-photo__lower__top--slide
+          .items-photo__lower__top--slide
+          .items-photo__lower__top--slide
+          .items-photo__lower__top--slide
+          .items-photo__lower__top--slide
+          .items-photo__lower__top--slide
+          .items-photo__lower__top--slide
+      .detail__body--right
+        %table
+          %tr
+            %th 出品者
+            %td
+              = link_to 'user.name', root_path
+              .evaluate__icon
+                .evaluate__icon__smile
+                  %i.fa.fa-smile-o
+                  80
+                .evaluate__icon__meh-o
+                  %i.fa.fa-meh-o
+                  50
+                .evaluate__icon__frown
+                  %i.fa.fa-frown-o
+                  30
+          %tr
+            %th カテゴリー
+            %td
+              = link_to '> メンズ ', root_path
+          %tr
+            %th ブランド
+            %td 
+              = link_to 'ラブ', root_path
+          %tr
+            %th 商品のサイズ
+            %td 16cm ・ 16.5cm
+          %tr
+            %th 商品の状態
+            %td 未使用に近い
+          %tr
+            %th 配送料の負担
+            %td 送料込み（出品者負担）
+          %tr
+            %th 配送の方法
+            %td らくらくメルカリ便
+          %tr
+            %th 配送元地域
+            %td= link_to '> 茨城県 ', root_path
+          %tr
+            %th 発送日の目安
+            %td 2~3日程度
+
+      .item__price
+        %span.item__price__bold ¥2,800
+        %span.item__price__tax (税込)
+        %span.item__price__fee 送料込み
+      .item-buy-btn 
+        .buy-text= link_to '購入画面に進む ', root_path
+      .item-description
+        ディスクリプションです
+        ディスクリプションです
+        ディスクリプションです
+        ディスクリプションです
+        ディスクリプションです
+        ディスクリプションです
+      .footer
+        .footer__likes
+          .footer__likes--icon
+            =fa_icon "heart"
+          .footer__likes--text
+            = link_to 'いいね！', root_path
+        .footer__notes
+          .footer__notes--icon
+            =fa_icon "flag"
+          .footer__notes--text
+            = link_to '不適切な商品の報告', root_path
+        .footer__right
+          .footer__right--icon
+            =fa_icon "lock"
+          .footer__right--text
+            = link_to 'あんしん・あんぜんへの取り組み', root_path
+            
+  .comments
+    .comments__header
+      相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+    %textarea.comments__middle
+    %button.comments__footer
+      %span コメントする
+
+  .link
+    .link__bar
+      .link__bar__left
+        .link__bar__left--icon
+          =fa_icon "angle-left"
+        .link__bar__left--text
+          = link_to ' 専用*9本', root_path
+      .link__bar__right
+        .link__bar__right--text
+          = link_to 'レディーアップルシード コート 95 美品', root_path
+        .link__bar__right--icon
+          =fa_icon "angle-right"
+        
+  .icons
+    .icons__bar
+      %i.facebook=fa_icon "facebook-official"
+      %i.twitter=fa_icon "twitter"
+      %i.pinterest=fa_icon "pinterest-square"
+
+  .item__boxes
+    .item__boxes__header  
+      = link_to '自己紹介者さんのその他の商品', root_path
+    .item__boxes__main
+      %ul.item__boxes__main__lists
+        %li.item__boxes__main__lists__content
+          .item__boxes__main__lists__content--image
+          = image_tag 'christmasA7_03359_TP_V4.jpg', size: "210x180", class: "item__boxes__main__lists__content--image--size"
+          .item__box__main__lists__content__footer
+            .item__box__main__lists__content__footer--text
+              商品紹介メッセージ
+            .item__box__main__lists__content__text--price
+              商品価格
+        %li.item__boxes__main__lists__content
+          .item__boxes__main__lists__content--image
+          = image_tag 'christmasA7_03359_TP_V4.jpg', size: "210x180", class: "item__boxes__main__lists__content--image--size"
+          .item__box__main__lists__content__footer
+            .item__box__main__lists__content__footer--text
+              商品紹介メッセージ
+            .item__box__main__lists__content__text--price
+              商品価格
+        %li.item__boxes__main__lists__content
+          .item__boxes__main__lists__content--image
+          = image_tag 'christmasA7_03359_TP_V4.jpg', size: "210x180", class: "item__boxes__main__lists__content--image--size"
+          .item__box__main__lists__content__footer
+            .item__box__main__lists__content__footer--text
+              商品紹介メッセージ
+            .item__box__main__lists__content__text--price
+              商品価格
+        %li.item__boxes__main__lists__content
+          .item__boxes__main__lists__content--image
+          = image_tag 'christmasA7_03359_TP_V4.jpg', size: "210x180", class: "item__boxes__main__lists__content--image--size"
+          .item__box__main__lists__content__footer
+            .item__box__main__lists__content__footer--text
+              商品紹介メッセージ
+            .item__box__main__lists__content__text--price
+              商品価格
+        %li.item__boxes__main__lists__content
+          .item__boxes__main__lists__content--image
+          = image_tag 'christmasA7_03359_TP_V4.jpg', size: "210x180", class: "item__boxes__main__lists__content--image--size"
+          .item__box__main__lists__content__footer
+            .item__box__main__lists__content__footer--text
+              商品紹介メッセージ
+            .item__box__main__lists__content__text--price
+              商品価格
+        %li.item__boxes__main__lists__content
+          .item__boxes__main__lists__content--image
+          = image_tag 'christmasA7_03359_TP_V4.jpg', size: "210x180", class: "item__boxes__main__lists__content--image--size"
+          .item__box__main__lists__content__footer
+            .item__box__main__lists__content__footer--text
+              商品紹介メッセージ
+            .item__box__main__lists__content__text--price
+              商品価格
+  
+  .item__boxes
+    .item__boxes__header  
+      = link_to 'ブランドその他商品', root_path
+    .item__boxes__main
+      %ul.item__boxes__main__lists
+        %li.item__boxes__main__lists__content
+          .item__boxes__main__lists__content--image
+          = image_tag 'christmasA7_03359_TP_V4.jpg', size: "210x180", class: "item__boxes__main__lists__content--image--size"
+          .item__box__main__lists__content__footer
+            .item__box__main__lists__content__footer--text
+              商品紹介メッセージ
+            .item__box__main__lists__content__text--price
+              商品価格
+        %li.item__boxes__main__lists__content
+          .item__boxes__main__lists__content--image
+          = image_tag 'christmasA7_03359_TP_V4.jpg', size: "210x180", class: "item__boxes__main__lists__content--image--size"
+          .item__box__main__lists__content__footer
+            .item__box__main__lists__content__footer--text
+              商品紹介メッセージ
+            .item__box__main__lists__content__text--price
+              商品価格
+        %li.item__boxes__main__lists__content
+          .item__boxes__main__lists__content--image
+          = image_tag 'christmasA7_03359_TP_V4.jpg', size: "210x180", class: "item__boxes__main__lists__content--image--size"
+          .item__box__main__lists__content__footer
+            .item__box__main__lists__content__footer--text
+              商品紹介メッセージ
+            .item__box__main__lists__content__text--price
+              商品価格
+        %li.item__boxes__main__lists__content
+          .item__boxes__main__lists__content--image
+          = image_tag 'christmasA7_03359_TP_V4.jpg', size: "210x180", class: "item__boxes__main__lists__content--image--size"
+          .item__box__main__lists__content__footer
+            .item__box__main__lists__content__footer--text
+              商品紹介メッセージ
+            .item__box__main__lists__content__text--price
+              商品価格
+        %li.item__boxes__main__lists__content
+          .item__boxes__main__lists__content--image
+          = image_tag 'christmasA7_03359_TP_V4.jpg', size: "210x180", class: "item__boxes__main__lists__content--image--size"
+          .item__box__main__lists__content__footer
+            .item__box__main__lists__content__footer--text
+              商品紹介メッセージ
+            .item__box__main__lists__content__text--price
+              商品価格
+        %li.item__boxes__main__lists__content
+          .item__boxes__main__lists__content--image
+          = image_tag 'christmasA7_03359_TP_V4.jpg', size: "210x180", class: "item__boxes__main__lists__content--image--size"
+          .item__box__main__lists__content__footer
+            .item__box__main__lists__content__footer--text
+              商品紹介メッセージ
+            .item__box__main__lists__content__text--price
+              商品価格
+  
