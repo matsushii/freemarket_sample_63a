@@ -1,6 +1,6 @@
 class PurchasesController < ApplicationController
   def new
-    @item = Item.find_by(id: params[:item_id])
+    @item = Item.find(params[:item_id])
   end
   
   def create
