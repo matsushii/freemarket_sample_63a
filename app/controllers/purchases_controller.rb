@@ -1,10 +1,14 @@
 class PurchasesController < ApplicationController
   def new
-    @item = Item.find(params[:item_id])
+    unless user_signed_in?
+      redirect_to root_path
+    else
+      @item = Item.find(params[:item_id])
+    end
   end
   
   def create
-    Purchase.create(user_id: current_user.id, item_id: purchase_params[:item_id])
+    Purchase.create(user_id: current_user.id, item_id: [:item_id])
   end
   
   private
