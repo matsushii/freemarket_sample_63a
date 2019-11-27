@@ -7,7 +7,6 @@ class PurchasesController < ApplicationController
   def create
     if Purchase.create(user_id: current_user.id, item_id: [:item_id])
       redirect_to root_path, notice: '購入が完了しました'
-      binding.pry
     else
       flash.now[:alert] = 'エラーがが発生しました'
       render :new
