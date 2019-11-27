@@ -83,10 +83,15 @@
           text-align: center;
         }
         &__buy--btn {
-          padding: 16px;
-          font-size: 14px;
           text-align: center;
           background-color: $icongray;
+          a {
+            font-size: 14px;
+            line-height: px;
+            padding: 16px;
+            text-decoration: none;
+            display: block;
+          }
         }
         &__info {
           margin-top: 8px;
@@ -97,8 +102,6 @@
         &__logo {
           height: 60px;
           display: flex;
-          // margin: 0 auto;
-          // text-align: center;
           line-height: 60px;
           &--left {
             width:50%;
@@ -132,23 +135,23 @@
           color: $lightblue;
         }
       }
-        .bottom {
-          height: 154px;
-          padding-top: 40px;
-          font-size: 14px;
-          border-top: 1px solid $lightgray;
-          &__header {
-            margin-top: 8px;
-            font-weight: bold;
-          }
-          &__main {
-          }
-          &__footer {
-            float: right;
-          }
-          a {
-            color: $lightblue;
-          }
+      .bottom {
+        height: 154px;
+        padding-top: 40px;
+        font-size: 14px;
+        border-top: 1px solid $lightgray;
+        &__header {
+          margin-top: 8px;
+          font-weight: bold;
+        }
+        &__main {
+        }
+        &__footer {
+          float: right;
+        }
+        a {
+          color: $lightblue;
+        }
       }
     }
   }

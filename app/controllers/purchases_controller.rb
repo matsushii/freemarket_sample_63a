@@ -4,7 +4,12 @@ class PurchasesController < ApplicationController
   end
   
   def create
-    Purchase.create(user_id: current_user.id,
-                            item_id: params[:item_id])
+    Purchase.create(user_id: current_user.id, item_id: purchase_params[:item_id])
   end
+  
+  private
+    def purchase_params
+      params.permit(:user_id,:item_id)
+    end
 end
+
