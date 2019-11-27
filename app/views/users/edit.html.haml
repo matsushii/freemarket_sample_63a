@@ -1,0 +1,7 @@
+.background
+  .show-container.clearfix
+    = render "users/side"
+    = form_with(model: @user, local: true) do |form|
+      = form.text_field :nickname, placeholder: "例)AYA@セール中"
+      = form.text_area :introduction, placeholder: "自己紹介を入力", rows: "10"
+      = form.submit "変更する"
