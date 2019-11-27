@@ -1,7 +1,15 @@
 .background
   .show-container.clearfix
     = render "users/side"
-    = form_with(model: @user, local: true) do |form|
-      = form.text_field :nickname, placeholder: "例)AYA@セール中"
-      = form.text_area :introduction, placeholder: "自己紹介を入力", rows: "10"
-      = form.submit "変更する"
+    .edit-container
+      %section.edit-container__section
+        %h2.edit-container__section__header
+          プロフィール
+        = form_with(model: @user, local: true) do |form|
+          .edit-container__section__name
+            .edit-container__section__name__image
+              = image_tag "sample_item.jpg", size: "60x60"
+            = form.text_field :nickname, placeholder: "例)AYA@セール中", class: "edit-container__section__name__field"
+          .edit-container__section__introduction
+            = form.text_area :introduction, placeholder: "自己紹介を入力", rows: "10", class: "edit-container__section__introduction__field"
+            = form.submit "変更する", class: "edit-container__section__introduction__submit"
