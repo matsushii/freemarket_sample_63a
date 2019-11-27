@@ -1,0 +1,58 @@
+.wrapper 
+  .header
+    .header__logo
+      merucari
+  .container  
+    .body 
+      .body__header
+        購入内容の確認
+      .body__main
+        .body__main__top
+          .body__main__top--img
+          .body__main__top--name
+            購入商品名
+        .body__main__price
+          .body__main__price--amount
+            ¥6,000円
+          .body__main__price--message
+            送料込み
+        .body__main__point
+          ポイントはありません
+        .body__main__payment__amount
+          .body__main__payment__amount--left
+            支払い金額
+          .body__main__payment__amount--right
+            ¥6,000
+        .body__main__note
+          この商品はゆうゆうメルカリ便を利用しているためアプリからのみ購入出来ます
+        .body__main__buy--btn
+          = link_to '購入する ', item_purchases_path(@item.id), method: "post"
+        .body__main__info
+          アプリをお持ちでない方は以下よりインストールしてご利用いただけます。
+        .body__main__logo
+          .body__main__logo--left
+            appstore
+          .body__main__logo--right
+            googleplay
+        .address
+          %ul
+            %li.address__header
+              配送先
+            %li.address__post-number
+              郵便番号
+            %li.address__main
+              住所
+            %li.address__name
+              名前
+            %li.address__footer
+              = link_to root_path do
+                変更する >
+        .bottom
+          %ul
+            %li.bottom__header
+              支払い方法
+            %li.bottom__main
+              日付
+            %li.bottom__footer
+              = link_to root_path do
+                変更する >
