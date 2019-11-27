@@ -1,9 +1,5 @@
 .background {
-  .clearfix::after {
-    content: "";
-    display: block;
-    clear: both;
-  }
+  @include clearfix;
   .show-container {
     margin: 40px 130px 0px;
     padding-bottom: 40px;
