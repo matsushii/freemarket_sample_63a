@@ -1,0 +1,64 @@
+.edit-container {
+  width: 700px;
+  float: right;
+  &__section {
+    &__header {
+      width: 100%;
+      height: 50px;
+      padding: 8px 24px;
+      box-sizing: border-box;
+      display: inline-block;
+      text-align: center;
+      font-size: 24px;
+      background-color: $white;
+    }
+    &__name {
+      width: 668px;
+      height: 60px;
+      padding: 72px 16px 24px;
+      background: linear-gradient(to top, #87d6d2d9, #aa97d9e1), url(sample_background.jpg);
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      &__image {
+        >img {
+          border-radius: 50%;
+        }
+      }
+      &__field {
+        width: 220px;
+        height: 48px;
+        padding: 10px 16px;
+        margin-left: 8px;
+        border: 1px solid $icongray;
+        box-sizing: border-box;
+        border-radius: 4px;
+      }
+    }
+    &__introduction {
+      width: 668px;
+      padding: 40px 16px;
+      background-color: $white;
+      &__field {
+        width: 668px;
+        height: 220px;
+        padding: 10px;
+        border: 1px solid $icongray;
+        border-radius: 4px;
+        box-sizing: border-box;
+        resize: none;
+      }
+      &__submit {
+        width: 100%;
+        line-height: 48px;
+        margin-top: 16px;
+        border: none;
+        display: block;
+        background-color: $red;
+        color: $white;
+        font-size: smaller;
+      }
+    }
+  }
+}
+
