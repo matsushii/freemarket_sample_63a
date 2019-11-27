@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :items, only: [:index, :show] do
     resources :purchases, only: [:new, :create]
   end
-  resources :users, only: :show do
+  resources :users, only: [:show, :edit, :update] do
     member do
       get :logout
     end

@@ -1,9 +1,30 @@
 class UsersController < ApplicationController
+  before_action :set_user, only: [:show, :edit, :update]
+
   def show
-    user = User.find(params[:id])
-    @nickname = user.nickname
+    @nickname = @user.nickname
+  end
+
+  def edit
+  end
+
+  def update
+    if @user.update_attributes(user_params)
+      redirect_to user_path(current_user)
+    else
+      render 'edit'
+    end
   end
 
   def logout
+  end
+
+  private
+  def set_user
+    @user = User.find(params[:id])
+  end
+
+  def user_params
+    params.require(:user).permit(:nickname, :introduction)
   end
 end
