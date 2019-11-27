@@ -28,7 +28,7 @@
             - @items.each do |item|
               %li.content__box__items__lists__list
                 .product
-                  = link_to "/items/#{item.id}", class: "product--link" do
+                  = link_to item_path(item.id), class: "product--link" do
                     %figure.product__link__thumbnail
                       .product__link__thumbnail__info
                         %span.product__link__thumbnail__info--price ¥#{item.price.to_s(:delimited)}
