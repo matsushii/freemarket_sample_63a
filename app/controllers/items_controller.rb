@@ -6,7 +6,7 @@ class ItemsController < ApplicationController
     @hobbies_items = Item.where(id: 16..20).order(created_at: :desc).limit(10)
   end
 
-  def show
+  def show 
   end
 
 end
