@@ -52,11 +52,11 @@
             = link_to user_path(current_user) do
               マイページ
       - else
-        %ul.container__bottom__right
-          %li.container__bottom__right__list-left
+        .container__bottom__right
+          .container__bottom__right__new-user
             = link_to new_user_registration_path do
               %i.fa.fa-heart-o
               ユーザー新規登録
-          %li.container__bottom__right__list-right
+          .container__bottom__right__login
             = link_to new_user_session_path do
               ログイン
