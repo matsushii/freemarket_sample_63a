@@ -4,10 +4,10 @@
 @import "mixins/clearfix";
 @import "modules/header";
 @import "modules/footer";
-@import "modules/user-show";
 @import "modules/item-show";
-@import "modules/purchases-new";
 @import "modules/item-index";
+@import "modules/item-new";
+@import "modules/user-show";
 @import "modules/user-logout";
 @import "modules/user-edit";
-
+@import "modules/purchases-new";
