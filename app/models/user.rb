@@ -12,4 +12,5 @@ class User < ApplicationRecord
   validates :myoji_kana, presence: true
   validates :namae_kana, presence: true
   validates :birthday, presence: true
+
 end
