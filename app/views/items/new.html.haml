@@ -4,7 +4,7 @@
       .content__header
         .content__header__logo
           .image
-            = image_tag "/assets/sample_log.png", size: "185x49"
+            = image_tag "/assets/sample_logo.png", size: "185x49"
       .content__main
         .content__main__box
           .content__main__box__header
@@ -16,12 +16,12 @@
                 %span.require 必須
                 %p.label 最大10枚までアップロードできます
             .container
-              = form_with model: @image, local: true do |f|
-                .image-upload
-                  .box
-                    .image-upload--btn
-                      = f.file_field :image
-          = form_with model: @item, local: true do |f|
+              -# = form_with model: @image, local: true do |f|
+              -#   .image-upload
+              -#     .box
+              -#       .image-upload--btn
+              -#         = f.file_field :image
+          = form_with(model: @item, local: true) do |f|
             .content__main__box__product
               .name-box
                 = f.label "商品名", class: "label"
