@@ -16,17 +16,19 @@
                 %span.require 必須
                 %p.label 最大10枚までアップロードできます
             .container
-              -# = form_with model: @image, local: true do |f|
-              -#   .image-upload
-              -#     .box
-              -#       .image-upload--btn
-              -#         = f.file_field :image
+              = form_with(model: @image, local: true) do |f|
+                .image-upload
+                  .box
+                    .image-upload--btn
+                      = f.file_field :image
           = form_with(model: @item, local: true) do |f|
             .content__main__box__product
               .name-box
                 = f.label "商品名", class: "label"
                 %span.require 必須
                 = f.text_field :name ,class: "name-filed", placeholder: "商品名（必須40文字以内）" 
+                - if @item.errors.any?
+                  = @item.errors.full_messages
               .disc-box
                 = f.label "商品の説明", class: "label"
                 %span.require 必須
