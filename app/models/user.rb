@@ -8,3 +8,4 @@ class User < ApplicationRecord
   has_many :purchases
   has_many :cards
   validates :nickname, :myoji_kanji, :namae_kanji, :myoji_kana, :namae_kana, :birthday, presence: true
+end
