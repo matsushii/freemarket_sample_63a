@@ -23,9 +23,24 @@ server "52.194.61.165", user: "ec2-user", roles: %w{app db web}
 set :rails_env, "production"
 set :unicorn_rack_env, "production"
 
+set :linked_files, %w{ config/master.key }
+
 after 'deploy:publishing', 'deploy:restart'
 namespace :deploy do
   task :restart do
     invoke 'unicorn:restart'
   end
+
+  desc 'upload master.key'
+  task :upload do
+    on roles(:app) do |host|
+      if test "[ ! -d #{shared_path}/config ]"
+        execute "mkdir -p #{shared_path}/config"
+      end
+      upload!('config/master.key', "#{shared_path}/config/master.key")
+    end
+  end
+  before :starting, 'deploy:upload'
+  after :finishing, 'deploy:cleanup'
 end
+
