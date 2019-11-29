@@ -9,7 +9,7 @@ class PurchasesController < ApplicationController
   
   def create
     @purchase = Purchase.new(user_id: current_user.id, item_id: purchase_params[:item_id])
-    card = Card.where(user_id: current_user.id).first
+    card = Card.find_by(user_id: current_user.id)
     Payjp.api_key = 'sk_test_7e45cce1c3bf4742a63222c4'
     Payjp::Charge.create(
     amount: 300,
