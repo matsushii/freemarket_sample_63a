@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'cards/new'
   devise_for :users
   root to: "items#index"
   resources :items, only: [:index, :show] do
@@ -8,5 +9,6 @@ Rails.application.routes.draw do
     member do
       get :logout
     end
+    resources :cards
   end
 end
