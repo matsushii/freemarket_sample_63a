@@ -23,13 +23,6 @@ server "52.194.61.165", user: "ec2-user", roles: %w{app db web}
 set :rails_env, "production"
 set :unicorn_rack_env, "production"
 
-after 'deploy:publishing', 'deploy:restart'
-namespace :deploy do
-  task :restart do
-    invoke 'unicorn:restart'
-  end
-end
-
 set :linked_files, %w{ config/master.key }
 
 after 'deploy:publishing', 'deploy:restart'
