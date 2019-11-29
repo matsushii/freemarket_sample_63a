@@ -13,7 +13,6 @@ class PurchasesController < ApplicationController
     Payjp.api_key = 'sk_test_7e45cce1c3bf4742a63222c4'
     Payjp::Charge.create(
     amount: 300,
-    # :amount => @item.price,
     customer: card.customer_id, 
     currency: 'jpy', 
   )
