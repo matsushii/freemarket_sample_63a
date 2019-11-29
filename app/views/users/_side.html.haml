@@ -23,8 +23,9 @@
           プロフィール
       %li.mypage-nav__ul__li
         発送元・お届け先住所変更
-      %li.mypage-nav__ul__li
-        支払い方法
+      = link_to new_user_card_path(current_user) do
+        %li.mypage-nav__ul__li
+          支払い方法
       %li.mypage-nav__ul__li
         メール/パスワード
       %li.mypage-nav__ul__li
