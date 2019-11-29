@@ -7,4 +7,9 @@ class User < ApplicationRecord
   has_many :items
   has_many :purchases
   has_many :cards
-end
+  validates :nickname, presence: true
+  validates :myoji_kanji, presence: true
+  validates :namae_kanji, presence: true
+  validates :myoji_kana, presence: true
+  validates :namae_kana, presence: true
+  validates :birthday, presence: true
