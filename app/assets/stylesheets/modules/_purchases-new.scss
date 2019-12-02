@@ -60,7 +60,10 @@
           padding: 16px;
           font-size: 14px;
           text-align: center;
-          background-color: $icongray;
+          background-color:  #198FCC;
+          background-image: -webkit-linear-gradient(#35a9e6 0,#319cd3 48%,#2590c7 100%);
+          border-radius: 2px;
+          color:white;
         }
         &__payment__amount {
           height: 60px;
@@ -84,14 +87,6 @@
         }
         &__buy--btn {
           text-align: center;
-          background-color: $icongray;
-          a {
-            font-size: 14px;
-            line-height: px;
-            padding: 16px;
-            text-decoration: none;
-            display: block;
-          }
         }
         &__info {
           margin-top: 8px;
@@ -156,3 +151,4 @@
     }
   }
 }
+
