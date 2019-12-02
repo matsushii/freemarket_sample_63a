@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   def index
-    @items = Item.all.limit(10)
+    @items = Item.all.order(created_at: "desc").limit(10)
   end
 
   def new
@@ -32,3 +32,5 @@ class ItemsController < ApplicationController
   end
 end
 
+# /Users/saeki/projects/freemarket_sample_63a/public/uploads/image/image/8/sample_item.jpeg
+"/uploads/image/image/1/sample_item.jpg"
