@@ -6,11 +6,6 @@ class User < ApplicationRecord
   has_many :addresses
   has_many :items
   has_many :purchases
-  validates :nickname, presence: true
-  validates :myoji_kanji, presence: true
-  validates :namae_kanji, presence: true
-  validates :myoji_kana, presence: true
-  validates :namae_kana, presence: true
-  validates :birthday, presence: true
-
+  has_many :cards
+  validates :nickname, :myoji_kanji, :namae_kanji, :myoji_kana, :namae_kana, :birthday, presence: true
 end
