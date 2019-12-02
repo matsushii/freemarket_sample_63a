@@ -4,6 +4,15 @@ class SignupController < ApplicationController
     @user.addresses.build
   end
 
+  def step2
+    session[:user_params] = user_params
+    @user = User.new
+    @user.addresses.build
+  end
+
+  def step3
+  end
+
   private
   def user_params
     params.require(:user).permit(
@@ -15,6 +24,7 @@ class SignupController < ApplicationController
       :namae_kanji,
       :myoji_kana,
       :namae_kana,
+      :phone_number,
       addresses_attributes: [:addresses]
     )
   end
