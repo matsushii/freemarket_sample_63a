@@ -1,7 +1,6 @@
 .details
   .detail
-    .detail__header
-      商品詳細テスト
+    .detail__header #{@item.name}
     .detail__body
       .detail__body--left
         .items-photo__upper
@@ -21,7 +20,7 @@
           %tr
             %th 出品者
             %td
-              = link_to "#{@item.name}", root_path
+              = link_to "#{@item.user.nickname}", root_path
               .evaluate__icon
                 .evaluate__icon__smile
                   %i.fa.fa-smile-o
@@ -35,11 +34,16 @@
           %tr
             %th カテゴリー
             %td
-              = link_to '> メンズ ', root_path
+              .top_cat
+              = link_to '> メンズ ', item_path
+              .middle_cat
+              = link_to '> トップス ', item_path
+              .bottom_cat
+              = link_to '> ポロシャツ ', item_path
           %tr
             %th ブランド
             %td 
-              = link_to 'ラブ', root_path
+              = link_to 'ラブ', item_path
           %tr
             %th 商品のサイズ
             %td 16cm ・ 16.5cm
