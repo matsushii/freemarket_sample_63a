@@ -1,0 +1,163 @@
+.container {
+  font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+  .header {
+    .header__logo{
+    }
+    .header__navi{
+    }
+  }
+  .containts {
+    background-color: #fff;
+    width: 700px;
+    margin: 0 auto;
+    .header {
+      font-size: 18px;
+      font-weight: bolder;
+      line-height: 1.5;
+      text-align: center;
+      padding: 32px;
+      border: 1px solid #f5f5f5;
+    } 
+    .content_inner {
+      max-width: 380px;
+      padding: 24px 16px 40px;
+      margin: 0 auto;
+      .nickname-box{
+        .main{
+          .label {
+          }
+          .require{
+          }
+        }
+        .form {
+        }
+      }
+      .email-box {
+        .main{
+          .label {
+          }
+          .require{
+          }
+        }
+        .form {
+        }
+      }
+      .password-box {
+        .main{
+          .label {
+          }
+          .require{
+          }
+        }
+        .form {
+        }
+      }
+      .iden-header{
+        .label {
+          float: left;
+        }
+        .info {
+          clear: both;
+          margin: 8px 0 16px;
+        }
+      }
+      .name-kanji {
+        .main{
+          margin: 8px 0;
+          .label {
+          }
+          .require{
+          }
+        }
+        .form-s {
+        }
+      }
+      .name-kana {
+        .main {
+          .label {
+          }
+          .require { 
+          }
+        }
+        .form-s {
+        }
+      }
+      .birthday {
+        .main{
+          .label {
+          }
+          .require {
+          }
+          .select {
+          }
+        }
+      }
+      .info {
+        .text{
+          font-size: 14px;
+          color: #888888;
+          margin: 8px 0 16px;
+        }
+      }
+      .info-text {
+        font-size: 14px;
+        margin: 0 0 16px 0;
+        .term {
+          color: #0099e8;
+          text-decoration: none;
+        }
+      }
+      .next {
+        &__btn {
+          &--red{
+            background: #ea352d;
+            border: 1px solid #ea352d;
+            color: #fff;
+            display: block;
+            width: 100%;
+            line-height: 48px;
+            font-size: 14px;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+  .footer {
+
+  }
+}
+
+.label {
+  font-weight: 600;
+  display: inline-block;
+}
+.form {
+  height: 48px;
+  width: 100%;
+  padding: 8px;
+  margin: 8px 0 16px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  line-height: 1.5;
+  font-size: 16px;
+}
+.form-s {
+  height: 48px;
+  padding: 8px;
+  margin: 8px 0;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  line-height: 1.5;
+  font-size: 16px;
+}
+.require {
+  background-color: red;
+  margin: 0 0 8px 8px;
+  padding: 2px 4px;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 14px;
+}
