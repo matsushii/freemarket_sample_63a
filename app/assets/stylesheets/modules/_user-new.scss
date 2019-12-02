@@ -1,9 +1,9 @@
 .container {
   font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
   .header {
-    .header__logo{
+    &__logo{
     }
-    .header__navi{
+    &__navi{
     }
   }
   .containts {
@@ -18,40 +18,10 @@
       padding: 32px;
       border: 1px solid $lightgray;
     } 
-    .content_inner {
+    .contents__inner {
       max-width: 380px;
       padding: 24px 16px 40px;
       margin: 0 auto;
-      .nickname-box{
-        .main{
-          .label {
-          }
-          .require{
-          }
-        }
-        .form {
-        }
-      }
-      .email-box {
-        .main{
-          .label {
-          }
-          .require{
-          }
-        }
-        .form {
-        }
-      }
-      .password-box {
-        .main{
-          .label {
-          }
-          .require{
-          }
-        }
-        .form {
-        }
-      }
       .iden-header{
         .label {
           float: left;
@@ -64,30 +34,6 @@
       .name-kanji {
         .main{
           margin: 8px 0;
-          .label {
-          }
-          .require{
-          }
-        }
-        .form-s {
-        }
-      }
-      .name-kana {
-        .main {
-          .label {
-          }
-          .require { 
-          }
-        }
-        .form-s {
-        }
-      }
-      .birthday {
-        .main{
-          .label {
-          }
-          .require {
-          }
         }
       }
       .info {

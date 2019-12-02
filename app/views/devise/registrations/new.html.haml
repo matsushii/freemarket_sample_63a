@@ -6,7 +6,7 @@
     %h2.header 会員情報の入力
     = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
       = render "devise/shared/error_messages", resource: resource
-      .content_inner
+      .contents__inner
         .nickname-box
           .main
             .label  ニックネーム
