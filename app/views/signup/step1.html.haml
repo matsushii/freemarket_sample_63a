@@ -1,4 +1,5 @@
 %h2 会員情報の入力
+= hidden_field_tag :current_step, 'step1'
 = form_for @user, url: step2_signup_index_path do |f|
   .field
     ニックネーム
