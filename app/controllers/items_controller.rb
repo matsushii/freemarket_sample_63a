@@ -7,6 +7,7 @@ class ItemsController < ApplicationController
     @item = Item.new
     @item.images.build
     @image = Image.new
+   
   end
   
   def create
@@ -22,6 +23,8 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
+    @item_images = @item.images.limit(10)
+    # render  layout: false
   end
 
   private
