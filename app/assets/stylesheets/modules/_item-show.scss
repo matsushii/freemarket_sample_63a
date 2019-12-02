@@ -16,20 +16,18 @@
       &--left {
         float: left;           
         .items-photo__upper {
-          height: 300px;
-          width: 300px;
           margin: 16px 0 0;
           font-size: 14px;
-          background-image: url('christmasA7_03359_TP_V4.jpg');
           text-align: center;
         }
         .items-photo__lower__top {
           display: flex;
           flex-wrap: wrap;
-          &--slide {
-            height: 60px;
-            width: 20%;  
-            background-image: url('christmasA7_03359_TP_V4.jpg');
+          max-width: 300px;
+          &__box{
+            &-slide {
+              width: 20%;
+            } 
           }
         }
       }
