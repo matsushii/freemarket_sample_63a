@@ -11,7 +11,6 @@ class ItemsController < ApplicationController
   end
   
   def create
-    # binding.pry
     @item = Item.new(item_params)
     # @item.images.build(item_params[:images_attributes])
     if @item.save
