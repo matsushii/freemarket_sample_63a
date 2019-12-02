@@ -7,7 +7,7 @@
     }
   }
   .containts {
-    background-color: #fff;
+    background-color: $white;
     width: 700px;
     margin: 0 auto;
     .header {
@@ -16,7 +16,7 @@
       line-height: 1.5;
       text-align: center;
       padding: 32px;
-      border: 1px solid #f5f5f5;
+      border: 1px solid $lightgray;
     } 
     .content_inner {
       max-width: 380px;
@@ -88,14 +88,12 @@
           }
           .require {
           }
-          .select {
-          }
         }
       }
       .info {
         .text{
           font-size: 14px;
-          color: #888888;
+          color: $gray;
           margin: 8px 0 16px;
         }
       }
@@ -112,7 +110,7 @@
           &--red{
             background: #ea352d;
             border: 1px solid #ea352d;
-            color: #fff;
+            color: $white;
             display: block;
             width: 100%;
             line-height: 48px;
@@ -138,8 +136,8 @@
   padding: 8px;
   margin: 8px 0 16px;
   border-radius: 4px;
-  border: 1px solid #ccc;
-  background: #fff;
+  border: 1px solid $icongray;
+  background: $white;
   line-height: 1.5;
   font-size: 16px;
 }
@@ -148,16 +146,16 @@
   padding: 8px;
   margin: 8px 0;
   border-radius: 4px;
-  border: 1px solid #ccc;
-  background: #fff;
+  border: 1px solid $icongray;
+  background: $white;
   line-height: 1.5;
   font-size: 16px;
 }
 .require {
-  background-color: red;
+  background-color: $red;
   margin: 0 0 8px 8px;
   padding: 2px 4px;
   border-radius: 2px;
-  color: #fff;
+  color: $white;
   font-size: 14px;
 }
