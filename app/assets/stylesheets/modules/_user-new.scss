@@ -1,0 +1,107 @@
+.container {
+  font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+  .header {
+    &__logo{
+    }
+    &__navi{
+    }
+  }
+  .containts {
+    background-color: $white;
+    width: 700px;
+    margin: 0 auto;
+    .header {
+      font-size: 18px;
+      font-weight: bolder;
+      line-height: 1.5;
+      text-align: center;
+      padding: 32px;
+      border: 1px solid $lightgray;
+    } 
+    .contents__inner {
+      max-width: 380px;
+      padding: 24px 16px 40px;
+      margin: 0 auto;
+      .iden-header{
+        .label {
+          float: left;
+        }
+        .info {
+          clear: both;
+          margin: 8px 0 16px;
+        }
+      }
+      .name-kanji {
+        .main{
+          margin: 8px 0;
+        }
+      }
+      .info {
+        .text{
+          font-size: 14px;
+          color: $gray;
+          margin: 8px 0 16px;
+        }
+      }
+      .info-text {
+        font-size: 14px;
+        margin: 0 0 16px 0;
+        .term {
+          color: #0099e8;
+          text-decoration: none;
+        }
+      }
+      .next {
+        &__btn {
+          &--red{
+            background: #ea352d;
+            border: 1px solid #ea352d;
+            color: $white;
+            display: block;
+            width: 100%;
+            line-height: 48px;
+            font-size: 14px;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+  .footer {
+
+  }
+}
+
+.label {
+  font-weight: 600;
+  display: inline-block;
+}
+.form {
+  height: 48px;
+  width: 100%;
+  padding: 8px;
+  margin: 8px 0 16px;
+  border-radius: 4px;
+  border: 1px solid $icongray;
+  background: $white;
+  line-height: 1.5;
+  font-size: 16px;
+}
+.form-s {
+  height: 48px;
+  padding: 8px;
+  margin: 8px 0;
+  border-radius: 4px;
+  border: 1px solid $icongray;
+  background: $white;
+  line-height: 1.5;
+  font-size: 16px;
+}
+.require {
+  background-color: $red;
+  margin: 0 0 8px 8px;
+  padding: 2px 4px;
+  border-radius: 2px;
+  color: $white;
+  font-size: 14px;
+}
