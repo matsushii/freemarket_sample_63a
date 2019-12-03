@@ -285,13 +285,10 @@
   }
   &__main {
     &__lists {
-      // width: 100%;
       display: flex;
       flex-wrap: wrap;
       &__content {
-        // box-sizing: border-box;
         width: 33%;
-        // margin: 0 auto;
         &--image {
           &--size {
             object-fit: cover;
