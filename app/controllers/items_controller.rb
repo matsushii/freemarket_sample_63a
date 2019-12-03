@@ -23,6 +23,14 @@ class ItemsController < ApplicationController
     @item_images = @item.images.limit(10)
   end
 
+  def destroy
+    if current_user.id == @item.user_id && @item.destroy
+      render :destroy
+    else
+      render :show
+    end
+  end
+
   private
   def item_params
     params.require(:item).permit(
