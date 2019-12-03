@@ -12,6 +12,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.string :myoji_kana,         null: false
       t.string :namae_kana,         null: false
       t.date   :birthday,           null: false
+      t.string :phone_number
       t.text   :introduction
 
       ## Recoverable
