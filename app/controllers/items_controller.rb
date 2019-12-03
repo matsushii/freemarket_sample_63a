@@ -1,7 +1,6 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update]
 
-
   def index
     @items = Item.all.limit(10)
   end
@@ -31,9 +30,13 @@ class ItemsController < ApplicationController
   end
 
   def update
-    if item.user_id == current_user.id
-      item.update(item_params)
+    if current_user.id == @item.user_id
+      @item.update(item_params)
+      render :show
+    else
+      render :edit
     end
+
   end
 
   private
