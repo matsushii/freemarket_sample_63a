@@ -1,4 +1,7 @@
 class ItemsController < ApplicationController
+  before_action :set_item, only: [:show, :edit, :update]
+
+
   def index
     @items = Item.all.limit(10)
   end
@@ -21,22 +24,23 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find(params[:id])
   end
 
   def edit
-    @item = Item.find(params[:id])
     @images = @item.images
   end
 
   def update
-    item = Item.find(params[:id])
     if item.user_id == current_user.id
       item.update(item_params)
     end
   end
 
   private
+  def set_item
+    @item = Item.find(params[:id])
+  end
+
   def item_params
     params.require(:item).permit(:name, :text, :price, images_attributes: [:image]).merge(user_id: current_user.id)
   end
