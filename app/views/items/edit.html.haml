@@ -18,6 +18,9 @@
                   %span.require 必須
                   %p.label 最大10枚までアップロードできます
               .container
+                - @images.each do |image|
+                  .label
+                    = image.image
                 = f.fields_for :images do |image|
                   .image-upload
                     .box
@@ -94,12 +97,13 @@
                   販売手数料(10%)
                   .fee__right
                 .profit
-                販売履歴
+                  販売履歴
             .content__main__box__btn
-              .edit__btn
-                = f.submit "変更する", class: "form__submit"
-              .return
-
+              .edit
+                .edit__btn
+                  = button_to("変更する", {action: :update}) 
+                .cancel__btn
+                  = link_to "キャンセル", item_path, class: "btn cancel__btn"
       .content__footer
         .content__footer__navigation
           .policy
