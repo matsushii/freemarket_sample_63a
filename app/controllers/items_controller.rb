@@ -1,4 +1,6 @@
 class ItemsController < ApplicationController
+  before_action :set_item, only: [:show, :edit, :update, :destroy]
+
   def index
     @items = Item.all.order(created_at: "desc").limit(10)
   end
@@ -30,6 +32,15 @@ class ItemsController < ApplicationController
       render :show
     end
   end
+
+  def destroy
+    if current_user.id == @item.user_id && @item.destroy
+      render :index
+    else
+      render :edit
+    end
+  end
+
 
   private
   def item_params
