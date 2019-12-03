@@ -32,7 +32,8 @@
                     %figure.product__link__thumbnail
                       .product__link__thumbnail__info
                         %span.product__link__thumbnail__info--price ¥#{item.price.to_s(:delimited)}
-                        = image_tag 'item.images.first.image.url', size: "180x180", class: "product__link__thumbnail__info--image"
+                        -# = image_tag 'item.images.first.image.url', size: "180x180", class: "product__link__thumbnail__info--image"
+                        = image_tag 'sample_item.jpeg', size: "180x180", class: "product__link__thumbnail__info--image"
                       %figcaption.product__caption
                         %span.product__caption--text #{item.text}
   .sell_btn
