@@ -30,14 +30,10 @@ class ItemsController < ApplicationController
   end
 
   def update
-    if current_user.id == @item.user_id
-      if @item.update(item_params)
-        render :show
-      else
-        render :edit
-      end
-    else
+    if current_user.id == @item.user_id && @item.update(item_params)
       render :show
+    else
+      render :edit
     end
   end
 
