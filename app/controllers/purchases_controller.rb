@@ -5,6 +5,7 @@ class PurchasesController < ApplicationController
   
   def new
     @item = Item.find(params[:item_id])
+    @item_images = @item.images.limit(10)
   end
   
   def create
