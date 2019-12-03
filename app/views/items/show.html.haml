@@ -1,27 +1,20 @@
 .details
   .detail
-    .detail__header
-      商品詳細テスト
+    .detail__header #{@item.name}
     .detail__body
-      .detail__body--left
+      .detail__body--left 
         .items-photo__upper
-        .items-photo__lower__top
-          .items-photo__lower__top--slide
-          .items-photo__lower__top--slide
-          .items-photo__lower__top--slide
-          .items-photo__lower__top--slide
-          .items-photo__lower__top--slide
-          .items-photo__lower__top--slide
-          .items-photo__lower__top--slide
-          .items-photo__lower__top--slide
-          .items-photo__lower__top--slide
-          .items-photo__lower__top--slide
+          = image_tag "#{@item_images.first.image}", size: "300x300", class: "detail__body--left--image"
+        %ul.items-photo__lower__top
+          %li.items-photo__lower__top__box
+          - @item_images.each do |item_image|
+            = image_tag "#{item_image.image}",size: "60x60", class: "items-photo__lower__top__box--slide"
       .detail__body--right
         %table
           %tr
             %th 出品者
             %td
-              = link_to "#{@item.name}", root_path
+              = link_to "#{@item.user.nickname}", root_path
               .evaluate__icon
                 .evaluate__icon__smile
                   %i.fa.fa-smile-o
@@ -35,11 +28,16 @@
           %tr
             %th カテゴリー
             %td
-              = link_to '> メンズ ', root_path
+              .top_cat
+              = link_to '> メンズ ', item_path
+              .middle_cat
+              = link_to '> トップス ', item_path
+              .bottom_cat
+              = link_to '> ポロシャツ ', item_path
           %tr
             %th ブランド
             %td 
-              = link_to 'ラブ', root_path
+              = link_to 'ラブ', item_path
           %tr
             %th 商品のサイズ
             %td 16cm ・ 16.5cm
@@ -60,18 +58,13 @@
             %td 2~3日程度
 
       .item__price
-        %span.item__price__bold ¥2,800
+        %span.item__price__bold ¥#{@item.price.to_s(:delimited)}円
         %span.item__price__tax (税込)
         %span.item__price__fee 送料込み
       .item-buy-btn 
         .buy-text= link_to '購入画面に進む ', new_item_purchase_path(@item.id)
       .item-description
-        ディスクリプションです
-        ディスクリプションです
-        ディスクリプションです
-        ディスクリプションです
-        ディスクリプションです
-        ディスクリプションです
+        %P #{@item.text}
       .footer
         .footer__likes
           .footer__likes--icon
@@ -115,63 +108,23 @@
       %i.twitter=fa_icon "twitter"
       %i.pinterest=fa_icon "pinterest-square"
 
+  
   .item__boxes
     .item__boxes__header  
-      = link_to '自己紹介者さんのその他の商品', root_path
+      = link_to "#{@item.user.nickname}さんのその他の商品", item_path
     .item__boxes__main
       %ul.item__boxes__main__lists
         %li.item__boxes__main__lists__content
           .item__boxes__main__lists__content--image
-          = image_tag 'christmasA7_03359_TP_V4.jpg', size: "210x180", class: "item__boxes__main__lists__content--image--size"
-          .item__box__main__lists__content__footer
-            .item__box__main__lists__content__footer--text
-              商品紹介メッセージ
-            .item__box__main__lists__content__text--price
-              商品価格
-        %li.item__boxes__main__lists__content
-          .item__boxes__main__lists__content--image
-          = image_tag 'christmasA7_03359_TP_V4.jpg', size: "210x180", class: "item__boxes__main__lists__content--image--size"
-          .item__box__main__lists__content__footer
-            .item__box__main__lists__content__footer--text
-              商品紹介メッセージ
-            .item__box__main__lists__content__text--price
-              商品価格
-        %li.item__boxes__main__lists__content
-          .item__boxes__main__lists__content--image
-          = image_tag 'christmasA7_03359_TP_V4.jpg', size: "210x180", class: "item__boxes__main__lists__content--image--size"
-          .item__box__main__lists__content__footer
-            .item__box__main__lists__content__footer--text
-              商品紹介メッセージ
-            .item__box__main__lists__content__text--price
-              商品価格
-        %li.item__boxes__main__lists__content
-          .item__boxes__main__lists__content--image
-          = image_tag 'christmasA7_03359_TP_V4.jpg', size: "210x180", class: "item__boxes__main__lists__content--image--size"
-          .item__box__main__lists__content__footer
-            .item__box__main__lists__content__footer--text
-              商品紹介メッセージ
-            .item__box__main__lists__content__text--price
-              商品価格
-        %li.item__boxes__main__lists__content
-          .item__boxes__main__lists__content--image
-          = image_tag 'christmasA7_03359_TP_V4.jpg', size: "210x180", class: "item__boxes__main__lists__content--image--size"
-          .item__box__main__lists__content__footer
-            .item__box__main__lists__content__footer--text
-              商品紹介メッセージ
-            .item__box__main__lists__content__text--price
-              商品価格
-        %li.item__boxes__main__lists__content
-          .item__boxes__main__lists__content--image
-          = image_tag 'christmasA7_03359_TP_V4.jpg', size: "210x180", class: "item__boxes__main__lists__content--image--size"
-          .item__box__main__lists__content__footer
-            .item__box__main__lists__content__footer--text
-              商品紹介メッセージ
-            .item__box__main__lists__content__text--price
-              商品価格
-  
+          = image_tag "#{@item.images.first.image.url}", size: "231x180", class: "item__boxes__main__lists__content--image--size"
+          .item__boxes__main__lists__content__lower
+            .item__boxes__main__lists__content__lower--name #{@item.name}
+            .item__boxes__main__lists__content__lower--price ¥#{@item.price.to_s(:delimited)}
+          
+          
   .item__boxes
     .item__boxes__header  
-      = link_to 'ブランドその他商品', root_path
+      = link_to 'ブランドその他商品', item_path
     .item__boxes__main
       %ul.item__boxes__main__lists
         %li.item__boxes__main__lists__content

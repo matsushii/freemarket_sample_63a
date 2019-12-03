@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   def index
-    @items = Item.all.limit(10)
+    @items = Item.all.order(created_at: "desc").limit(10)
   end
 
   def new
@@ -20,6 +20,7 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
+    @item_images = @item.images.limit(10)
   end
 
   private
