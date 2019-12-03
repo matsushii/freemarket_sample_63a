@@ -1,6 +1,6 @@
 class Address < ApplicationRecord
   belongs_to :user
-  enum prefectire: {
+  enum prefecture: {
     北海道:1,
     青森県:2,
     岩手県:3,
