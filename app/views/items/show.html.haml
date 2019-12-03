@@ -58,7 +58,7 @@
             %td 2~3日程度
 
       .item__price
-        %span.item__price__bold #{@item.price}円
+        %span.item__price__bold ¥#{@item.price.to_s(:delimited)}円
         %span.item__price__tax (税込)
         %span.item__price__fee 送料込み
       .item-buy-btn 

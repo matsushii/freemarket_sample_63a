@@ -10,10 +10,10 @@
         .body__main__top
           .body__main__top--img
           .body__main__top--name
-            購入商品名
+            #{@item.name}
         .body__main__price
           .body__main__price--amount
-            ¥6,000円
+            ¥#{@item.price.to_s(:delimited)}
           .body__main__price--message
             送料込み
         .body__main__point
@@ -22,9 +22,9 @@
           .body__main__payment__amount--left
             支払い金額
           .body__main__payment__amount--right
-            ¥6,000
-        .body__main__note
-          この商品はゆうゆうメルカリ便を利用しているためアプリからのみ購入出来ます
+            ¥#{@item.price.to_s(:delimited)}
+        -# .body__main__note
+        -#   この商品はゆうゆうメルカリ便を利用しているためアプリからのみ購入出来ます
         .body__main__buy--btn
           = form_with url: item_purchases_path(@item.id), method: "post" do
             :plain
