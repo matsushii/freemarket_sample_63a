@@ -1,0 +1,20 @@
+%h2 住所の入力
+= form_for @user, url: complete_signup_index_path, method: :post do |f|
+  = hidden_field_tag :current_step, 'step3'
+  = f.fields_for :address do |a|
+    .field
+      郵便番号
+      = a.text_field :postal_code
+    .field
+      都道府県
+      = a.text_field :prefecture
+    .field
+      市区町村
+      = a.text_field :city
+    .field
+      番地
+      = a.text_field :address
+    .field
+      建物名
+      = a.text_field :building
+    = f.submit '登録を完了する'
