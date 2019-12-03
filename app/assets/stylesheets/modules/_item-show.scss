@@ -1,7 +1,7 @@
 .details {
   background-color:#F5F5F5;  
   .detail {
-    height: 900px;
+    height: 100%;
     width: 700px;
     margin: 40px 290px 0;
     padding: 20px 40px 40px;
@@ -16,20 +16,18 @@
       &--left {
         float: left;           
         .items-photo__upper {
-          height: 300px;
-          width: 300px;
           margin: 16px 0 0;
           font-size: 14px;
-          background-image: url('christmasA7_03359_TP_V4.jpg');
           text-align: center;
         }
         .items-photo__lower__top {
           display: flex;
           flex-wrap: wrap;
-          &--slide {
-            height: 60px;
-            width: 20%;  
-            background-image: url('christmasA7_03359_TP_V4.jpg');
+          max-width: 300px;
+          &__box{
+            &--slide {
+              width: 20%;
+            } 
           }
         }
       }
@@ -287,16 +285,27 @@
   }
   &__main {
     &__lists {
-      width: 100%;
       display: flex;
       flex-wrap: wrap;
       &__content {
-        box-sizing: border-box;
         width: 33%;
-        margin: 0 auto;
+        margin: 0 20px 20px 0;
         &--image {
           &--size {
             object-fit: cover;
+          }
+        }
+        &__lower{
+          padding: 16px;
+          background-color: white;
+          &--name {
+            height:48px;
+            font-size: 16px;
+          }
+          &--price {
+            font-size: 14px;
+            margin: 8px 0 0;
+            font-weight: bold;
           }
         }
         &__footer {

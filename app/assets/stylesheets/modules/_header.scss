@@ -118,6 +118,15 @@ header {
           font-weight: bold;
           font-size: 1.1rem;
         }
+        &__new-user {
+          padding-right: 40px;
+          position: absolute;
+          right: 100px;
+        }
+        &__login {
+          position: absolute;
+          right: 40px;
+        }
       }
     }
   }
