@@ -285,16 +285,29 @@
   }
   &__main {
     &__lists {
-      width: 100%;
+      // width: 100%;
       display: flex;
       flex-wrap: wrap;
       &__content {
-        box-sizing: border-box;
+        // box-sizing: border-box;
         width: 33%;
-        margin: 0 auto;
+        // margin: 0 auto;
         &--image {
           &--size {
             object-fit: cover;
+          }
+        }
+        &__lower{
+          padding: 16px;
+          background-color: white;
+          &--name {
+            height:48px;
+            font-size: 16px;
+          }
+          &--price {
+            font-size: 14px;
+            margin: 8px 0 0;
+            font-weight: bold;
           }
         }
         &__footer {
