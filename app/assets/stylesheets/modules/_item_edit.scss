@@ -224,22 +224,15 @@
           &__btn {
             padding: 40px;
             border-top: 1px solid indigo;
-            .edit {
-              text-align: center;
-              &__btn {
-                background: #ea352d;
-                border: 1px solid #ea352d;
-                color: $white;
-                display: block;
-                width: 100%;
-                line-height: 48px;
-                font-size: 14px;
+            .btn-group {
+              .edit__btn {
                 &--red {
                 }
               }
-            }
-            }
-            .return__btn { 
+              .cancel__btn{
+                .back__btn{
+                }
+              }
             }
           }
         }

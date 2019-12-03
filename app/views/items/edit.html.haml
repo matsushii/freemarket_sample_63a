@@ -99,11 +99,11 @@
                 .profit
                   販売履歴
             .content__main__box__btn
-              .edit
+              .btn-group
                 .edit__btn
-                  = button_to("変更する", {action: :update}) 
+                  = button_to("変更する", {action: :update},class: "edit_btn--red") 
                 .cancel__btn
-                  = link_to "キャンセル", item_path, class: "btn cancel__btn"
+                  = link_to "キャンセル", item_path, class: "btn back__btn"
       .content__footer
         .content__footer__navigation
           .policy
