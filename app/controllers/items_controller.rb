@@ -25,11 +25,15 @@ class ItemsController < ApplicationController
     @item_images = @item.images.limit(10)
   end
 
-  def destroy
-    if current_user.id == @item.user_id && @item.destroy
-      render :destroy
-    else
+  def edit
+    @images = @item.images
+  end
+
+  def update
+    if current_user.id == @item.user_id && @item.update(item_params)
       render :show
+    else
+      render :edit
     end
   end
 
@@ -43,6 +47,10 @@ class ItemsController < ApplicationController
 
 
   private
+  def set_item
+    @item = Item.find(params[:id])
+  end
+
   def item_params
     params.require(:item).permit(
       :name,
