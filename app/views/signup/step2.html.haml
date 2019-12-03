@@ -1,8 +1,10 @@
 %h2 電話番号の確認
 = form_for @user, url: step3_signup_index_path do |f|
   = hidden_field_tag :current_step, 'step2'
-  = f.label :phone_number, "携帯電話の番号"
-  = f.text_field :phone_number
+  .field
+    = f.label :phone_number, "携帯電話の番号"
+    = f.text_field :phone_number
   本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
-  = f.submit 'SMSを送信する', class: 'btn-default btn-red'
+  .actions
+    = f.submit 'SMSを送信する', class: 'btn-default btn-red'
   ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
