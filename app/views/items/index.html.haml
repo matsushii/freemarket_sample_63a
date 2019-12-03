@@ -32,9 +32,9 @@
                     %figure.product__link__thumbnail
                       .product__link__thumbnail__info
                         %span.product__link__thumbnail__info--price ¥#{item.price.to_s(:delimited)}
-                        = image_tag 'sample_item.jpg', size: "180x180", class: "product__link__thumbnail__info--image"
+                        = image_tag "#{item.images.first.image.url}", size: "180x180", class: "product__link__thumbnail__info--image"
                       %figcaption.product__caption
-                        %span.product__caption--text #{item.text}
+                        %span.product__caption--text #{item.name}
   .sell_btn
     = link_to new_item_path do
       %p 出品
