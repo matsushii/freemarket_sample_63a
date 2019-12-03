@@ -31,12 +31,14 @@ class ItemsController < ApplicationController
 
   def update
     if current_user.id == @item.user_id
-      @item.update(item_params)
-      render :show
+      if @item.update(item_params)
+        render :show
+      else
+        render :edit
+      end
     else
-      render :edit
+      render :show
     end
-
   end
 
   private
