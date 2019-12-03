@@ -64,12 +64,7 @@
       .item-buy-btn 
         .buy-text= link_to '購入画面に進む ', new_item_purchase_path(@item.id)
       .item-description
-        ディスクリプションです
-        ディスクリプションです
-        ディスクリプションです
-        ディスクリプションです
-        ディスクリプションです
-        ディスクリプションです
+        %P #{@item.text}
       .footer
         .footer__likes
           .footer__likes--icon
