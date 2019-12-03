@@ -1,4 +1,6 @@
 class ItemsController < ApplicationController
+  before_action :set_item, only: [:show, :edit, :update, :destroy]
+
   def index
     @items = Item.all.order(created_at: "desc").limit(10)
   end
@@ -23,7 +25,32 @@ class ItemsController < ApplicationController
     @item_images = @item.images.limit(10)
   end
 
+  def edit
+    @images = @item.images
+  end
+
+  def update
+    if current_user.id == @item.user_id && @item.update(item_params)
+      render :show
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    if current_user.id == @item.user_id && @item.destroy
+      render :index
+    else
+      render :edit
+    end
+  end
+
+
   private
+  def set_item
+    @item = Item.find(params[:id])
+  end
+
   def item_params
     params.require(:item).permit(
       :name,
