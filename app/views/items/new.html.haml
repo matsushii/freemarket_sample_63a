@@ -72,9 +72,9 @@
                   配送料の負担
                   %span.require 必須
                 .region-box
-                  .label
-                  発送元の地域
+                  = f.label "発送元の地域", class: "label"
                   %span.require 必須
+                  = f.select :shipping_from, Item.shipping_froms.keys, {prompt: '選択してください'}
                 .days-box
                   .label
                   発送までの日数
