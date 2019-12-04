@@ -1,3 +1,6 @@
+= render "layouts/header"
+- breadcrumb :mypage
+= render "layouts/breadcrumbs"
 .background
   .show-container.clearfix
     = render "users/side"
@@ -34,3 +37,4 @@
                   後日実装します...
       %section.show-container__main__purchased
         購入した商品　後日実装します...
+= render "layouts/footer"

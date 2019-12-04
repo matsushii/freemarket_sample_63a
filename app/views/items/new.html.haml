@@ -60,25 +60,25 @@
                   .brand-box__form
                 .status-box
                   .status-box__header
-                    .label
-                    商品の状態
+                    = f.label "商品の状態", class: "label"
                     %span.require 必須
+                    = f.select :condition, Item.conditions.keys, {prompt: '---'}
                   .status-box__select
             .content__main__box__delivery
               .side
               .container
                 .burden-box
-                  .label
-                  配送料の負担
+                  = f.label "配送料の負担", class: "label"
                   %span.require 必須
+                  = f.select :shipping_fee, Item.shipping_fees.keys, {prompt: '---'}
                 .region-box
-                  .label
-                  発送元の地域
+                  = f.label "発送元の地域", class: "label"
                   %span.require 必須
+                  = f.select :shipping_from, Item.shipping_froms.keys, {prompt: '---'}
                 .days-box
-                  .label
-                  発送までの日数
+                  = f.label "発送までの日数", class: "label"
                   %span.require 必須
+                  = f.select :shipping_date, Item.shipping_dates.keys, {prompt: '---'}
             .content__main__box__price
               %h3.side 販売価格(300〜9,999,999)    
               .container
@@ -92,8 +92,9 @@
                   .fee__left
                   販売手数料(10%)
                   .fee__right
+                販売利益
                 .profit
-                販売履歴
+                = f.number_field :price, type: "hidden"
             .content__main__box__btn
               .attention
               %p 禁止されている出品、行為を必ずご確認ください。
