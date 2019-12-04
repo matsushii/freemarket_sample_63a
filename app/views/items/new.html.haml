@@ -1,10 +1,7 @@
 .container
   .contents
     .content
-      .content__header
-        .content__header__logo
-          .image
-            = image_tag "/assets/sample_logo.png", size: "185x49"
+      = render "signup/signup-header"
       .content__main
         .content__main__box
           .content__main__box__header
@@ -97,9 +94,9 @@
                 .profit__label 販売利益
           .content__main__box__btn
             .attention
-              = link_to "禁止されている出品", href: "https://www.mercari.com/jp/help_center/getting_started/prohibited_items/"
+              = link_to "禁止されている出品", href: "https://www.mercari.com/jp/help_center/getting_started/prohibited_items/", class: "attention__link"
               、
-              = link_to "行為", href: "https://www.mercari.com/jp/help_center/getting_started/prohibited_conduct/"
+              = link_to "行為", href: "https://www.mercari.com/jp/help_center/getting_started/prohibited_conduct/", class: "attention__link"
               を必ずご確認ください。
               %br
               またブランド品でシリアルナンバー等がある場合はご記載ください。
@@ -114,19 +111,7 @@
             .return
               = link_to "戻る", root_path, class: "return__btn"
       .content__footer
-        .content__footer__navigation
-          .policy
-          プライバシーポシシー
-          .rules
-          メルカリ利用規約
-          .transLow
-          特定商取引に関する表記
-        .content__footer__logo
-          .logo-image
-          
-        .content__footer__copyright
-          .copyright
-          © 2019 Mercari
+        = render "signup/signup-footer"
 
         
 
