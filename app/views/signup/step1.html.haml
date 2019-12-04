@@ -1,8 +1,5 @@
 .container
-  %header.container__sub-header
-    %h1.container__sub-header__logo
-      = link_to root_path do
-        = image_tag 'logos/fmarket_logo_red.svg', alt: 'mercari', height: '49px', width: '185px'
+  = render "signup-header"
   %main.container__main
     %section.container__main__container
       %h2.container__main__container__title 会員情報入力
@@ -71,19 +68,4 @@
               ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
           .actions
             = f.submit "次へ進む", class: "actions__button"
-  %footer.container__footer
-    %nav.container__footer__nav
-      %ul.container__footer__nav__ul
-        %li.container__footer__nav__ul__li
-          = link_to "" do
-            プライバシーポリシー
-        %li.container__footer__nav__ul__li
-          = link_to "" do
-            Fmarket利用規約
-        %li.container__footer__nav__ul__li
-          = link_to "" do
-            特定商取引に関する表記
-    = link_to root_path, class: "container__footer__logo" do
-      = image_tag 'logos/logo_gray.svg', alt: 'mercari'
-    %p.container__footer__copy
-      &copy 2019 Fmarket
+  = render "signup-footer"
