@@ -55,10 +55,10 @@
             padding: 40px;
             border-top: 1px solid $lightgray;
             .name-box {
-              &__label{
+              &__label {
                 font-weight: bold;
               }
-              .name-filed{
+              &__filed {
                 height: 48px;
                 width: 100%;
                 padding: 10px;
@@ -75,7 +75,7 @@
               &__label{
                 font-weight: bold;
               }
-              .textarea{
+              &__textarea{
                 width: 100%;
                 height: 100px;
                 margin: 8px 0 0 0;
@@ -101,12 +101,10 @@
               float: right;
               width: 60%;
               .cat-box {
-                &__header {
-                  .header-box {
-                    &__label {
-                      display: inline-block;
-                      font-weight: 600;
-                    }
+                &__header-box {
+                  &__label {
+                    display: inline-block;
+                    font-weight: 600;
                   }
                 }
                 &__select {
@@ -155,13 +153,11 @@
                 }
               }
               .size-box {
-                &__header {
-                  .header-box {
-                    &__label {
-                      display: inline-block;
-                      font-weight: 600;
-                      margin-top: 8px;
-                    }
+                &__header-box {
+                  &__label {
+                    display: inline-block;
+                    font-weight: 600;
+                    margin-top: 8px;
                   }
                 }
                 &__select {
@@ -179,23 +175,21 @@
 
               }
               .brand-box {
-                &__header {
-                  .header-box {
-                    &__label {
-                      margin-top: 8px;
-                      display: inline-block;
-                      font-weight: 600;
-                    }
-                    .arbitary {
-                      line-height: 16px;
-                      background-color: #ccc;
-                      margin: 0 0 0 8px;
-                      padding: 2px 4px;
-                      border-radius: 2px;
-                      font-size: 12px;
-                      color: $white;
-                    } 
+                &__header-box {
+                  &__label {
+                    margin-top: 8px;
+                    display: inline-block;
+                    font-weight: 600;
                   }
+                  .arbitary {
+                    line-height: 16px;
+                    background-color: #ccc;
+                    margin: 0 0 0 8px;
+                    padding: 2px 4px;
+                    border-radius: 2px;
+                    font-size: 12px;
+                    color: $white;
+                  } 
                 }
                 &__form {
                   .brand-field{
@@ -213,13 +207,11 @@
                 }
               }
               .status-box {
-                &__header {
-                  .header-box {
-                    &__label{
-                      margin-top: 8px;
-                      display: inline-block;
-                      font-weight: 600;
-                    }
+                &__header-box {
+                  &__label{
+                    margin-top: 8px;
+                    display: inline-block;
+                    font-weight: 600;
                   }
                 }
                 &__select {
@@ -250,7 +242,7 @@
               float: right;
               width: 60%;
               .burden-box {
-                .header-box{
+                &__header-box{
                   &__label {
                     font-weight: 600;
                     margin-top: 8px;
@@ -270,7 +262,7 @@
                 }
               }
               .region-box {
-                .header-box {
+                &__header-box {
                   font-weight: 600;
                   margin-top: 8px;
                 }
@@ -288,7 +280,7 @@
                 }
               }
               .days-box{
-                .header-box {
+                &__header-box {
                   font-weight: 600;
                   margin-top: 8px;
                 }
@@ -337,7 +329,7 @@
                     margin-right: 10px;
                   }
                   &__field{
-                    .price-filed {
+                    .price-field {
                       height: 48px;
                       width: 100%;
                       padding: 10px;
@@ -355,6 +347,7 @@
                 padding: 24px 0;
                 border-bottom: 1px solid #cccccc;
                 &__label {
+                  font-weight: 600;
                 }
               }
               .profit { 

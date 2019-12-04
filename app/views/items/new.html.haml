@@ -26,21 +26,20 @@
             .name-box
               = f.label "商品名", class: "name-box__label"
               %span.require 必須
-              = f.text_field :name ,class: "name-filed", placeholder: "商品名（必須40文字まで）" 
+              = f.text_field :name ,class: "name-box__filed", placeholder: "商品名（必須40文字まで）" 
               - if @item.errors.any?
                 = @item.errors.full_messages
             .disc-box
               = f.label "商品の説明", class: "disc-box__label"
               %span.require 必須
-              = f.text_area :text, class: "textarea", placeholder: "商品の説明（必須1000文字以内）"
+              = f.text_area :text, class: "disc-box__textarea", placeholder: "商品の説明（必須1000文字以内）"
           .content__main__box__detail
             .side-label 商品の詳細
             .form-container
               .cat-box
-                .cat-box__header
-                  .header-box
-                    .header-box__label カテゴリー
-                    %span.require 必須
+                .cat-box__header-box
+                  .cat-box__header-box__label カテゴリー
+                  %span.require 必須
                 .cat-box__select
                   .top-cat 
                     = f.select :condition, Item.conditions.keys, {prompt: '---'}, {class: "top-cat__select"}
@@ -49,39 +48,36 @@
                   .bot-cat
                     = f.select :condition, Item.conditions.keys, {prompt: '---'},  {class: "bot-cat__select"}
               .size-box
-                .size-box__header
-                  .header-box
-                    .header-box__label サイズ
-                    %span.require 必須
+                .size-box__header-box
+                  .size-box__header-box__label サイズ
+                  %span.require 必須
                 = f.select :condition, Item.conditions.keys, {prompt: '---'}, {class: "size-box__select"}
               .brand-box
-                .brand-box__header
-                  .header-box
-                    .header-box__label ブランド
-                    %span.arbitary 任意
+                .brand-box__header-box
+                  .brand-box__header-box__label ブランド
+                  %span.arbitary 任意
                 .brand-box__form
                   = f.text_field :name ,class: "brand-field", placeholder: "例）シャネル" 
               .status-box
-                .status-box__header
-                  .header-box
-                    = f.label "商品の状態", class: "header-box__label"
-                    %span.require 必須
+                .status-box__header-box
+                  = f.label "商品の状態", class: "status-box__header-box__label"
+                  %span.require 必須
                 = f.select :condition, Item.conditions.keys, {prompt: '---'}, {class: "status-box__select"}
           .content__main__box__delivery
             .side-label 配送について
             .form-container
               .burden-box
-                .header-box
-                  = f.label "配送料の負担", class: "header-box__label"
+                .burden-box__header-box
+                  = f.label "配送料の負担", class: "burden-box__header-box__label"
                   %span.require 必須
                 = f.select :shipping_fee, Item.shipping_fees.keys, {prompt: '---'}, {class: "burden-box__select"}
               .region-box 
-                .header-box
+                .region-box__header-box
                   = f.label "発送元の地域", class: "header-box__label"
                   %span.require 必須
                 = f.select :shipping_from, Item.shipping_froms.keys, {prompt: '---'}, {class: "region-box__select"}
               .days-box
-                .header-box
+                .days-box__header-box
                   = f.label "発送までの日数", class: "header-box__label"
                   %span.require 必須
                 = f.select :shipping_date, Item.shipping_dates.keys, {prompt: '---'}, {class: "days-box__select"}
@@ -90,12 +86,12 @@
             .form-container
               .price-box
                 .price-box__left
-                  = f.label "価格", class: "price-box__label"
+                  = f.label "価格", class: "price-box__left__label"
                   %span.require 必須
                 .price-box__right
                   .price-box__right__yen  ¥
                   .price-box__right__field
-                    = f.text_field :price, class: "price-filed", placeholder: "（例）300" 
+                    = f.text_field :price, class: "price-field", placeholder: "（例）300" 
               .fee
                 .fee__label 販売手数料(10%)
               .profit
