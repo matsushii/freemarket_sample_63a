@@ -1,0 +1,17 @@
+.breadcrumbs {
+  background-color: $white;
+  box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+  border-top: 1px solid #eee;
+  &__container {
+    padding: 16px 0;
+    margin: 0 110px;
+    &__lists {
+      &--list {
+        font-size: 14px;
+        .current {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
