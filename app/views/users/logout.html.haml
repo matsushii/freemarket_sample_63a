@@ -1,3 +1,6 @@
+= render "layouts/header"
+- breadcrumb :logout
+= render "layouts/breadcrumbs"
 .background
   .show-container.clearfix
     = render "users/side"
@@ -5,3 +8,4 @@
       = link_to destroy_user_session_path, method: "delete", class: "logout-container__link" do
         .logout-container__link__button
           %p ログアウト
+= render "layouts/footer"
