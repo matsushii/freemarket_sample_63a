@@ -1,3 +1,6 @@
+= render "layouts/header"
+- breadcrumb :profile
+= render "layouts/breadcrumbs"
 .background
   .show-container.clearfix
     = render "users/side"
@@ -13,3 +16,4 @@
           .edit-container__section__introduction
             = form.text_area :introduction, placeholder: "自己紹介を入力", rows: "10", class: "edit-container__section__introduction__field"
             = form.submit "変更する", class: "edit-container__section__introduction__submit"
+= render "layouts/footer"
