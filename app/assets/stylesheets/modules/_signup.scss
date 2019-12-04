@@ -29,6 +29,7 @@
         display: block;
         &__content {
           max-width: 56%;
+          height: 100%;
           margin: 0 auto;
           .form-part:first-child {
             margin: 0;
@@ -107,6 +108,43 @@
               background-color: $red;
               color: $white;
               font-size: 0.9rem;
+            }
+          }
+          .registrations {
+            &__button {
+              width: 100%;
+              line-height: 48px;
+              margin-top: 16px;
+              border-radius: 4px;
+              display: block;
+              font-size: 0.9rem;
+              text-align: center;
+              position: relative;
+              &--email {
+                margin-top: 0;
+                background-color: $red;
+                color: $white;
+                border: none;
+              }
+              &--facebook {
+                background-color: $facebook;
+                color: $white;
+                border: none;
+              }
+              &--google {
+                border: 1px solid $gray;
+                box-sizing: border-box;
+                color: $black;
+                .fa-google {
+                  color: $darkgray;
+                }
+              }
+              .fa {
+                font-size: 1.5rem;
+                position: absolute;
+                left: 16px;
+                top: 12px;
+              }
             }
           }
         }
