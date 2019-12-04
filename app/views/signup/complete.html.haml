@@ -1,3 +1,16 @@
-登録が完了しました
-= link_to root_path do
-  トップページへ
+.container
+  = render "signup-header"
+  %main.container__main
+    %section.container__main__container
+      %h2.container__main__container__title 会員登録完了
+      .container__main__container__form
+        .container__main__container__form__content
+          .form-part
+            .complete-text
+              ありがとうございます。
+              %br
+              会員登録が完了しました。
+          .actions
+            = link_to root_path, class: "actions__button" do
+              Fmarketをはじめる
+  = render "signup-footer"
