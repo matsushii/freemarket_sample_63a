@@ -1,4 +1,4 @@
-%header
+%header.main-header
   .container
     .container__top
       .container__top__logo
@@ -54,7 +54,7 @@
       - else
         .container__bottom__right
           .container__bottom__right__new-user
-            = link_to step1_signup_index_path do
+            = link_to signup_index_path do
               ユーザー新規登録
           .container__bottom__right__login
             = link_to new_user_session_path do

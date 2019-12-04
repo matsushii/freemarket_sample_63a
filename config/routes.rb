@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: "items#index"
-  resources :items, only: [:index, :new, :create, :show, :edit, :update, :destroy] do
+  resources :items do
     resources :purchases, only: [:new, :create]
   end
 
@@ -14,8 +14,7 @@ Rails.application.routes.draw do
 
   get 'cards/new'
   
-  get '/signup', to: 'signup#index'
-  resources :signup do
+  resources :signup, only: [:index, :create] do
     collection do
       get  'step1'
       post 'step2'
