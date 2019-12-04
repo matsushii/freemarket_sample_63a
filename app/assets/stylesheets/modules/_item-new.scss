@@ -1,9 +1,9 @@
 .container {
   .contents {
     font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
-    background-color: #f5f5f5;
+    background-color: $lightgray;
     .content {
-      .content__header{
+      &__header{
         height: 128px;
         text-align: center;
         line-height: 128px;
@@ -13,7 +13,7 @@
         }
       }
       &__main {
-        background-color: white;
+        background-color: $white;
         width: 700px;
         margin: 0 auto;
         &__box {
@@ -28,46 +28,35 @@
           }
           &__upload {
             padding: 40px;
-            border-top: 1px solid indigo;
-            .header {
-              &__box{
-                .main {
-                  font-size: 16px;
-                  font-weight: bold;
-                  display: inline;
+            border-top: 1px solid $lightgray;
+            .upload-contents {
+              &__header {
+                .header-box{
+                  .header-box__label {
+                    font-size: 16px;
+                    font-weight: 600;
+                    display: inline-block;
+                  }
                 }
-                .require {
-                }
-                .label {
+                &__info {
                   font-size: 16px;
                   margin: 8px 0 0 0;
                 }
               }
-            }
-            .container {
-              .item-images {
-                .image {
-                }
-                .edit {
-                }
-                .delete {
-                }
-              }
-              .image-upload {
-                .box {
+              &__container {
+                .image-upload {
+                  &--btn {
+                  }
                 }
               }
             }
           }
           &__product {
             padding: 40px;
-            border-top: 1px solid indigo;
+            border-top: 1px solid $lightgray;
             .name-box {
-              .label{
+              &__label{
                 font-weight: bold;
-                display: inline;
-              }
-              .require{
               }
               .name-filed{
                 height: 48px;
@@ -78,15 +67,13 @@
                 background: #fff;
                 line-height: 1.5;
                 font-size: 16px;
+                box-sizing: border-box;
               }
             }
             .disc-box {
               margin: 40px 0 0;
-              .label{
+              &__label{
                 font-weight: bold;
-                display: inline;
-              }
-              .require{
               }
               .textarea{
                 width: 100%;
@@ -97,139 +84,320 @@
                 line-height: 1.5;
                 resize: vertical;
                 border: 1px solid #ccc;
+                box-sizing: border-box;
               }
             }
           }
           &__detail {
             padding: 40px;
-            border-top: 1px solid indigo;
-            height: 500px;
-            .side {
-              width: 50%;
+            border-top: 1px solid $lightgray;
+            @include clearfix();
+            .side-label {
               float: left;
+              color: #888;
+              font-size: 14px;
             }
-            .container {
-              width: 50%;
-              .catBox {
+            .form-container {
+              float: right;
+              width: 60%;
+              .cat-box {
                 &__header {
-                  .label {
-                  }
-                  .require{
+                  .header-box {
+                    &__label {
+                      display: inline-block;
+                      font-weight: 600;
+                    }
                   }
                 }
                 &__select {
-                  .topCat {
+                  .top-cat {
+                    &__select {
+                      height: 48px;
+                      width: 100%;
+                      padding: 0 16px;
+                      margin-top: 8px;
+                      border-radius: 4px;
+                      border: 1px solid #ccc;
+                      background: 0;
+                      font-size: 16px;
+                      line-height: 1.5;
+                      cursor: pointer;
+                    }
                   }
-                  .midCat {
+                  .mid-cat {
+                    &__select {
+                      height: 48px;
+                      width: 100%;
+                      padding: 0 16px;
+                      margin-top: 8px;
+                      border-radius: 4px;
+                      border: 1px solid #ccc;
+                      background: 0;
+                      font-size: 16px;
+                      line-height: 1.5;
+                      cursor: pointer;
+                    }
                   }
-                  .botCat {
+                  .bot-cat {
+                    &__select {
+                      height: 48px;
+                      width: 100%;
+                      padding: 0 16px;
+                      margin-top: 8px;
+                      border-radius: 4px;
+                      border: 1px solid #ccc;
+                      background: 0;
+                      font-size: 16px;
+                      line-height: 1.5;
+                      cursor: pointer;
+                    }
                   }
                 }
               }
-              .sizeBox {
+              .size-box {
                 &__header {
-                  .label {
+                  .header-box {
+                    &__label {
+                      display: inline-block;
+                      font-weight: 600;
+                      margin-top: 8px;
+                    }
+                  }
+                }
+                &__select {
+                  height: 48px;
+                  width: 100%;
+                  padding: 0 16px;
+                  margin-top: 8px;
+                  border-radius: 4px;
+                  border: 1px solid #ccc;
+                  background: 0;
+                  font-size: 16px;
+                  line-height: 1.5;
+                  cursor: pointer;
+                }
 
-                  }
-                  .require {
-                  }
-                }
-                &__select {
-                }
               }
-              .brandBox {
+              .brand-box {
                 &__header {
-                  .label {
+                  .header-box {
+                    &__label {
+                      margin-top: 8px;
+                      display: inline-block;
+                      font-weight: 600;
+                    }
+                    .arbitary {
+                      line-height: 16px;
+                      background-color: #ccc;
+                      margin: 0 0 0 8px;
+                      padding: 2px 4px;
+                      border-radius: 2px;
+                      font-size: 12px;
+                      color: $white;
+                    } 
                   }
-                  .arbitary {
-                    background-color: #ccc;
-                    margin: 0 0 0 8px;
-                    padding: 2px 4px;
-                    border-radius: 2px;
-                    font-size: 12px;
-                  }
-                } 
+                }
                 &__form {
+                  .brand-field{
+                    height: 48px;
+                    width: 100%;
+                    padding: 10px;
+                    margin-top: 8px;
+                    border-radius: 4px;
+                    border: 1px solid #ccc;
+                    background: #fff;
+                    line-height: 1.5;
+                    font-size: 16px;
+                    box-sizing: border-box;
+                  }
                 }
               }
               .status-box {
                 &__header {
-                  .label {
-                  }
-                  .require {
+                  .header-box {
+                    &__label{
+                      margin-top: 8px;
+                      display: inline-block;
+                      font-weight: 600;
+                    }
                   }
                 }
-                &__select{
+                &__select {
+                  height: 48px;
+                  width: 100%;
+                  padding: 0 16px;
+                  margin-top: 8px;
+                  border-radius: 4px;
+                  border: 1px solid #ccc;
+                  background: 0;
+                  font-size: 16px;
+                  line-height: 1.5;
+                  cursor: pointer;
                 }
               }
             }
           }
           &__delivery {
             padding: 40px;
-            border-top: 1px solid indigo;
-            .side {
+            border-top: 1px solid $lightgray;
+            @include clearfix();
+            .side-label {
+              float: left;
+              color: #888;
+              font-size: 14px;
             }
-            .container {
-            }
-            .borden-box {
-              .label {
+            .form-container {
+              float: right;
+              width: 60%;
+              .burden-box {
+                .header-box{
+                  &__label {
+                    font-weight: 600;
+                    margin-top: 8px;
+                  }
+                }
+                &__select {
+                  height: 48px;
+                  width: 100%;
+                  padding: 0 16px;
+                  margin-top: 8px;
+                  border-radius: 4px;
+                  border: 1px solid #ccc;
+                  background: 0;
+                  font-size: 16px;
+                  line-height: 1.5;
+                  cursor: pointer; 
+                }
               }
-              .require {
+              .region-box {
+                .header-box {
+                  font-weight: 600;
+                  margin-top: 8px;
+                }
+                &__select {
+                  height: 48px;
+                  width: 100%;
+                  padding: 0 16px;
+                  margin-top: 8px;
+                  border-radius: 4px;
+                  border: 1px solid #ccc;
+                  background: 0;
+                  font-size: 16px;
+                  line-height: 1.5;
+                  cursor: pointer;
+                }
               }
-            }
-            .region-box {
-              .label {
+              .days-box{
+                .header-box {
+                  font-weight: 600;
+                  margin-top: 8px;
+                }
+                &__select {
+                  height: 48px;
+                  width: 100%;
+                  padding: 0 16px;
+                  margin-top: 8px;
+                  border-radius: 4px;
+                  border: 1px solid #ccc;
+                  background: 0;
+                  font-size: 16px;
+                  line-height: 1.5;
+                  cursor: pointer;
+                }
               }
-              .require {
-              }
-            }
-            .days-box{
-              .label{
-              }
-              .require{
-              }  
             }
           }
           &__price {
             padding: 40px;
-            border-top: 1px solid indigo;
-            .side {
+            border-top: 1px solid $lightgray;
+            @include clearfix();
+            .side-label {
               float: left;
-              width: 50%;
+              font-size: 14px;
+              color: #888888;
             }
-            .container {
-              .label {
-              float: left;
-              }
+            .form-container {
+              float: right;
+              width: 60%;
               .price-box {
-                width: 50%;
-                .right {
+                @include clearfix();
+                padding-bottom: 24px;
+                line-height: 48px;
+                border-bottom: 1px solid #cccccc;
+                &__left {
+                  float: left;
+                  font-weight: 600;
+                  &__label {
+                  }
+                }
+                &__right {
                   float: right;
-                  width: 400px;
-                  .price-filed {
+                  display: flex;
+                  &__yen {
+                    margin-right: 10px;
+                  }
+                  &__field{
+                    .price-filed {
+                      height: 48px;
+                      width: 100%;
+                      padding: 10px;
+                      border-radius: 4px;
+                      border: 1px solid #ccc;
+                      background: #fff;
+                      line-height: 1.5;
+                      font-size: 16px;
+                      box-sizing: border-box;  
+                    }
                   }
                 }
               }
               .fee {
-                &__left {
-                }
-                &__right {
+                padding: 24px 0;
+                border-bottom: 1px solid #cccccc;
+                &__label {
                 }
               }
               .profit { 
+                font-weight: 600;
+                padding: 24px 0;
+                border-bottom: 1px solid #cccccc;
+                &__label {
+                }
               }
             }
           }
           &__btn {
             padding: 40px;
-            border-top: 1px solid indigo;
+            border-top: 1px solid $lightgray;
             .attention {
+              font-size: 14px;
+              line-height: 1.5;
             }
-            .exhibit__btn {
-              .form__submit {
+            .exhibit {
+              margin: 40px 0 0;
+              .exhibit__btn {
+                background: #ea352d;
+                border: 1px solid #ea352d;
+                color: #fff;
+                display: block;
+                width: 100%;
+                line-height: 48px;
+                font-size: 14px;
               }
             }
-            .return__btn { 
+            .return {
+              &__btn {
+                display: block;
+                height: 48px;
+                width: 45%;
+                background: #aaa;
+                border: 1px solid #aaa;
+                margin: 24px auto 0;
+                color: #fff;
+                font-size: 14px;
+                text-align: center;
+                line-height: 48px;
+              }
             }
           }
         }
@@ -247,11 +415,7 @@
   }
 }
 
-.require {
-  background-color: red;
-  margin: 0 0 8px 8px;
-  padding: 2px 4px;
-  border-radius: 2px;
-  color: #fff;
-  font-size: 14px;
+a {
+  text-decoration: none;
+  color: #0099e8;
 }

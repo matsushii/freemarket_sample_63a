@@ -9,101 +9,115 @@
         .content__main__box
           .content__main__box__header
             %h1.main 商品の情報を入力
-          = form_for @item do |f|
-            .content__main__box__upload
-              .header
-                .header__box
-                  %h2.main 出品画像
+        = form_for @item do |f|
+          .content__main__box__upload
+            .upload-contents
+              .upload-contents__header
+                .header-box
+                  .header-box__label 出品画像
                   %span.require 必須
-                  %p.label 最大10枚までアップロードできます
-              .container
+                %p.info 最大10枚までアップロードできます
+              .upload-contents__container
                 = f.fields_for :images do |image|
                   .image-upload
-                    .box
-                      .image-upload--btn
-                        = image.file_field :image
-            .content__main__box__product
-              .name-box
-                = f.label "商品名", class: "label"
-                %span.require 必須
-                = f.text_field :name ,class: "name-filed", placeholder: "商品名（必須40文字まで）" 
-                - if @item.errors.any?
-                  = @item.errors.full_messages
-              .disc-box
-                = f.label "商品の説明", class: "label"
-                %span.require 必須
-                = f.text_area :text, class: "textarea", placeholder: "商品の説明（必須1000文字以内）"
-            .content__main__box__detail
-              .side
-              商品の詳細
-              .container
-                .cat-box
-                  .cat-box__header
-                    .label
-                    カテゴリー
+                    .image-upload--btn
+                      = image.file_field :image
+          .content__main__box__product
+            .name-box
+              = f.label "商品名", class: "name-box__label"
+              %span.require 必須
+              = f.text_field :name ,class: "name-filed", placeholder: "商品名（必須40文字まで）" 
+              - if @item.errors.any?
+                = @item.errors.full_messages
+            .disc-box
+              = f.label "商品の説明", class: "disc-box__label"
+              %span.require 必須
+              = f.text_area :text, class: "textarea", placeholder: "商品の説明（必須1000文字以内）"
+          .content__main__box__detail
+            .side-label 商品の詳細
+            .form-container
+              .cat-box
+                .cat-box__header
+                  .header-box
+                    .header-box__label カテゴリー
                     %span.require 必須
-                  .cat-box__select
-                    .topCat
-                    .midCat
-                    .botCat
-                .size-box
-                  .size-box__header
-                    .label
-                    サイズ
+                .cat-box__select
+                  .top-cat 
+                    = f.select :condition, Item.conditions.keys, {prompt: '---'}, {class: "top-cat__select"}
+                  .mid-cat
+                    = f.select :condition, Item.conditions.keys, {prompt: '---'},  {class: "mid-cat__select"}
+                  .bot-cat
+                    = f.select :condition, Item.conditions.keys, {prompt: '---'},  {class: "bot-cat__select"}
+              .size-box
+                .size-box__header
+                  .header-box
+                    .header-box__label サイズ
                     %span.require 必須
-                  .size-box__select
-                .brand-box
-                  .brand-box__header
-                    .label
-                    ブランド
+                = f.select :condition, Item.conditions.keys, {prompt: '---'}, {class: "size-box__select"}
+              .brand-box
+                .brand-box__header
+                  .header-box
+                    .header-box__label ブランド
                     %span.arbitary 任意
-                  .brand-box__form
-                .status-box
-                  .status-box__header
-                    = f.label "商品の状態", class: "label"
+                .brand-box__form
+                  = f.text_field :name ,class: "brand-field", placeholder: "例）シャネル" 
+              .status-box
+                .status-box__header
+                  .header-box
+                    = f.label "商品の状態", class: "header-box__label"
                     %span.require 必須
-                    = f.select :condition, Item.conditions.keys, {prompt: '---'}
-                  .status-box__select
-            .content__main__box__delivery
-              .side
-              .container
-                .burden-box
-                  = f.label "配送料の負担", class: "label"
+                = f.select :condition, Item.conditions.keys, {prompt: '---'}, {class: "status-box__select"}
+          .content__main__box__delivery
+            .side-label 配送について
+            .form-container
+              .burden-box
+                .header-box
+                  = f.label "配送料の負担", class: "header-box__label"
                   %span.require 必須
-                  = f.select :shipping_fee, Item.shipping_fees.keys, {prompt: '---'}
-                .region-box
-                  = f.label "発送元の地域", class: "label"
+                = f.select :shipping_fee, Item.shipping_fees.keys, {prompt: '---'}, {class: "burden-box__select"}
+              .region-box 
+                .header-box
+                  = f.label "発送元の地域", class: "header-box__label"
                   %span.require 必須
-                  = f.select :shipping_from, Item.shipping_froms.keys, {prompt: '---'}
-                .days-box
-                  = f.label "発送までの日数", class: "label"
+                = f.select :shipping_from, Item.shipping_froms.keys, {prompt: '---'}, {class: "region-box__select"}
+              .days-box
+                .header-box
+                  = f.label "発送までの日数", class: "header-box__label"
                   %span.require 必須
-                  = f.select :shipping_date, Item.shipping_dates.keys, {prompt: '---'}
-            .content__main__box__price
-              %h3.side 販売価格(300〜9,999,999)    
-              .container
-                .price-box
-                  = f.label "価格", class: "label"
+                = f.select :shipping_date, Item.shipping_dates.keys, {prompt: '---'}, {class: "days-box__select"}
+          .content__main__box__price
+            .side-label 販売価格(300〜9,999,999)    
+            .form-container
+              .price-box
+                .price-box__left
+                  = f.label "価格", class: "price-box__label"
                   %span.require 必須
-                  .right 
-                  ¥
-                  = f.text_field :price, class: "price-filed", placeholder: "（例）300" 
-                .fee
-                  .fee__left
-                  販売手数料(10%)
-                  .fee__right
-                販売利益
-                .profit
-                = f.number_field :price, type: "hidden"
-            .content__main__box__btn
-              .attention
-              %p 禁止されている出品、行為を必ずご確認ください。
-              %p またブランド品でシリアルナンバー等がある場合はご記載ください。偽ブランドの販売は犯罪であり処罰される可能性があります。
-              %p また、出品をもちまして加盟店規約に同意したことになります。
-              .exhibit__btn
-                = f.submit "出品する", class: "form__submit"
-              .return
-
+                .price-box__right
+                  .price-box__right__yen  ¥
+                  .price-box__right__field
+                    = f.text_field :price, class: "price-filed", placeholder: "（例）300" 
+              .fee
+                .fee__label 販売手数料(10%)
+              .profit
+                .profit__label 販売利益
+          .content__main__box__btn
+            .attention
+              = link_to "禁止されている出品", href: "https://www.mercari.com/jp/help_center/getting_started/prohibited_items/"
+              、
+              = link_to "行為", href: "https://www.mercari.com/jp/help_center/getting_started/prohibited_conduct/"
+              を必ずご確認ください。
+              %br
+              またブランド品でシリアルナンバー等がある場合はご記載ください。
+              = link_to "偽ブランドの販売", href: "https://www.mercari.com/jp/help_center/getting_started/counterfeit_goods/", class: "attention__link"
+              は犯罪であり処罰される可能性があります。
+              %br
+              また、出品をもちまして
+              = link_to "加盟店規約",href: "https://www.mercari.com/jp/seller_terms/",  class: "attention__link"
+              に同意したことになります。
+            .exhibit
+              = f.submit "出品する", class: "exhibit__btn"
+            .return
+              = link_to "戻る", root_path, class: "return__btn"
       .content__footer
         .content__footer__navigation
           .policy
