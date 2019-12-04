@@ -92,8 +92,9 @@
                   .fee__left
                   販売手数料(10%)
                   .fee__right
+                販売利益
                 .profit
-                販売履歴
+                = f.number_field :price, type: "hidden"
             .content__main__box__btn
               .attention
               %p 禁止されている出品、行為を必ずご確認ください。
