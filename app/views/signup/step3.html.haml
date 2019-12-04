@@ -1,3 +1,57 @@
+.container
+  = render "signup-header"
+  %main.container__main
+    %section.container__main__container
+      %h2.container__main__container__title 住所入力
+      = form_for @user, url: signup_index_path, method: :post, html: { class: "container__main__container__form"} do |f|
+        .container__main__container__form__content
+          = hidden_field_tag :current_step, 'step3'
+          = f.fields_for :address do |a| 
+            .form-part
+              .form-part__title
+                = a.label :postal_code, {class: "form-part__title__label"} do
+                  郵便番号
+                %span.form-part__title__require 必須
+              = a.text_field :postal_code, placeholder: "例)123-4567", class: "form-part__single-field"
+              - if @user.errors.any?
+                = @user.errors[:postal_code]
+            .form-part
+              .form-part__title
+                = a.label :prefecture, {class: "form-part__title__label"} do
+                  都道府県
+                %span.form-part__title__require 必須
+              = a.select :prefecture, Address.prefectures.keys, {prompt: '選択してください'}, class: "form-part__single-field"
+              - if @user.errors.any?
+                = @user.errors[:prefecture]
+            .form-part
+              .form-part__title
+                = a.label :city, {class: "form-part__title__label"} do
+                  市区町村
+                %span.form-part__title__require 必須
+              = a.text_field :city, placeholder: "例)渋谷区南平台町", class: "form-part__single-field"
+              - if @user.errors.any?
+                = @user.errors[:city]
+            .form-part
+              .form-part__title
+                = a.label :address, {class: "form-part__title__label"} do
+                  番地
+                %span.form-part__title__require 必須
+              = a.text_field :address, placeholder: "例)1-1-1", class: "form-part__single-field"
+              - if @user.errors.any?
+                = @user.errors[:address]
+            .form-part
+              .form-part__title
+                = a.label :building, {class: "form-part__title__label"} do
+                  建物名
+                %span.form-part__title__require.form-part__title__require--optional 任意
+              = a.text_field :address, placeholder: "例)1-1-1", class: "form-part__single-field"
+          .actions
+            = f.submit "次へ進む", class: "actions__button"
+  = render "signup-footer"
+
+
+
+
 %h2 住所の入力
 = form_for @user, url: signup_index_path, method: :post do |f|
   = hidden_field_tag :current_step, 'step3'

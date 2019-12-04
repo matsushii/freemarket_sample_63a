@@ -48,6 +48,9 @@
                 vertical-align: top;
                 background-color: $red;
                 color: $white;
+                &--optional {
+                  background-color: $icongray;
+                }
               }
             }
             &__text {
@@ -67,6 +70,7 @@
               box-sizing: border-box;
               border: 1px solid $icongray;
               border-radius: 4px;
+              background-color: $white;
             }
             &__half-field:first-of-type {
               margin-right: 8px;
