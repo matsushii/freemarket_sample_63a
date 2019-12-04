@@ -58,7 +58,7 @@
               &__label{
                 font-weight: bold;
               }
-              &__filed{
+              .name-filed{
                 height: 48px;
                 width: 100%;
                 padding: 10px;
@@ -75,7 +75,7 @@
               &__label{
                 font-weight: bold;
               }
-              &__textarea{
+              .textarea{
                 width: 100%;
                 height: 100px;
                 margin: 8px 0 0 0;
@@ -101,13 +101,15 @@
               float: right;
               width: 60%;
               .cat-box {
-                &__header-box {
-                  &__label {
-                    display: inline-block;
-                    font-weight: 600;
+                &__header {
+                  .header-box {
+                    &__label {
+                      display: inline-block;
+                      font-weight: 600;
+                    }
                   }
                 }
-                &__container {
+                &__select {
                   .top-cat {
                     &__select {
                       height: 48px;
@@ -153,11 +155,13 @@
                 }
               }
               .size-box {
-                &__header-box {
-                  &__label {
-                    display: inline-block;
-                    font-weight: 600;
-                    margin-top: 8px;
+                &__header {
+                  .header-box {
+                    &__label {
+                      display: inline-block;
+                      font-weight: 600;
+                      margin-top: 8px;
+                    }
                   }
                 }
                 &__select {
@@ -175,24 +179,26 @@
 
               }
               .brand-box {
-                &__header-box {
-                  &__label {
-                    margin-top: 8px;
-                    display: inline-block;
-                    font-weight: 600;
+                &__header {
+                  .header-box {
+                    &__label {
+                      margin-top: 8px;
+                      display: inline-block;
+                      font-weight: 600;
+                    }
+                    .arbitary {
+                      line-height: 16px;
+                      background-color: #ccc;
+                      margin: 0 0 0 8px;
+                      padding: 2px 4px;
+                      border-radius: 2px;
+                      font-size: 12px;
+                      color: $white;
+                    } 
                   }
-                  .arbitary {
-                    line-height: 16px;
-                    background-color: #ccc;
-                    margin: 0 0 0 8px;
-                    padding: 2px 4px;
-                    border-radius: 2px;
-                    font-size: 12px;
-                    color: $white;
-                  } 
                 }
                 &__form {
-                  &__field {
+                  .brand-field{
                     height: 48px;
                     width: 100%;
                     padding: 10px;
@@ -207,11 +213,13 @@
                 }
               }
               .status-box {
-                &__header-box {
-                  &__label {
-                    margin-top: 8px;
-                    display: inline-block;
-                    font-weight: 600;
+                &__header {
+                  .header-box {
+                    &__label{
+                      margin-top: 8px;
+                      display: inline-block;
+                      font-weight: 600;
+                    }
                   }
                 }
                 &__select {
@@ -242,7 +250,7 @@
               float: right;
               width: 60%;
               .burden-box {
-                &__header-box {
+                .header-box{
                   &__label {
                     font-weight: 600;
                     margin-top: 8px;
@@ -262,11 +270,9 @@
                 }
               }
               .region-box {
-                &__header-box {
-                  & label{
-                    font-weight: 600;
-                    margin-top: 8px;
-                  }
+                .header-box {
+                  font-weight: 600;
+                  margin-top: 8px;
                 }
                 &__select {
                   height: 48px;
@@ -313,7 +319,7 @@
             .form-container {
               float: right;
               width: 60%;
-              &__price-box {
+              .price-box {
                 @include clearfix();
                 padding-bottom: 24px;
                 line-height: 48px;
@@ -345,13 +351,13 @@
                   }
                 }
               }
-              &__fee {
+              .fee {
                 padding: 24px 0;
                 border-bottom: 1px solid #cccccc;
                 &__label {
                 }
               }
-              &__profit { 
+              .profit { 
                 font-weight: 600;
                 padding: 24px 0;
                 border-bottom: 1px solid #cccccc;
@@ -360,14 +366,14 @@
               }
             }
           }
-          &__attention {
-            font-size: 14px;
-            line-height: 1.5;
-          }
           &__btn {
             padding: 40px;
             border-top: 1px solid $lightgray;
-            &__exhibit {
+            .attention {
+              font-size: 14px;
+              line-height: 1.5;
+            }
+            .exhibit {
               margin: 40px 0 0;
               .exhibit__btn {
                 background: #ea352d;
@@ -379,8 +385,8 @@
                 font-size: 14px;
               }
             }
-            &__return {
-              .return__btn {
+            .return {
+              &__btn {
                 display: block;
                 height: 48px;
                 width: 45%;
