@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 2019_12_03_111910) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "postal_code", null: false
-    t.string "prefecture", null: false
+    t.integer "prefecture", null: false
     t.string "city", null: false
     t.string "address", null: false
     t.string "building"
@@ -72,6 +72,7 @@ ActiveRecord::Schema.define(version: 2019_12_03_111910) do
     t.string "myoji_kana", null: false
     t.string "namae_kana", null: false
     t.date "birthday", null: false
+    t.string "phone_number"
     t.text "introduction"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
