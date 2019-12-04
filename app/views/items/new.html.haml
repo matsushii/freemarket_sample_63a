@@ -12,10 +12,9 @@
         = form_for @item do |f|
           .content__main__box__upload
             .upload-contents
-              .upload-contents__header
-                .header-box
-                  .header-box__label 出品画像
-                  %span.require 必須
+              .upload-contents__header-box
+                .upload-contents__header-box__label 出品画像
+                %span.require 必須
                 %p.info 最大10枚までアップロードできます
               .upload-contents__container
                 = f.fields_for :images do |image|

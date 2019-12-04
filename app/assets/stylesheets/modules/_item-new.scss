@@ -30,18 +30,16 @@
             padding: 40px;
             border-top: 1px solid $lightgray;
             .upload-contents {
-              &__header {
-                .header-box{
-                  .header-box__label {
-                    font-size: 16px;
-                    font-weight: 600;
-                    display: inline-block;
-                  }
-                }
-                &__info {
+              &__header-box{
+                &__label {
                   font-size: 16px;
-                  margin: 8px 0 0 0;
+                  font-weight: 600;
+                  display: inline-block;
                 }
+              }
+              &__info {
+                font-size: 16px;
+                margin: 8px 0 0 0;
               }
               &__container {
                 .image-upload {
@@ -63,8 +61,8 @@
                 width: 100%;
                 padding: 10px;
                 border-radius: 4px;
-                border: 1px solid #ccc;
-                background: #fff;
+                border: 1px solid $icongray;
+                background: $white;
                 line-height: 1.5;
                 font-size: 16px;
                 box-sizing: border-box;
@@ -83,7 +81,7 @@
                 font-size: 16px;
                 line-height: 1.5;
                 resize: vertical;
-                border: 1px solid #ccc;
+                border: 1px solid $icongray;
                 box-sizing: border-box;
               }
             }
@@ -115,7 +113,7 @@
                       padding: 0 16px;
                       margin-top: 8px;
                       border-radius: 4px;
-                      border: 1px solid #ccc;
+                      border: 1px solid $icongray;
                       background: 0;
                       font-size: 16px;
                       line-height: 1.5;
@@ -129,7 +127,7 @@
                       padding: 0 16px;
                       margin-top: 8px;
                       border-radius: 4px;
-                      border: 1px solid #ccc;
+                      border: 1px solid $icongray;
                       background: 0;
                       font-size: 16px;
                       line-height: 1.5;
@@ -143,7 +141,7 @@
                       padding: 0 16px;
                       margin-top: 8px;
                       border-radius: 4px;
-                      border: 1px solid #ccc;
+                      border: 1px solid $icongray;
                       background: 0;
                       font-size: 16px;
                       line-height: 1.5;
@@ -166,7 +164,7 @@
                   padding: 0 16px;
                   margin-top: 8px;
                   border-radius: 4px;
-                  border: 1px solid #ccc;
+                  border: 1px solid $icongray;
                   background: 0;
                   font-size: 16px;
                   line-height: 1.5;
@@ -183,7 +181,7 @@
                   }
                   .arbitary {
                     line-height: 16px;
-                    background-color: #ccc;
+                    background-color: $icongray;
                     margin: 0 0 0 8px;
                     padding: 2px 4px;
                     border-radius: 2px;
@@ -198,8 +196,8 @@
                     padding: 10px;
                     margin-top: 8px;
                     border-radius: 4px;
-                    border: 1px solid #ccc;
-                    background: #fff;
+                    border: 1px solid $icongray;
+                    background: $white;
                     line-height: 1.5;
                     font-size: 16px;
                     box-sizing: border-box;
@@ -220,7 +218,7 @@
                   padding: 0 16px;
                   margin-top: 8px;
                   border-radius: 4px;
-                  border: 1px solid #ccc;
+                  border: 1px solid $icongray;
                   background: 0;
                   font-size: 16px;
                   line-height: 1.5;
@@ -254,7 +252,7 @@
                   padding: 0 16px;
                   margin-top: 8px;
                   border-radius: 4px;
-                  border: 1px solid #ccc;
+                  border: 1px solid $icongray;
                   background: 0;
                   font-size: 16px;
                   line-height: 1.5;
@@ -272,7 +270,7 @@
                   padding: 0 16px;
                   margin-top: 8px;
                   border-radius: 4px;
-                  border: 1px solid #ccc;
+                  border: 1px solid $icongray;
                   background: 0;
                   font-size: 16px;
                   line-height: 1.5;
@@ -290,7 +288,7 @@
                   padding: 0 16px;
                   margin-top: 8px;
                   border-radius: 4px;
-                  border: 1px solid #ccc;
+                  border: 1px solid $icongray;
                   background: 0;
                   font-size: 16px;
                   line-height: 1.5;
@@ -315,7 +313,7 @@
                 @include clearfix();
                 padding-bottom: 24px;
                 line-height: 48px;
-                border-bottom: 1px solid #cccccc;
+                border-bottom: 1px solid $icongray;
                 &__left {
                   float: left;
                   font-weight: 600;
@@ -334,8 +332,8 @@
                       width: 100%;
                       padding: 10px;
                       border-radius: 4px;
-                      border: 1px solid #ccc;
-                      background: #fff;
+                      border: 1px solid $icongray;
+                      background: $white;
                       line-height: 1.5;
                       font-size: 16px;
                       box-sizing: border-box;  
@@ -345,7 +343,7 @@
               }
               .fee {
                 padding: 24px 0;
-                border-bottom: 1px solid #cccccc;
+                border-bottom: 1px solid $icongray;
                 &__label {
                   font-weight: 600;
                 }
@@ -353,7 +351,7 @@
               .profit { 
                 font-weight: 600;
                 padding: 24px 0;
-                border-bottom: 1px solid #cccccc;
+                border-bottom: 1px solid $icongray;
                 &__label {
                 }
               }
@@ -371,7 +369,7 @@
               .exhibit__btn {
                 background: #ea352d;
                 border: 1px solid #ea352d;
-                color: #fff;
+                color: $white;
                 display: block;
                 width: 100%;
                 line-height: 48px;
@@ -386,7 +384,7 @@
                 background: #aaa;
                 border: 1px solid #aaa;
                 margin: 24px auto 0;
-                color: #fff;
+                color: $white;
                 font-size: 14px;
                 text-align: center;
                 line-height: 48px;
