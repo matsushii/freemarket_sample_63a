@@ -63,6 +63,12 @@
                 font-size: smaller;
               }
             }
+            .complete-text {
+              width: 200px;
+              margin: 0 auto;
+              text-align: center;
+              color: $darkgray;
+            }
             &__single-field {
               width: 100%;
               height: 48px;
@@ -108,6 +114,7 @@
               background-color: $red;
               color: $white;
               font-size: 0.9rem;
+              text-align: center;
             }
           }
           .registrations {
