@@ -131,6 +131,12 @@
                   color: $darkgray;
                 }
               }
+              .fab {
+                font-size: 1.5rem;
+                position: absolute;
+                left: 16px;
+                top: 12px;
+              }
               .fa {
                 font-size: 1.5rem;
                 position: absolute;
@@ -170,7 +176,7 @@
           @include button-with-icon();
           background-color: $facebook;
           color: $white;
-          .fa {
+          .fab {
             @include icon();
           }
         }
@@ -180,7 +186,7 @@
           box-sizing: border-box;
           border: 1px solid $gray;
           color: $black;
-          .fa {
+          .fab {
             @include icon();
           }
         }

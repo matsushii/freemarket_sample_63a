@@ -7,6 +7,7 @@
 @import "mixins/mixin-users";
 @import "modules/header";
 @import "modules/footer";
+@import "modules/devise-new-user";
 @import "modules/item-show";
 @import "modules/item-index";
 @import "modules/item-new";
@@ -14,9 +15,8 @@
 @import "modules/user-mypage";
 @import "modules/user-logout";
 @import "modules/user-edit";
-@import "modules/user-new";
 @import "modules/user-purchased-trading-items";
+@import "modules/user-signup";
 @import "modules/purchases-new";
-@import "modules/signup";
 @import "modules/breadcrumbs";
 @import "modules/user-identification";
