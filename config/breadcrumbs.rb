@@ -16,6 +16,11 @@ crumb :logout do
   link "ログアウト", logout_user_path
   parent :mypage
 end
+
+crumb :username do
+  link "ユーザー情報", user_path
+  parent :root
+end
 # crumb :projects do
 #   link "Projects", projects_path
 # end
