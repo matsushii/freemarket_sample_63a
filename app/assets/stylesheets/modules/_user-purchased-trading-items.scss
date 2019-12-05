@@ -1,0 +1,64 @@
+.purchased__trading__items {
+  width: calc(100% - 320px);
+  float: right;
+  background-color: $white;
+  &--header {
+    border-style: solid;
+    border-width: 0;
+    padding: 0 16px;
+    background-color: $highlight;
+    font-size: 16px;
+    line-height: 72px;
+    font-weight: bold;
+  }
+  &--container {
+    width: 100%;
+    display: inline-flex;
+    &__li {
+      width: 50%;
+      text-align: center;
+      display: inline-block;
+      vertical-align: top;
+      &__title--left {
+        line-height: 74px;
+        >a {
+          border-top: 2px solid #ea352d;
+          position: relative;
+          display: block;
+          color: #333;
+          font-size: 16px;
+          line-height: 72px;
+          font-weight: bold;
+        }
+      }
+    }
+    &__li {
+      width: 50%;
+      text-align: center;
+      display: inline-block;
+      vertical-align: top;
+      &__title--right {
+        line-height: 74px;
+        >a {
+          background-color: whitesmoke;
+          // border-top: 2px solid #ea352d;
+          position: relative;
+          display: block;
+          color: #333;
+          font-size: 16px;
+          line-height: 72px;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+  .purchased__trading__items--content {
+    %ul.tab-content__notification {
+      %li.tab-content__notification__list {
+        display: none;
+          %figure {}
+          .tab-content__notification__body {}
+      }
+    }
+  }
+}

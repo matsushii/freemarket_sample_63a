@@ -56,6 +56,10 @@ class ItemsController < ApplicationController
       :name,
       :text,
       :price,
+      :condition,
+      :shipping_from,
+      :shipping_date,
+      :shipping_fee,
       images_attributes: [:image]
     ).merge(user_id: current_user.id)
   end
