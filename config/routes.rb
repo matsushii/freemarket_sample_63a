@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     member do
       get :logout
       get :mypage
+      get :identification
       get :purchased_trading_items
     end
     resources :cards

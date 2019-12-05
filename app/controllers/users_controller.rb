@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :mypage]
+  before_action :set_user, only: [:show, :edit, :update, :mypage, :identification]
 
   def mypage
     @nickname = @user.nickname
@@ -25,6 +25,9 @@ class UsersController < ApplicationController
   end
 
   def logout
+  end
+
+  def identification
   end
 
   private
