@@ -63,6 +63,7 @@
       height: 40px;
       margin-top: 8px; 
       font-size: 0.9rem;
+      @include clearfix();
       &__left {
         height: 100%;
         display: flex;  
@@ -96,11 +97,11 @@
       &__right {
         height: 100%;
         width: 50%;;
+        line-height: 36px;
         display: flex;
         float: right;
         list-style: none;
         position: relative;
-        line-height: 36px;
         &__list-left {
           padding-right: 14px;
         }
@@ -117,14 +118,31 @@
           font-weight: bold;
           font-size: 1.1rem;
         }
+      }
+      &__session {
+        width: 200px;
+        height: 100%;
+        display: flex;
+        float: right;
+        position: relative;
         &__new-user {
-          padding-right: 40px;
-          position: absolute;
-          right: 100px;
+          text-align: center;
+          &--link {
+            @include header-btn();
+            background-color: $red;
+            color: $white;
+            border: 1px solid $red;
+          }
         }
         &__login {
           position: absolute;
-          right: 40px;
+          right: 0px;
+          text-align: center;
+          &--link {
+            @include header-btn();
+            color: $lightblue;
+            border: 1px solid $lightblue;
+          }
         }
       }
     }

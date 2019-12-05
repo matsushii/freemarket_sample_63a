@@ -52,10 +52,10 @@
             = link_to user_path(current_user) do
               マイページ
       - else
-        .container__bottom__right
-          .container__bottom__right__new-user
-            = link_to signup_index_path do
-              ユーザー新規登録
-          .container__bottom__right__login
-            = link_to new_user_session_path do
+        .container__bottom__session
+          .container__bottom__session__new-user
+            = link_to signup_index_path, class: "container__bottom__session__new-user--link" do
+              新規会員登録
+          .container__bottom__session__login
+            = link_to new_user_session_path, class: "container__bottom__session__login--link" do
               ログイン
