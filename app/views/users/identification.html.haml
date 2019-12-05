@@ -1,0 +1,54 @@
+= render "layouts/header"
+- breadcrumb :mypage
+= render "layouts/breadcrumbs"
+.background
+  .show-container.clearfix
+    = render "users/side"
+    .show-container__main
+      .show-container__main__header 本人情報の登録
+      .show-container__main__container
+        .contents
+          .contents__header
+            %p お客さまの本人情報をご登録ください。  
+            %p 登録されたお名前・生年月日を変更する場合、本人確認書類の提出が必要になります。
+            .contents__header__info
+              = link_to "本人確認書類のアップロードについて >", href: "https://www.mercari.com/jp/help_center/article/495/", class: "info-link"
+          .contents__form-group
+            .contents__form-group__label お名前
+            %p.regist-text 
+              ="#{@user.myoji_kanji}"+" "+"#{@user.namae_kanji}"
+          .contents__form-group
+            .contents__form-group__label お名前カナ
+            %p.regist-text
+              ="#{@user.myoji_kana}"+" "+"#{@user.namae_kana}"
+          .contents__form-group
+            .contents__form-group__label 生年月日
+            %p.regist-text
+              ="#{@user.birthday}".gsub(/-/, "/")
+          = form_with(model: @user, local: true) do |f|
+            .contents__form-group
+              .contents__form-group__label 郵便番号
+              %span.arbitary 任意
+            = f.text_field :name ,class: "form-field", placeholder: "例）1234567" , class: "form-field", value: @user.address.postal_code
+            .contents__form-group
+              .contents__form-group__label 都道府県
+              %span.arbitary 任意
+            = f.select :prefecture, Address.prefectures.keys, {prompt: @user.address.prefecture}, class: "pre-select"
+            .contents__form-group
+              .contents__form-group__label 市区町村
+              %span.arbitary 任意
+            = f.text_field :name ,class: "form-field", placeholder: "例）例)渋谷区南平台町", value: @user.address.city
+            .contents__form-group
+              .contents__form-group__label 番地
+              %span.arbitary 任意
+            = f.text_field :name ,class: "form-field", placeholder: "例）1-1-1", value: @user.address.address
+            .contents__form-group
+              .contents__form-group__label 建物名
+              %span.arbitary 任意
+            = f.text_field :name ,class: "form-field", placeholder: "例）テックビル101", value: @user.address.building
+            .contents__btn
+              = f.submit "変更する", class: "contents__btn--red"
+            .contents__bottom-info
+              = link_to "本人情報の登録について >", href: "https://www.mercari.com/jp/help_center/article/423", class: "info-link"
+
+= render "layouts/footer"
