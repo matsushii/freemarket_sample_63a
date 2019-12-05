@@ -8,17 +8,17 @@
           新規会員登録
       .signup-container__main__login-panel__form-inner
         = link_to "", class: "signup-container__main__login-panel__form-inner--facebook" do
-          %i.fa.fa-facebook-square
+          %i.fab.fa-facebook-square
           Facebookでログイン
         = link_to "", class: "signup-container__main__login-panel__form-inner--google" do
-          %i.fa.fa-google
+          %i.fab.fa-google
           Googleでログイン
       = form_for resource, as: resource_name, url: session_path(resource_name), html: { class: "signup-container__main__login-panel__form-inner"} do |f|
         .signup-container__main__login-panel__form-inner__content
           .form-part
             = f.email_field :email, placeholder: "メールアドレス", class: "form-part__single-field"
           .form-part
-            = f.email_field :password, placeholder: "パスワード", class: "form-part__single-field"
+            = f.password_field :password, placeholder: "パスワード", class: "form-part__single-field"
               - if devise_mapping.rememberable?
             .form-part--checkbox
               = f.check_box :remember_me

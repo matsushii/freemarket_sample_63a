@@ -32,7 +32,7 @@ class PurchasesController < ApplicationController
     end
 
     def move_to_login
-      redirect_to root_path unless user_signed_in?
+      redirect_to signup_index_path unless user_signed_in?
     end
 
     def set_card

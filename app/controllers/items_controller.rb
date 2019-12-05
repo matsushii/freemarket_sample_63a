@@ -9,6 +9,9 @@ class ItemsController < ApplicationController
     @item = Item.new
     @item.images.build
     @image = Image.new
+    unless user_signed_in?
+      redirect_to signup_index_path
+    end
   end
   
   def create

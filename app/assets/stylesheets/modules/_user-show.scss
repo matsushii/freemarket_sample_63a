@@ -1,114 +1,145 @@
-.background {
-  @include clearfix;
-  .show-container {
-    margin: 40px 130px 0px;
-    padding-bottom: 40px;
-    &__side {
-      width: 280px;
-      height: 100%;
-      margin-right: 40px;
-      float: left;
-      .mypage-nav {
-        &__ul {
-          list-style: none;
-          background-color: #fff;
-          &__li {
-            width: 248px;
-            padding: 16px;
-            line-height: 16px;
-            font-size: smaller;
-            border-top: 1px solid $lightgray;
-          }
+.user-details {
+  width: 700px;
+  margin: 40px auto;
+  display: block;
+  background-color: $white;
+  &__profile {
+    padding-top: 50px;
+    background: linear-gradient(to top, #87d6d2d9, #aa97d9e1), url(sample_background.jpg);
+    background-size: cover;
+    text-align: center;
+    &__photo {
+      height: 180px;
+      display: block;
+      &--image {
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+    }
+    &__username {
+      line-height: 1.4;
+      margin: 8px 0 16px;
+      font-size: 1.2rem;
+      display: block;
+      color: $black;
+    }
+    &__scores {
+      padding-bottom: 30px;
+      display: inline-flex;
+      font-size: 0.8rem;
+      font-weight: bold;
+      color: $black;
+      &--rate {
+        margin-right: 12px;
+      }
+      &--item {
+        margin-left: 12px;
+      }
+    }
+  }
+  &__ratings {
+    border-bottom: 2px solid $lightgray;
+    &__rating {
+      height: 50px;
+      padding-top: 14px;
+      width: 360px;
+      margin: 0 auto;
+      box-sizing: border-box;
+      &__box {
+        display: flex;
+        justify-content: space-between;
+        .rating:last-child {
+          padding-right: 0px;
+          display: inline-flex;
         }
-        &__head {
-          margin: 40px 0 8px;
-          font-size: 16px;
-          font-weight: bold;
+        .rating {
+          padding-right: 30px;
+          display: inline-flex;
+          .fa {
+            font-size: 1.5rem;
+          }
+          .fa-thumbs-up {
+            color: $pink;
+          }
+          .fa-check-circle {
+            color: $yellow;
+          }
+          .fa-thumbs-down {
+            color: $lightblue;
+          }
+          &--score {
+            width: 60px;
+            margin-left: 14px;
+            text-align: center;
+          }
         }
       }
     }
-    &__main {
-      width: calc(100% - 320px);
-      float: right;
-      &__user-icon {
-        height: 200px;
-        padding: 20px;
-        box-sizing: border-box;
-        position: relative;
-        background: linear-gradient(to top, #87d6d2d9, #aa97d9e1), url(sample_background.jpg);
-        background-size: cover;
+  }
+  &__introduction {
+    padding: 30px 50px 16px;
+    border-bottom: 2px solid $lightgray;
+    &__sns {
+      width: 600px;
+      margin: 24px auto;
+      padding: 24px 0;
+      box-sizing: border-box;
+      &__box {
+        width: 100%;
+        margin-top: 16px;
         text-align: center;
-        &__link {
-          width: 100%;
-          position: absolute;
-          top: 50%;
-          left: 0;
-          transform: translateY(-50%);
+        >li:last-of-type {
+          margin-right: 0px;
+        }
+        >li {
           display: inline-block;
-          font-size: smaller;
-          &__image {
-            width: 60px;
-            height: 60px;
-            margin: 0 auto;
-            >img {
-              border-radius: 50%;
-            }
-          }
-          &__nickname {
-            margin-top: 8px;
-          }
-          &__statuses {
-            margin-top: 8px;
-            display: inline-flex;
-            &--rate {
-            }
-            &--item {
-              margin-left: 16px;
-            }
-          }
-        }
-      }
-      &__notice-todo {
-        .mypage-tabs {
-          width: 100%;
-          display: inline-flex;
-          &__li {
-            width: 50%;
-            text-align: center;
-            display: inline-block;
-            vertical-align: top;
-            &__title {
-              line-height: 74px;
-              >a {
-                width: 100%;
-                text-align: center;
-                display: inline-block;
-                font-weight: bold;
-                background-color: $tabgray;
+          margin: 0 8px 8px 0;
+          .sns-list {
+            font-size: 32px;
+            &--facebook {
+              @include sns-icon();
+              background-color: $facebook;
+              .fa-facebook-square {
+                color: $white;
+                position: absolute;
+                top: 7px;
+                left: 9px;
               }
             }
-          }
-        }
-        .tab-content {
-          padding: 0;
-          margin: 0;
-          &__notification {
-
-            &__list {
-              border-bottom: 1px solid $lightgray;
-              >a {
-                width: 100%;
-                height: 100%;
-                line-height: 100%;
-                background-color: $white;
+            &--twitter {
+              @include sns-icon();
+              background-color: $twitter;
+              .fa-twitter {
+                color: $white;
+                position: absolute;
+                top: 7px;
+                left: 7px;
+              }
+            }
+            &--line {
+              @include sns-icon();
+              font-size: 52px;
+              .fa-line {
+                color: $line;
+                position: absolute;
+                top: -3px;
+                left: 1px;
               }
             }
           }
         }
       }
-      &__purchased {
-        margin-top: 40px;
-      }
+    }
+  }
+  &__user-items {
+    padding: 30px 50px 60px;
+    &__title {
+      margin-bottom: 14px;
+      font-size: 1.3rem;
+      font-weight: bold;
     }
   }
 }

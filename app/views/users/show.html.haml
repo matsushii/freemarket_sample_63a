@@ -1,38 +1,52 @@
 = render "layouts/header"
-- breadcrumb :mypage
+- breadcrumb :username
 = render "layouts/breadcrumbs"
-.background
-  .show-container.clearfix
-    = render "users/side"
-    .show-container__main
-      %section.show-container__main__user-icon
-        = link_to user_path(current_user), class: "show-container__main__user-icon__link" do
-          %figure.show-container__main__user-icon__link__image
-            = image_tag "sample_item.jpg", size: "60x60"
-          %h2.show-container__main__user-icon__link__nickname
-            = @nickname
-          .show-container__main__user-icon__link__statuses
-            .show-container__main__user-icon__link__statuses--rate
-              評価
-              %span.bold 0
-            .show-container__main__user-icon__link__statuses--item
-              出品数
-              %span.bold 0
-      %section.show-container__main__notice-todo
-        %ul.mypage-tabs
-          %li.mypage-tabs__li
-            %h3.mypage-tabs__li__title
-              = link_to user_path(current_user) do
-                お知らせ
-          %li.mypage-tabs__li
-            %h3.mypage-tabs__li__title
-              = link_to user_path(current_user) do
-                やることリスト
-        .tab-content
-          %ul.tab-content__notification
-            %li.tab-content__notification__list
-              = link_to user_path(current_user) do
-                %figure
-                .tab-content__notification__body
-                  後日実装します...
+%section.user-details
+  .user-details__profile
+    .user-details__profile__photo
+      = image_tag "sample_item.jpg", class: "user-details__profile__photo--image"
+    %h2.user-details__profile__username
+      = @user.nickname
+    .user-details__profile__scores
+      .user-details__profile__scores--rate
+        評価
+        %span.bold 0
+      .user-details__profile__scores--item
+        出品数
+        %span.bold 0
+  .user-details__ratings
+    .user-details__ratings__rating
+      .user-details__ratings__rating__box
+        .rating
+          %i.fa.fa-thumbs-up
+          .rating--score
+            0
+        .rating
+          %i.fa.fa-check-circle
+          .rating--score
+            0
+        .rating
+          %i.fa.fa-thumbs-down
+          .rating--score
+            0
+  .user-details__introduction
+    = @user.introduction
+    .user-details__introduction__sns
+      %ul.user-details__introduction__sns__box
+        %li
+          = link_to "", class: "sns-list" do
+            .sns-list--facebook
+              %i.fab.fa-facebook-square
+        %li
+          = link_to "", class: "sns-list" do
+            .sns-list--twitter
+              %i.fab.fa-twitter
+        %li
+          = link_to "", class: "sns-list" do
+            .sns-list--line
+              %i.fab.fa-line
+  %section.user-details__user-items
+    .user-details__user-items__title
+      この出品者の商品
+    今後実装します...
 = render "layouts/footer"
