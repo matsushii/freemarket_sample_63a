@@ -10,6 +10,12 @@
       = link_to user_path(current_user) do
         %li.mypage-nav__ul__li
           やることリスト
+      = link_to user_path(current_user) do
+        %li.mypage-nav__ul__li
+          やることリスト
+      = link_to purchased_trading_items_user_path(current_user) do
+        %li.mypage-nav__ul__li
+          購入した商品-取引中
     %h3.mypage-nav__head メルペイ
     %ul.mypage-nav__ul
       %li.mypage-nav__ul__li
