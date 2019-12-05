@@ -1,0 +1,52 @@
+= render "layouts/header"
+- breadcrumb :mypage
+= render "layouts/breadcrumbs"
+%section.user-details
+  .user-details__profile
+    .user-details__profile__photo
+      = image_tag "sample_item.jpg", class: "user-details__profile__photo--image"
+    %h2.user-details__profile__username
+      = @nickname
+    .user-details__profile__scores
+      .user-details__profile__scores--rate
+        評価
+        %span.bold 0
+      .user-details__profile__scores--item
+        出品数
+        %span.bold 0
+  .user-details__ratings
+    .user-details__ratings__rating
+      .user-details__ratings__rating__box
+        .rating
+          %i.fa.fa-thumbs-up
+          .rating--score
+            0
+        .rating
+          %i.fa.fa-check-circle
+          .rating--score
+            0
+        .rating
+          %i.fa.fa-thumbs-down
+          .rating--score
+            0
+  .user-details__introduction
+    = @user.introduction
+    .user-details__introduction__sns
+      %ul.user-details__introduction__sns__box
+        %li
+          = link_to "", class: "sns-list" do
+            .sns-list--facebook
+              %i.fab.fa-facebook-square
+        %li
+          = link_to "", class: "sns-list" do
+            .sns-list--twitter
+              %i.fab.fa-twitter
+        %li
+          = link_to "", class: "sns-list" do
+            .sns-list--line
+              %i.fab.fa-line
+  %section.user-details__user-items
+    .user-details__user-items__title
+      この出品者の商品
+    今後実装します...
+= render "layouts/footer"
