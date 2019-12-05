@@ -7,7 +7,7 @@
       = form_tag("/", method: "get", class: "container__top__form") do
         = text_field_tag(:q, '', class: "container__top__form--field", placeholder: "何かお探しですか？")
         = label :search, '', class: "container__top__form--search-btn" do
-          = fa_icon "search", id: 'btn'
+          %i.fa.fa-search#btn
           = submit_tag("Search", class: "container__top__form--search-btn--hidden")
     .container__bottom
       .container__bottom__left
