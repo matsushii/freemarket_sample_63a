@@ -1,12 +1,12 @@
 = render "layouts/header"
-- breadcrumb :mypage
+- breadcrumb :username
 = render "layouts/breadcrumbs"
 %section.user-details
   .user-details__profile
     .user-details__profile__photo
       = image_tag "sample_item.jpg", class: "user-details__profile__photo--image"
     %h2.user-details__profile__username
-      = @nickname
+      = @user.nickname
     .user-details__profile__scores
       .user-details__profile__scores--rate
         評価
