@@ -24,6 +24,7 @@ class SignupController < ApplicationController
     if @user.save
       session[:id] = @user.id #idをsessionに入れてログイン状態にできる
       redirect_to complete_signup_index_path
+      sign_in @user
     else
       render '/signup/step1'
     end
