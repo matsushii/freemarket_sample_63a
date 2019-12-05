@@ -1,7 +1,8 @@
 @import "font-awesome";
 @import "config/reset";
 @import "config/colors";
-@import "mixins/clearfix";
+@import "mixins/mixin-form";
+@import "mixins/mixin-header";
 @import "modules/header";
 @import "modules/footer";
 @import "modules/item-show";
@@ -10,8 +11,9 @@
 @import "modules/user-show";
 @import "modules/user-logout";
 @import "modules/user-edit";
-@import "modules/purchases-new";
 @import "modules/user-new";
+@import "modules/user-purchased-trading-items";
+@import "modules/purchases-new";
 @import "modules/signup";
 @import "modules/breadcrumbs";
 @import "modules/user-identification";

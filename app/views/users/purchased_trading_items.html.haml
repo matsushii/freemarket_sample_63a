@@ -1,0 +1,29 @@
+= render "layouts/header"
+-# - breadcrumb :logout
+= render "layouts/breadcrumbs"
+.background
+  .show-container.clearfix
+    = render "users/side"
+    %section.purchased__trading__items
+      %h2.purchased__trading__items--header 購入した商品
+      %ul.purchased__trading__items--container
+        %li.purchased__trading__items--container__li
+          %h3.purchased__trading__items--container__li__title--left
+            = link_to user_path(current_user) do
+              取引中
+        %li.purchased__trading__items--container__li
+          %h3.purchased__trading__items--container__li__title--right
+            = link_to user_path(current_user) do
+              過去の取引
+      .purchased__trading__items--content
+        %ul.tab-content__notification
+          - @purchased_trading_items.each do |purchased_trading_items| 
+            %li.tab-content__notification__list
+              = "『#{purchased_trading_items.item.name}』を購入しました。取引が完了しました"
+
+            
+            = link_to user_path(current_user) do
+              %figure
+              .tab-content__notification__body
+                -# 後日実装します....
+= render "layouts/footer"
