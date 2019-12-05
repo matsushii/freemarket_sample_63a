@@ -1,0 +1,20 @@
+.signup-container
+  = render "signup-header"
+  %main.signup-container__main
+    %section.signup-container__main__container
+      %h2.signup-container__main__container__title 新規会員登録
+      .signup-container__main__container__form
+        .signup-container__main__container__form__content
+          .registrations
+            = link_to step1_signup_index_path, class: "registrations__button registrations__button--email" do
+              %i.fa.fa-envelope
+              メールアドレスで登録する
+          .registrations
+            = link_to signup_index_path, class: "registrations__button registrations__button--facebook" do
+              %i.fa.fa-facebook-square
+              Facebookで登録する
+          .registrations
+            = link_to signup_index_path, class: "registrations__button registrations__button--google" do
+              %i.fa.fa-google
+              Googleで登録する
+  = render "signup-footer"

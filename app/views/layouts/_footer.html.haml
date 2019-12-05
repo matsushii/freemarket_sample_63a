@@ -8,12 +8,14 @@
       .footer__upper__right
         .footer__upper__right--logo
           %p
-            = link_to("merkari","https://www.mercari.com/jp/")
+            = image_tag 'logos/logo_red.svg', size: "48x48"
           %p
-            = link_to("AppStore","https://apps.apple.com/jp/app/id667861049?l=ja")
+            = link_to "https://apps.apple.com/jp/app/id667861049?l=ja" do
+              = image_tag 'badges/App_Store_Badge.svg', class: "logo-image"
           %p
-            = link_to("GoogleStore","https://apps.apple.com/jp/app/id667861049?l=ja")
-        
+            = link_to "https://apps.apple.com/jp/app/id667861049?l=ja" do
+              = image_tag 'badges/google-play-badge.png', size: "134x40", class: "logo-image"
+
   .footer__lower__wrapper 
     .footer__lower
       .footer__lower--mercari.footer__lower--size

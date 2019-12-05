@@ -1,10 +1,20 @@
-%h2 電話番号の確認
-= form_for @user, url: step3_signup_index_path do |f|
-  = hidden_field_tag :current_step, 'step2'
-  .field
-    = f.label :phone_number, "携帯電話の番号"
-    = f.text_field :phone_number
-  本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
-  .actions
-    = f.submit 'SMSを送信する', class: 'btn-default btn-red'
-  ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
+.signup-container
+  = render "signup-header"
+  %main.signup-container__main
+    %section.signup-container__main__container
+      %h2.signup-container__main__container__title 電話番号の確認
+      = form_for @user, url: step3_signup_index_path, html: { class: "signup-container__main__container__form"} do |f|
+        .signup-container__main__container__form__content
+          = hidden_field_tag :current_step, 'step2'
+          .form-part
+            .form-part__title
+              = f.label :phone_number, {class: "form-part__title__label"} do
+                携帯電話の番号
+            = f.text_field :phone_number, placeholder: "携帯電話の番号を入力", class: "form-part__single-field"
+            .form-part__text
+              本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
+          .actions
+            = f.submit "次へ進む", class: "actions__button"
+            .form-part__text
+              ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
+  = render "signup-footer"

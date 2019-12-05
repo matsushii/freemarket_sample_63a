@@ -2,6 +2,9 @@ class SignupController < ApplicationController
   before_action :save_step1_to_session, only: :step2
   before_action :save_step2_to_session, only: :step3
 
+  def index
+  end
+  
   def step1
     @user = User.new
   end
