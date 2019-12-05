@@ -344,15 +344,24 @@
               .fee {
                 padding: 24px 0;
                 border-bottom: 1px solid $icongray;
+                @include clearfix ();
                 &__label {
-                  font-weight: 600;
+                  &__preview {
+                    float: right;
+                    line-height: 2;
+                  }
                 }
               }
               .profit { 
-                font-weight: 600;
                 padding: 24px 0;
                 border-bottom: 1px solid $icongray;
+                @include clearfix ();
                 &__label {
+                  font-weight: 600;
+                }
+                &__preview {
+                  float: right;
+                  font-size: 32px;
                 }
               }
             }
@@ -395,15 +404,6 @@
               }
             }
           }
-        }
-      }
-      &__footer {
-        text-align: center;
-        &__navigation {
-        }
-        &__logo {
-        }
-        &__copyright {
         }
       }
     }
