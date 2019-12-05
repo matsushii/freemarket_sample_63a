@@ -18,7 +18,7 @@
           .form-part
             = f.email_field :email, placeholder: "メールアドレス", class: "form-part__single-field"
           .form-part
-            = f.email_field :password, placeholder: "パスワード", class: "form-part__single-field"
+            = f.password_field :password, placeholder: "パスワード", class: "form-part__single-field"
               - if devise_mapping.rememberable?
             .form-part--checkbox
               = f.check_box :remember_me
