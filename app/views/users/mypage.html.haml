@@ -1,0 +1,38 @@
+= render "layouts/header"
+- breadcrumb :mypage
+= render "layouts/breadcrumbs"
+.background
+  .show-container.clearfix
+    = render "users/side"
+    .show-container__main
+      %section.show-container__main__user-icon
+        = link_to user_path(current_user), class: "show-container__main__user-icon__link" do
+          %figure.show-container__main__user-icon__link__image
+            = image_tag "sample_item.jpg", size: "60x60"
+          %h2.show-container__main__user-icon__link__nickname
+            = @user.nickname
+          .show-container__main__user-icon__link__statuses
+            .show-container__main__user-icon__link__statuses--rate
+              評価
+              %span.bold 0
+            .show-container__main__user-icon__link__statuses--item
+              出品数
+              %span.bold 0
+      %section.show-container__main__notice-todo
+        %ul.mypage-tabs
+          %li.mypage-tabs__li
+            %h3.mypage-tabs__li__title
+              = link_to user_path(current_user) do
+                お知らせ
+          %li.mypage-tabs__li
+            %h3.mypage-tabs__li__title
+              = link_to user_path(current_user) do
+                やることリスト
+        .tab-content
+          %ul.tab-content__notification
+            %li.tab-content__notification__list
+              = link_to user_path(current_user) do
+                %figure
+                .tab-content__notification__body
+                  後日実装します...
+= render "layouts/footer"

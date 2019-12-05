@@ -1,8 +1,10 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :identification]
+  before_action :set_user, only: [:show, :edit, :update, :mypage, :identification]
 
+  def mypage
+  end
+  
   def show
-    @nickname = @user.nickname
   end
 
   def edit

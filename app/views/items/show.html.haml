@@ -15,7 +15,7 @@
           %tr
             %th 出品者
             %td
-              = link_to "#{@item.user.nickname}", root_path
+              = link_to "#{@item.user.nickname}", user_path(@item.user_id)
               .evaluate__icon
                 .evaluate__icon__smile
                   %i.fa.fa-smile-o
@@ -69,17 +69,17 @@
       .footer
         .footer__likes
           .footer__likes--icon
-            =fa_icon "heart"
+            %i.fa.fa-heart
           .footer__likes--text
             = link_to 'いいね！', root_path
         .footer__notes
           .footer__notes--icon
-            =fa_icon "flag"
+            %i.fa.fa-flag
           .footer__notes--text
             = link_to '不適切な商品の報告', root_path
         .footer__right
           .footer__right--icon
-            =fa_icon "lock"
+            %i.fa.fa-lock
           .footer__right--text
             = link_to 'あんしん・あんぜんへの取り組み', root_path
             
@@ -94,20 +94,20 @@
     .link__bar
       .link__bar__left
         .link__bar__left--icon
-          =fa_icon "angle-left"
+          %i.fa.fa-angle-left
         .link__bar__left--text
           = link_to ' 専用*9本', root_path
       .link__bar__right
         .link__bar__right--text
           = link_to 'レディーアップルシード コート 95 美品', root_path
         .link__bar__right--icon
-          =fa_icon "angle-right"
+          %i.fa.fa-angle-right
         
   .icons
     .icons__bar
-      %i.facebook=fa_icon "facebook-official"
-      %i.twitter=fa_icon "twitter"
-      %i.pinterest=fa_icon "pinterest-square"
+      %i.fab.fa-facebook-square
+      %i.fab.fa-twitter
+      %i.fab.fa-pinterest
 
   
   .item__boxes
