@@ -1,6 +1,6 @@
   class CardsController < ApplicationController
-    before_action :set_card
-    
+    before_action :set_card, only:[:index, :new, :create]
+    before_action :redirect_to_login_page, except: [:index, :new, :create]
     require "payjp"
 
     def index
@@ -32,6 +32,12 @@
     def set_card
       if Card.where(user_id: current_user.id).present?
         @card = Card.where(user_id: current_user.id)
+      end
     end
-  end
+
+    def redirect_to_login_page
+      unless user_signed_in?
+        redirect_to new_user_session_path
+      end
+    end
 end
