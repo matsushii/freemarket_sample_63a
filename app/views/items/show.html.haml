@@ -5,11 +5,11 @@
     .detail__body
       .detail__body--left 
         .items-photo__upper
-          = image_tag "#{@item_images.first.image}", size: "300x300", class: "detail__body--left--image"
+          = image_tag @item.images.first, size: "300x300", class: "items-photo__upper--thumbnail"
         %ul.items-photo__lower__top
           %li.items-photo__lower__top__box
-          - @item_images.each do |item_image|
-            = image_tag "#{item_image.image}",size: "60x60", class: "items-photo__lower__top__box--slide"
+          - @item.images.each do |image|
+            = image_tag image,size: "60x60", class: "items-photo__lower__top__box--slide"
       .detail__body--right
         %table
           %tr
@@ -134,12 +134,12 @@
   
   .item__boxes
     .item__boxes__header  
-      = link_to "#{@item.user.nickname}さんのその他の商品", item_path
+      = link_to "#{@item.user.nickname}さんのその他の商品", user_path
     .item__boxes__main
       %ul.item__boxes__main__lists
         %li.item__boxes__main__lists__content
           .item__boxes__main__lists__content--image
-          = image_tag "#{@item.images.first.image.url}", size: "231x180", class: "item__boxes__main__lists__content--image--size"
+          = image_tag @item.images.first, size: "231x180", class: "item__boxes__main__lists__content--image--size"
           .item__boxes__main__lists__content__lower
             .item__boxes__main__lists__content__lower--name #{@item.name}
             .item__boxes__main__lists__content__lower--price ¥#{@item.price.to_s(:delimited)}

@@ -32,8 +32,9 @@
                   = link_to item_path(item.id), class: "product--link" do
                     %figure.product__link__thumbnail
                       .product__link__thumbnail__info
-                        %span.product__link__thumbnail__info--price ¥#{item.price.to_s(:delimited)}
-                        = image_tag "#{item.images.first.image.url}", size: "180x180", class: "product__link__thumbnail__info--image"
+                        %span.product__link__thumbnail__info--price
+                          ¥#{item.price.to_s(:delimited)}
+                        = image_tag item.images.first, size: "180x180", class: "product__link__thumbnail__info--image"
                       %figcaption.product__caption
                         %span.product__caption--text #{item.name}
   .sell_btn
