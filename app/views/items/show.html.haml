@@ -5,7 +5,7 @@
     .detail__body
       .detail__body--left 
         .items-photo__upper
-          = image_tag @item.images.first, size: "300x300", class: "detail__body--left--image"
+          = image_tag @item.images.first, size: "300x300", class: "items-photo__upper--thumbnail"
         %ul.items-photo__lower__top
           %li.items-photo__lower__top__box
           - @item.images.each do |image|

@@ -19,6 +19,10 @@
           margin: 16px 0 0;
           font-size: 14px;
           text-align: center;
+          position: relative;
+          &--thumbnail {
+            object-fit: contain;
+          }
         }
         .items-photo__lower__top {
           display: flex;
@@ -27,6 +31,7 @@
           &__box{
             &--slide {
               width: 20%;
+              object-fit: contain;
             } 
           }
         }
