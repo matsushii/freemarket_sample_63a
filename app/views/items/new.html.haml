@@ -21,7 +21,7 @@
             .name-box
               = f.label "商品名", class: "name-box__label"
               %span.require 必須
-              = f.text_field :name, class: "name-box__filed", placeholder: "商品名（必須40文字まで）" 
+              = f.text_field :name, class: "name-box__filed", placeholder: "商品名（必須40文字まで）"
               - if @item.errors.any?
                 = @item.errors.full_messages
             .disc-box
@@ -89,22 +89,28 @@
                   .price-box__right__field
                     = f.text_field :price, class: "price-field", placeholder: "（例）300" 
               .fee
-                .fee__label 販売手数料(10%)
+                .fee__label
+                  販売手数料(10%)
+                  .fee__label__preview  
+                  -#  JSが当たってるのでクラス名変更注意
               .profit
                 .profit__label 販売利益
+                .profit__preview
+                  -#  JSが当たってるのでクラス名変更注意
+
           .content__main__box__btn
             .attention
-              = link_to "禁止されている出品", href: "https://www.mercari.com/jp/help_center/getting_started/prohibited_items/", class: "attention__link"
+              = link_to "禁止されている出品", "https://www.mercari.com/jp/help_center/getting_started/prohibited_items/", class: "attention__link"
               、
-              = link_to "行為", href: "https://www.mercari.com/jp/help_center/getting_started/prohibited_conduct/", class: "attention__link"
+              = link_to "行為", "https://www.mercari.com/jp/help_center/getting_started/prohibited_conduct/", class: "attention__link"
               を必ずご確認ください。
               %br
               またブランド品でシリアルナンバー等がある場合はご記載ください。
-              = link_to "偽ブランドの販売", href: "https://www.mercari.com/jp/help_center/getting_started/counterfeit_goods/", class: "attention__link"
+              = link_to "偽ブランドの販売", "https://www.mercari.com/jp/help_center/getting_started/counterfeit_goods/", class: "attention__link"
               は犯罪であり処罰される可能性があります。
               %br
               また、出品をもちまして
-              = link_to "加盟店規約",href: "https://www.mercari.com/jp/seller_terms/",  class: "attention__link"
+              = link_to "加盟店規約", "https://www.mercari.com/jp/seller_terms/",  class: "attention__link"
               に同意したことになります。
             .exhibit
               = f.submit "出品する", class: "exhibit__btn"

@@ -7,6 +7,14 @@ class Item < ApplicationRecord
   has_many_attached :images
 
   validates :name, presence: true
+  
+  def self.search(search) 
+    if search 
+      Item.where('name LIKE ?', "%#{search}%")
+    else
+      Item.all 
+    end
+  end
 
   enum condition: {
     新品、未使用:1,
@@ -75,5 +83,11 @@ class Item < ApplicationRecord
     １〜２日で発送:1,
     ２〜３日で発送:2,
     ４〜７日で発送:3,
+  }
+  enum status: {
+    出品中:1,
+    取引中:2,
+    停止中:3,
+    取引完了:4,
   }
 end

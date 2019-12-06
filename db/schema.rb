@@ -73,6 +73,7 @@ ActiveRecord::Schema.define(version: 2019_12_06_035722) do
     t.integer "shipping_fee", null: false
     t.integer "shipping_date", null: false
     t.integer "shipping_from", null: false
+    t.integer "status"
   end
 
   create_table "purchases", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

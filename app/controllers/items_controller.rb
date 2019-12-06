@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
   before_action :redirect_to_login_page, except: [:index, :show]
   before_action :set_item, only: [:show, :edit, :update, :destroy]
+  before_action :redirect_to_login_page, except: [:index]
 
   def index
     @items = Item.all #.order(created_at: "desc").limit(10)
@@ -12,6 +13,7 @@ class ItemsController < ApplicationController
   
   def create
     @item = Item.new(item_params)
+    @item.status = 1
     if @item.save
       redirect_to root_path
     else
@@ -34,6 +36,26 @@ class ItemsController < ApplicationController
       render :edit
     end
   end
+  
+  def pause
+    if @item = Item.find(params[:id])
+    @item.status = (3)
+    @item.save
+    redirect_to root_path
+    else
+      render :show
+    end
+  end
+  
+  def resume
+    if @item = Item.find(params[:id])
+    @item.status = (1)
+    @item.save
+      redirect_to root_path
+    else
+      render :show
+    end
+  end
 
   def destroy
     if current_user.id == @item.user_id && @item.destroy
@@ -43,6 +65,10 @@ class ItemsController < ApplicationController
     end
   end
 
+  def search
+    @items = Item.search(params[:search])
+    render :index
+  end
 
   private
   def redirect_to_login_page
@@ -51,6 +77,12 @@ class ItemsController < ApplicationController
   
   def set_item
     @item = Item.find(params[:id])
+  end
+
+  def redirect_to_login_page
+    unless user_signed_in?
+      redirect_to new_user_session_path
+    end
   end
 
   def item_params
