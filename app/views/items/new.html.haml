@@ -14,10 +14,9 @@
                 %span.require 必須
                 %p.info 最大10枚までアップロードできます
               .upload-contents__container
-                = f.fields_for :images do |image|
-                  .image-upload
-                    .image-upload--btn
-                      = image.file_field :image
+                .image-upload
+                  .image-upload--btn
+                    = f.file_field :images, multiple: true, id: "file"
           .content__main__box__product
             .name-box
               = f.label "商品名", class: "name-box__label"
