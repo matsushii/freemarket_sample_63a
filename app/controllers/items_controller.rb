@@ -16,6 +16,7 @@ class ItemsController < ApplicationController
   
   def create
     @item = Item.new(item_params)
+    @item.status = 1
     if @item.save
       redirect_to root_path
     else
@@ -37,6 +38,26 @@ class ItemsController < ApplicationController
       render :show
     else
       render :edit
+    end
+  end
+  
+  def pause
+    if @item = Item.find(params[:id])
+    @item.status = (3)
+    @item.save
+    redirect_to root_path
+    else
+      render :show
+    end
+  end
+  
+  def resume
+    if @item = Item.find(params[:id])
+    @item.status = (1)
+    @item.save
+      redirect_to root_path
+    else
+      render :show
     end
   end
 

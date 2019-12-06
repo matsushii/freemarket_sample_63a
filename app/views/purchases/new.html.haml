@@ -28,7 +28,7 @@
         .body__main__buy--btn
           = form_with url: item_purchases_path(@item.id), method: "post" do
             :plain
-              <script type="text/javascript" src="https://checkout.pay.jp" class="payjp-button" data-key="pk_test_7a80698bf3309ecfeed80515" data-text="購入する"></script>
+              <script type="text/javascript" src="https://checkout.pay.jp" class="payjp-button" data-payjp= "3b2af2d309980321d4184814ecd6257e123d9cbe" data-key="pk_test_7a80698bf3309ecfeed80515" data-text="購入する"></script>
         .body__main__info
           アプリをお持ちでない方は以下よりインストールしてご利用いただけます。
         .body__main__logo

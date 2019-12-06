@@ -22,7 +22,7 @@
             .name-box
               = f.label "商品名", class: "name-box__label"
               %span.require 必須
-              = f.text_field :name, class: "name-box__filed", placeholder: "商品名（必須40文字まで）" 
+              = f.text_field :name, class: "name-box__filed", placeholder: "商品名（必須40文字まで）"
               - if @item.errors.any?
                 = @item.errors.full_messages
             .disc-box
@@ -53,7 +53,7 @@
                   .brand-box__header-box__label ブランド
                   %span.arbitary 任意
                 .brand-box__form
-                  = f.text_field :name ,class: "brand-field", placeholder: "例）シャネル" 
+                  -# = f.text_field :name ,class: "brand-field", placeholder: "例）シャネル" 
               .status-box
                 .status-box__header-box
                   = f.label "商品の状態", class: "status-box__header-box__label"
