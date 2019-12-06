@@ -14,10 +14,9 @@
                 %span.require 必須
                 %p.info 最大10枚までアップロードできます
               .upload-contents__container
-                = f.fields_for :images do |image|
-                  .image-upload
-                    .image-upload--btn
-                      = image.file_field :image
+                .image-upload
+                  .image-upload--btn
+                    = f.file_field :images, multiple: true
           .content__main__box__product
             .name-box
               = f.label "商品名", class: "name-box__label"
@@ -48,12 +47,13 @@
                   .size-box__header-box__label サイズ
                   %span.require 必須
                 = f.select :condition, Item.conditions.keys, {prompt: '---'}, {class: "size-box__select"}
-              .brand-box
-                .brand-box__header-box
-                  .brand-box__header-box__label ブランド
-                  %span.arbitary 任意
-                .brand-box__form
-                  = f.text_field :name ,class: "brand-field", placeholder: "例）シャネル" 
+              -# 現在別ブランチにて実装中なので一旦コメントアウトしておきます
+              -# .brand-box
+              -#   .brand-box__header-box
+              -#     .brand-box__header-box__label ブランド
+              -#     %span.arbitary 任意
+              -#   .brand-box__form
+              -#     = f.text_field :name ,class: "brand-field", placeholder: "例）シャネル" 
               .status-box
                 .status-box__header-box
                   = f.label "商品の状態", class: "status-box__header-box__label"
@@ -112,8 +112,3 @@
               = link_to "戻る", root_path, class: "return__btn"
       .content__footer
         = render "signup/signup-footer"
-
-        
-
-
-
