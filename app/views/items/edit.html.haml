@@ -18,9 +18,9 @@
                   %span.require 必須
                   %p.label 最大10枚までアップロードできます
               .container
-                - @images.each do |image|
+                - @item.images.each do |image|
                   .label
-                    = image.image
+                    = image
                 = f.fields_for :images do |image|
                   .image-upload
                     .box
