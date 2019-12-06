@@ -62,6 +62,7 @@
         %span.item__price__bold ¥#{@item.price.to_s(:delimited)}円
         %span.item__price__tax (税込)
         %span.item__price__fee 送料込み
+    - unless @item.user_id == current_user.id  
       .item-buy-btn 
         .buy-text= link_to '購入画面に進む ', new_item_purchase_path(@item.id)
       .item-description
@@ -82,19 +83,28 @@
             =fa_icon "lock"
           .footer__right--text
             = link_to 'あんしん・あんぜんへの取り組み', root_path
-            
-  .listing__item__change__box
-    .listing__item__change__box--edit
-      = link_to '商品を編集する', edit_item_path(@item.id)
-    %p.listing__item__change__box--text
-      or
-    .listing__item__change__box--pause
-      = link_to '出品を停止する', pause_item_path(@item.id)
-    .listing__item__change__box--resume
-      = link_to '出品を再開する', resume_item_path(@item.id)
-    .listing__item__change__box--delete
-      = link_to 'この商品を削除する', item_path(@item.id), method: "delete" 
   
+  - if @item.user_id == current_user.id && @item.status == "出品中"          
+    .listing__item__change__box
+      .listing__item__change__box--edit
+        = link_to '商品を編集する', edit_item_path(@item.id)
+      %p.listing__item__change__box--text
+        or
+      .listing__item__change__box--pause
+        = link_to '出品を停止する', pause_item_path(@item.id)
+      .listing__item__change__box--delete
+        = link_to 'この商品を削除する', item_path(@item.id), method: "delete" 
+  - elsif @item.user_id == current_user.id && @item.status == "停止中"          
+    .listing__item__change__box
+      .listing__item__change__box--edit
+        = link_to '商品を編集する', edit_item_path(@item.id)
+      %p.listing__item__change__box--text
+        or
+      .listing__item__change__box--resume
+        = link_to '出品を再開する', resume_item_path(@item.id)
+      .listing__item__change__box--delete
+        = link_to 'この商品を削除する', item_path(@item.id), method: "delete" 
+    
   .comments
     .comments__header
       相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
