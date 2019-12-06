@@ -4,10 +4,13 @@
     height: 390px;
     background-size: auto;
     &__title {
-      line-height: 390px;
+      // line-height: 390px;
       margin: 0 auto;
       text-align: center;
       color: $black;
+      &__image {
+        height: 390px;
+      }
     }
   }
   .contents {

@@ -5,6 +5,14 @@ class Item < ApplicationRecord
 
   accepts_nested_attributes_for :images, allow_destroy: true
   validates :name, presence: true
+  
+  def self.search(search) 
+    if search 
+      Item.where(['name LIKE ?', "%#{search}%"])
+    else
+      Item.all 
+    end
+  end
 
   enum condition: {
     新品、未使用:1,
