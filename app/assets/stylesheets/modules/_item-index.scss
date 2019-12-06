@@ -8,12 +8,14 @@
       margin: 0 auto;
       text-align: center;
       color: $black;
+      
     }
   }
   .contents {
     width: 100vw;
     overflow: hidden;
     .content {
+      border-top: 20px;
       margin: 0 auto;
       width: 80%;
       color: $black;

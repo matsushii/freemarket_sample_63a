@@ -69,6 +69,10 @@ class ItemsController < ApplicationController
     end
   end
 
+  def search
+    @items = Item.search(params[:search])
+    render :index
+  end
 
   private
   def set_item

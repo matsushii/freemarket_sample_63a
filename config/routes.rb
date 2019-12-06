@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     member do
       get :pause
       get :resume
+      get :search
     end
     resources :purchases, only: [:new, :create]
   end
