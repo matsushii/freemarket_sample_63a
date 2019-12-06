@@ -184,6 +184,54 @@
     }    
   }
 }
+.listing__item__change__box {
+  margin: 8px 290px;
+  background-color: white;
+  padding: 20px 40px;
+  box-sizing: border-box;
+  a {
+    font-size: 14px;
+    line-height: 48px;
+    color: white;
+    text-decoration: none;
+  }
+  .listing__item__change__box--edit {
+    height: 48px;
+    margin: 16px 0;
+    cursor: pointer;
+    text-align: center;
+    background-color: #ea352d;
+  }
+  .listing__item__change__box--text {
+    text-align: center;
+    >p {
+      font-size: 16px;
+      margin: 16px 0;
+    }
+  }
+  &--pause {
+    height: 48px;
+    margin: 16px 0;
+    cursor: pointer;
+    text-align: center;
+    background-color: #ea352d;
+  }
+  &--resume {
+    height: 48px;
+    margin: 16px 0;
+    cursor: pointer;
+    text-align: center;
+    background-color: #ea352d;
+  }
+  &--delete {
+    height: 48px; 
+    margin: 16px 0;
+    cursor: pointer;
+    text-align: center;
+    background-color: #ea352d;
+  }
+}
+
 .comments {
   height: 260px;
   margin: 8px 290px;

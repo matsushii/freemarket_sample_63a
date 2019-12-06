@@ -74,4 +74,10 @@ class Item < ApplicationRecord
     ２〜３日で発送:2,
     ４〜７日で発送:3,
   }
+  enum status: {
+    出品中:1,
+    取引中:2,
+    停止中:3,
+    取引完了:4,
+  }
 end
