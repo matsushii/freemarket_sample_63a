@@ -4,18 +4,18 @@
     height: 390px;
     background-size: auto;
     &__title {
+      line-height: 390px;
       margin: 0 auto;
       text-align: center;
       color: $black;
-      &__image {
-        height: 390px;
-      }
+      
     }
   }
   .contents {
     width: 100vw;
     overflow: hidden;
     .content {
+      border-top: 20px;
       margin: 0 auto;
       width: 80%;
       color: $black;
