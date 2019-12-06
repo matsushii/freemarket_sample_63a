@@ -1,9 +1,11 @@
 class Item < ApplicationRecord
   belongs_to :user
   has_one :purchase
-  has_many :images, dependent: :destroy
+  # jsを使った画像編集や削除の実装次第で今後使うかもしれないので残しておきますが、このブランチが
+  # has_many :images, dependent: :destroy
+  # accepts_nested_attributes_for :images, allow_destroy: true
+  has_many_attached :images
 
-  accepts_nested_attributes_for :images, allow_destroy: true
   validates :name, presence: true
 
   enum condition: {
