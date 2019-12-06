@@ -1,17 +1,13 @@
 class ItemsController < ApplicationController
+  before_action :redirect_to_login_page, except: [:index, :show]
   before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   def index
-    @items = Item.all.order(created_at: "desc").limit(10)
+    @items = Item.all #.order(created_at: "desc").limit(10)
   end
 
   def new
     @item = Item.new
-    @item.images.build
-    @image = Image.new
-    unless user_signed_in?
-      redirect_to signup_index_path
-    end
   end
   
   def create
@@ -24,7 +20,6 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find(params[:id])
     @item_images = @item.images.limit(10)
   end
 
@@ -50,6 +45,10 @@ class ItemsController < ApplicationController
 
 
   private
+  def redirect_to_login_page
+    redirect_to new_user_session_path unless user_signed_in?
+  end
+  
   def set_item
     @item = Item.find(params[:id])
   end
@@ -63,7 +62,7 @@ class ItemsController < ApplicationController
       :shipping_from,
       :shipping_date,
       :shipping_fee,
-      images_attributes: [:image]
+      images: []
     ).merge(user_id: current_user.id)
   end
 end
