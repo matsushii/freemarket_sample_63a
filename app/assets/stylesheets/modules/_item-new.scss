@@ -57,15 +57,7 @@
                 font-weight: bold;
               }
               &__filed {
-                height: 48px;
-                width: 100%;
-                padding: 10px;
-                border-radius: 4px;
-                border: 1px solid $icongray;
-                background: $white;
-                line-height: 1.5;
-                font-size: 16px;
-                box-sizing: border-box;
+                @include single-field();
               }
             }
             .disc-box {
@@ -91,9 +83,7 @@
             border-top: 1px solid $lightgray;
             @include clearfix();
             .side-label {
-              float: left;
-              color: #888;
-              font-size: 14px;
+              @include side-label();
             }
             .form-container {
               float: right;
@@ -108,44 +98,17 @@
                 &__select {
                   .top-cat {
                     &__select {
-                      height: 48px;
-                      width: 100%;
-                      padding: 0 16px;
-                      margin-top: 8px;
-                      border-radius: 4px;
-                      border: 1px solid $icongray;
-                      background: 0;
-                      font-size: 16px;
-                      line-height: 1.5;
-                      cursor: pointer;
+                      @include selector();
                     }
                   }
                   .mid-cat {
                     &__select {
-                      height: 48px;
-                      width: 100%;
-                      padding: 0 16px;
-                      margin-top: 8px;
-                      border-radius: 4px;
-                      border: 1px solid $icongray;
-                      background: 0;
-                      font-size: 16px;
-                      line-height: 1.5;
-                      cursor: pointer;
+                      @include selector();
                     }
                   }
                   .bot-cat {
                     &__select {
-                      height: 48px;
-                      width: 100%;
-                      padding: 0 16px;
-                      margin-top: 8px;
-                      border-radius: 4px;
-                      border: 1px solid $icongray;
-                      background: 0;
-                      font-size: 16px;
-                      line-height: 1.5;
-                      cursor: pointer;
+                      @include selector();
                     }
                   }
                 }
@@ -153,31 +116,18 @@
               .size-box {
                 &__header-box {
                   &__label {
-                    display: inline-block;
-                    font-weight: 600;
-                    margin-top: 8px;
+                    @include form-label();
                   }
                 }
                 &__select {
-                  height: 48px;
-                  width: 100%;
-                  padding: 0 16px;
-                  margin-top: 8px;
-                  border-radius: 4px;
-                  border: 1px solid $icongray;
-                  background: 0;
-                  font-size: 16px;
-                  line-height: 1.5;
-                  cursor: pointer;
+                  @include selector();
                 }
 
               }
               .brand-box {
                 &__header-box {
                   &__label {
-                    margin-top: 8px;
-                    display: inline-block;
-                    font-weight: 600;
+                    @include side-label();
                   }
                   .arbitary {
                     line-height: 16px;
@@ -191,38 +141,18 @@
                 }
                 &__form {
                   .brand-field{
-                    height: 48px;
-                    width: 100%;
-                    padding: 10px;
-                    margin-top: 8px;
-                    border-radius: 4px;
-                    border: 1px solid $icongray;
-                    background: $white;
-                    line-height: 1.5;
-                    font-size: 16px;
-                    box-sizing: border-box;
+                    @include single_field();
                   }
                 }
               }
               .status-box {
                 &__header-box {
                   &__label{
-                    margin-top: 8px;
-                    display: inline-block;
-                    font-weight: 600;
+                    @include form-label();
                   }
                 }
                 &__select {
-                  height: 48px;
-                  width: 100%;
-                  padding: 0 16px;
-                  margin-top: 8px;
-                  border-radius: 4px;
-                  border: 1px solid $icongray;
-                  background: 0;
-                  font-size: 16px;
-                  line-height: 1.5;
-                  cursor: pointer;
+                  @include selector();
                 }
               }
             }
@@ -232,9 +162,7 @@
             border-top: 1px solid $lightgray;
             @include clearfix();
             .side-label {
-              float: left;
-              color: #888;
-              font-size: 14px;
+              @include side-label();
             }
             .form-container {
               float: right;
@@ -247,16 +175,7 @@
                   }
                 }
                 &__select {
-                  height: 48px;
-                  width: 100%;
-                  padding: 0 16px;
-                  margin-top: 8px;
-                  border-radius: 4px;
-                  border: 1px solid $icongray;
-                  background: 0;
-                  font-size: 16px;
-                  line-height: 1.5;
-                  cursor: pointer; 
+                  @include selector();
                 }
               }
               .region-box {
@@ -265,16 +184,7 @@
                   margin-top: 8px;
                 }
                 &__select {
-                  height: 48px;
-                  width: 100%;
-                  padding: 0 16px;
-                  margin-top: 8px;
-                  border-radius: 4px;
-                  border: 1px solid $icongray;
-                  background: 0;
-                  font-size: 16px;
-                  line-height: 1.5;
-                  cursor: pointer;
+                  @include selector();
                 }
               }
               .days-box{
@@ -283,16 +193,7 @@
                   margin-top: 8px;
                 }
                 &__select {
-                  height: 48px;
-                  width: 100%;
-                  padding: 0 16px;
-                  margin-top: 8px;
-                  border-radius: 4px;
-                  border: 1px solid $icongray;
-                  background: 0;
-                  font-size: 16px;
-                  line-height: 1.5;
-                  cursor: pointer;
+                  @include selector();
                 }
               }
             }
@@ -302,9 +203,7 @@
             border-top: 1px solid $lightgray;
             @include clearfix();
             .side-label {
-              float: left;
-              font-size: 14px;
-              color: #888888;
+              @include side-label();
             }
             .form-container {
               float: right;
@@ -380,13 +279,7 @@
             .exhibit {
               margin: 40px 0 0;
               .exhibit__btn {
-                background: $red;
-                border: 1px solid $red;
-                color: $white;
-                display: block;
-                width: 100%;
-                line-height: 48px;
-                font-size: 14px;
+                @include submit-btn();
               }
             }
             .return {
