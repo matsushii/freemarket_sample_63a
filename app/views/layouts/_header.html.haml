@@ -4,7 +4,7 @@
       .container__top__logo
         = link_to root_path do
           = image_tag 'logos/fmarket_logo_red.svg', size: "134x40", class: "logo-image"
-      = form_tag(search_item_path(@items.ids), method: "get", class: "container__top__form") do
+      = form_tag(search_item_path(:id), method: "get", class: "container__top__form") do
         = text_field_tag(:search, params[:search], class: "container__top__form--field", placeholder: "何かお探しですか？")
         = label :search, '', class: "container__top__form--search-btn" do
           %i.fa.fa-search#btn
