@@ -96,20 +96,8 @@
                   }
                 }
                 &__select {
-                  .top-cat {
-                    &__select {
-                      @include selector();
-                    }
-                  }
-                  .mid-cat {
-                    &__select {
-                      @include selector();
-                    }
-                  }
-                  .bot-cat {
-                    &__select {
-                      @include selector();
-                    }
+                  .cat__select {
+                    @include selector();
                   }
                 }
               }
