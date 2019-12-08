@@ -41,11 +41,11 @@
               %i.far.fa-heart
               いいね！一覧
           %li.container__bottom__right__list-center
-            = link_to root_path do
+            = link_to mypage_user_path(current_user) do
               %i.far.fa-bell
               お知らせ
           %li.container__bottom__right__list-center
-            = link_to root_path do
+            = link_to mypage_user_path(current_user) do
               %i.fa.fa-check
               やることリスト
           %li.container__bottom__right__list-right
