@@ -24,8 +24,9 @@
       = link_to edit_user_path(current_user) do
         %li.mypage-nav__ul__li
           プロフィール
-      %li.mypage-nav__ul__li
-        発送元・お届け先住所変更
+      = link_to deliver_address_user_path(current_user) do
+        %li.mypage-nav__ul__li
+          発送元・お届け先住所変更
       = link_to new_user_card_path(current_user) do
         %li.mypage-nav__ul__li
           支払い方法
@@ -33,7 +34,7 @@
         メール/パスワード
       = link_to identification_user_path(current_user) do
         %li.mypage-nav__ul__li
-          本人情報
+          本人情報確認
       %li.mypage-nav__ul__li
         電話番号の確認
       = link_to logout_user_path do
