@@ -9,7 +9,7 @@
       .body__main
         .body__main__top
           .body__main__top--img
-            = image_tag "#{@item_images.first.image}",size: "60x60"
+            = image_tag @item.images.first, size: "60x60"
           .body__main__top--name
             #{@item.name}
         .body__main__price
