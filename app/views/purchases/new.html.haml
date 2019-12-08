@@ -54,7 +54,7 @@
               #{current_user.myoji_kanji}
               #{current_user.namae_kanji}
             %li.address__footer
-              = link_to root_path do
+              = link_to deliver_address_user_path(current_user) do
                 変更する >
         .bottom
           %ul
