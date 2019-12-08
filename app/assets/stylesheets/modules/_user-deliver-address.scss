@@ -13,11 +13,11 @@
       }
       &__container {
         padding: 65px;
-        .contents {
+        .main-contents {
           max-width: 340px;
           margin: 0 auto;
           &__form-group {
-            margin: 40px 0 0;
+            line-height: 1.5;
             &__label {
               font-weight: 600;
               font-size: 14px;
@@ -28,8 +28,11 @@
               font-weight: 200;
               font-size: 14px;
             }
-            .require{
+            .require {
               @include require();
+            }
+            .arbitary {
+              @include arbitary();
             }
           }
           .form-field{
@@ -39,31 +42,17 @@
             @include half-field();
           }
           .pre-select{
-            height: 48px;
-            width: 100%;
-            padding: 0 16px;
-            margin-top: 8px;
-            border-radius: 4px;
-            border: 1px solid $icongray;
-            background: 0;
-            font-size: 16px;
-            line-height: 1.5;
-            cursor: pointer;
-          }
-          &__btn {
-            margin: 40px 0;
-            &--red {
-              background: $red;
-              border: 1px solid $red;
-              color: $white;
-              display: block;
-              width: 100%;
-              line-height: 48px;
-              font-size: 14px;
-            }
+            @include selector();
           }
         }
-      }
+        .contents__btn {
+          margin: 40px 0;
+          &--red {
+            margin: auto 0;
+            @include submit-btn();
+          }
+        }
+        }
     }
   }
 }
