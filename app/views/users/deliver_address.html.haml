@@ -39,6 +39,6 @@
               .contents__form-group__label 建物名
               %span.arbitary 任意
             = f.text_field :name ,class: "form-field", placeholder: "例）テックビル101", value: @user.address.building
-          .contents__btn
-            = f.submit "変更する", class: "contents__btn--red"
+            .main-contents__btn
+              = f.submit "変更する", class: "main-contents__btn--red"
 = render "layouts/footer"

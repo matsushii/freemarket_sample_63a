@@ -44,12 +44,11 @@
           .pre-select{
             @include selector();
           }
-        }
-        .contents__btn {
-          margin: 40px 0;
-          &--red {
-            margin: auto 0;
-            @include submit-btn();
+          &__btn {
+            margin: 40px 0;
+            &--red {
+              @include submit-btn();
+            }
           }
         }
         }
