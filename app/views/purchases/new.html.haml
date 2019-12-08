@@ -1,7 +1,8 @@
 .wrapper 
   .header
     .header__logo
-      merucari
+      = link_to root_path do
+        = image_tag 'logos/fmarket_logo_red.svg', size: "134x40", class: "logo-image"
   .container  
     .body 
       .body__header
@@ -33,19 +34,25 @@
           アプリをお持ちでない方は以下よりインストールしてご利用いただけます。
         .body__main__logo
           .body__main__logo--left
-            appstore
+            = link_to "https://apps.apple.com/jp/app/id667861049?l=ja" do
+              = image_tag 'badges/App_Store_Badge.svg', class: "logo-image"
           .body__main__logo--right
-            googleplay
+            = link_to "https://apps.apple.com/jp/app/id667861049?l=ja" do
+              = image_tag 'badges/google-play-badge.png', size: "134x40", class: "logo-image"
         .address
           %ul
             %li.address__header
               配送先
             %li.address__post-number
-              郵便番号
+              〒#{@user.address.postal_code}
             %li.address__main
-              住所
+              #{@user.address.prefecture} 
+              #{@user.address.city} 
+              #{@user.address.address}
+              #{@user.address.building}
             %li.address__name
-              名前
+              #{current_user.myoji_kanji}
+              #{current_user.namae_kanji}
             %li.address__footer
               = link_to root_path do
                 変更する >
