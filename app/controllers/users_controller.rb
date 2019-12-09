@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :mypage, :identification]
+  before_action :set_user, only: [:show, :edit, :update, :mypage, :identification, :deliver_address]
 
   def mypage
   end
@@ -30,6 +30,9 @@ class UsersController < ApplicationController
   end
 
   def identification
+  end
+
+  def deliver_address
   end
 
   private
