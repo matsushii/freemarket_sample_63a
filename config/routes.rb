@@ -17,6 +17,7 @@ Rails.application.routes.draw do
       get :identification
       get :deliver_address
       get :purchased_trading_items
+      get :exhibit_items
     end
     resources :cards
   end
