@@ -43,6 +43,6 @@
           本人情報確認
       %li.mypage-nav__ul__li
         電話番号の確認
-      = link_to logout_user_path do
+      = link_to logout_user_path(current_user) do
         %li.mypage-nav__ul__li
           ログアウト
