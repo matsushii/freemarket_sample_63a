@@ -4,22 +4,22 @@
 .background
   .show-container.clearfix
     = render "users/side"
-    %section.exhibit__items
-      %h2.exhibit__items--header 出品した商品
-      %ul.exhibit__items--container
-        %li.exhibit__items--container__li
-          %h3.exhibit__items--container__li__title--left
+    %section.exhibit__items__trading
+      %h2.exhibit__items__trading--header 出品した商品
+      %ul.exhibit__items__trading--container
+        %li.exhibit__items__trading--container__li
+          %h3.exhibit__items__trading--container__li__title--left
             = link_to exhibit_items_user_path(current_user) do
               出品中
-        %li.exhibit__items--container__li
-          %h3.exhibit__items--container__li__title--center
+        %li.exhibit__items__trading--container__li
+          %h3.exhibit__items__trading--container__li__title--center
             = link_to exhibit_items_trading_user_path(current_user) do
               取引中
-        %li.exhibit__items--container__li
-          %h3.exhibit__items--container__li__title--right
+        %li.exhibit__items__trading--container__li
+          %h3.exhibit__items__trading--container__li__title--right
             = link_to exhibit_items_sold_user_path(current_user) do
               売却済
-      .exhibit__items--content
+      .exhibit__items__trading--content
         %ul.tab-content__notification
           - @exhibit_items.each do |exhibit_items| 
             %li.tab-content__notification__list

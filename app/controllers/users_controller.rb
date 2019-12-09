@@ -23,7 +23,15 @@ class UsersController < ApplicationController
   end
 
   def exhibit_items
-    @exhibit_items = Purchase.all.order(created_at: "desc").limit(10)
+    @exhibit_items = Item.where(status: 1,user_id: current_user.id).order(created_at: "desc").limit(10)
+  end
+
+  def exhibit_items_trading
+    @exhibit_items = Item.where(status: 2,user_id: current_user.id).order(created_at: "desc").limit(10)
+  end
+
+  def exhibit_items_sold
+    @exhibit_items = Item.where(status: 4,user_id: current_user.id).order(created_at: "desc").limit(10)
   end
 
   def logout
