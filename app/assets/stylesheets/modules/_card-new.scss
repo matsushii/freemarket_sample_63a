@@ -1,0 +1,9 @@
+#payjp_checkout_box input[type=button] {
+  @include submit-btn();
+  background-color: $red;
+}
+.card-exit {
+  text-align: center;
+  font-weight: bold;
+  font-size: 24px;
+}
