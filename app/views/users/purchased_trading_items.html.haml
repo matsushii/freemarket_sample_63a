@@ -20,10 +20,4 @@
           - @purchased_trading_items.each do |purchased_trading_items| 
             %li.tab-content__notification__list
               = "『#{purchased_trading_items.item.name}』を購入しました。取引が完了しました"
-
-            
-            = link_to user_path(current_user) do
-              %figure
-              .tab-content__notification__body
-                -# 後日実装します....
 = render "layouts/footer"
