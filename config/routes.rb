@@ -21,7 +21,7 @@ Rails.application.routes.draw do
       get :exhibit_items_trading
       get :exhibit_items_sold
     end
-    resources :cards, only: [:new]
+    resources :cards, only: [:new, :create]
   end
 
   resources :signup, only: [:index, :create] do
