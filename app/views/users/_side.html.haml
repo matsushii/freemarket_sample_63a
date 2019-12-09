@@ -13,6 +13,7 @@
       = link_to new_item_path do
         %li.mypage-nav__ul__li
           出品する
+      = link_to exhibit_items_user_path(current_user) do
         %li.mypage-nav__ul__li
           出品した商品-出品中
         %li.mypage-nav__ul__li
