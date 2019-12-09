@@ -49,6 +49,22 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:nickname, :introduction)
+    params.require(:user).permit(
+      :nickname,
+      :introduction,
+      :myoji_kanji,
+      :namae_kanji,
+      :myoji_kana,
+      :namae_kana,
+      address_attributes: [
+        :id,
+        :postal_code,
+        :prefecture,
+        :city,
+        :address,
+        :building
+      ]
+    )
   end
 end
+
