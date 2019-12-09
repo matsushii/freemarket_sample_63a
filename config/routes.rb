@@ -15,6 +15,7 @@ Rails.application.routes.draw do
       get :logout
       get :mypage
       get :identification
+      get :deliver_address
       get :purchased_trading_items
     end
     resources :cards

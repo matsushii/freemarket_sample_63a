@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :mypage, :identification]
+  before_action :set_user, only: [:show, :edit, :update, :mypage, :identification, :deliver_address]
 
   def mypage
   end
@@ -22,10 +22,17 @@ class UsersController < ApplicationController
     @purchased_trading_items = Purchase.all.order(created_at: "desc").limit(10)
   end
 
+  def exhibit_items
+    @exhibit_items = Purchase.all.order(created_at: "desc").limit(10)
+  end
+
   def logout
   end
 
   def identification
+  end
+
+  def deliver_address
   end
 
   private

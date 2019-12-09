@@ -4,7 +4,7 @@ class ItemsController < ApplicationController
   before_action :redirect_to_login_page, except: [:index]
 
   def index
-    @items = Item.all #.order(created_at: "desc").limit(10)
+    @items = Item.where(status: 1).order(created_at: "desc").limit(10)
   end
 
   def new
@@ -30,8 +30,9 @@ class ItemsController < ApplicationController
   end
 
   def update
-    if current_user.id == @item.user_id && @item.update(item_params)
-      render :show
+    item = Item.find(params[:id])
+    if item.user_id == current_user.id && item.update(item_params)
+      redirect_to item
     else
       render :edit
     end
@@ -39,7 +40,7 @@ class ItemsController < ApplicationController
   
   def pause
     if @item = Item.find(params[:id])
-    @item.status = (3)
+    @item.status = 3
     @item.save
     redirect_to root_path
     else
@@ -49,7 +50,7 @@ class ItemsController < ApplicationController
   
   def resume
     if @item = Item.find(params[:id])
-    @item.status = (1)
+    @item.status = 1
     @item.save
       redirect_to root_path
     else
@@ -58,10 +59,11 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    if current_user.id == @item.user_id && @item.destroy
-      render :index
+    item = Item.find(params[:id])
+    if current_user.id == item.user_id && item.destroy
+      redirect_to root_path
     else
-      render :edit
+      render :show
     end
   end
 
