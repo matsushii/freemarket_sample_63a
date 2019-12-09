@@ -19,6 +19,8 @@ class PurchasesController < ApplicationController
       customer: @card.customer_id, 
       currency: 'jpy', 
       )
+      @purchase.item.status = 2
+      @purchase.item.save
       if @purchase.save
         redirect_to root_path, notice: '購入が完了しました'
       else

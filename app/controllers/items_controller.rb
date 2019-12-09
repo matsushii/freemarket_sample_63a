@@ -4,7 +4,7 @@ class ItemsController < ApplicationController
   before_action :redirect_to_login_page, except: [:index]
 
   def index
-    @items = Item.all #.order(created_at: "desc").limit(10)
+    @items = Item.where(status: 1).order(created_at: "desc").limit(10)
   end
 
   def new
@@ -40,7 +40,7 @@ class ItemsController < ApplicationController
   
   def pause
     if @item = Item.find(params[:id])
-    @item.status = (3)
+    @item.status = 3
     @item.save
     redirect_to root_path
     else
@@ -50,7 +50,7 @@ class ItemsController < ApplicationController
   
   def resume
     if @item = Item.find(params[:id])
-    @item.status = (1)
+    @item.status = 1
     @item.save
       redirect_to root_path
     else

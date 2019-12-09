@@ -3,6 +3,7 @@
   .news {
     height: 390px;
     background-size: auto;
+    background-image: url('slide/autumn-fes.jpg');
     &__title {
       line-height: 390px;
       margin: 0 auto;
@@ -76,6 +77,23 @@
                     margin: 0;
                     &__info {
                       position: relative;
+                      .hoge {
+                        width: 0;
+                        height: 0;
+                        border-top: 40px solid $red;
+                        border-left: 40px solid $red;
+                        border-right: 40px solid transparent;
+                        border-bottom: 40px solid transparent;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        >p {
+                          margin: -20px 0 0 -35px;
+                          color: $white;
+                          transform: rotate(-45deg);
+                          font-weight: bold;
+                        }
+                      }
                       &--price {
                         position: absolute;
                         bottom: 8px;

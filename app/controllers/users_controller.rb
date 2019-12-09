@@ -22,6 +22,10 @@ class UsersController < ApplicationController
     @purchased_trading_items = Purchase.all.order(created_at: "desc").limit(10)
   end
 
+  def exhibit_items
+    @exhibit_items = Purchase.all.order(created_at: "desc").limit(10)
+  end
+
   def logout
   end
 
