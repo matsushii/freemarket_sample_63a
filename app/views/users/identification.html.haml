@@ -12,7 +12,7 @@
             %p お客さまの本人情報をご登録ください。  
             %p 登録されたお名前・生年月日を変更する場合、本人確認書類の提出が必要になります。
             .contents__header__info
-              = link_to "本人確認書類のアップロードについて >", href: "https://www.mercari.com/jp/help_center/article/495/", class: "info-link"
+              = link_to "本人確認書類のアップロードについて >", "https://www.mercari.com/jp/help_center/article/495/", class: "info-link"
           .contents__form-group
             .contents__form-group__label お名前
             %p.regist-text 
@@ -49,6 +49,5 @@
             .contents__btn
               = f.submit "変更する", class: "contents__btn--red"
             .contents__bottom-info
-              = link_to "本人情報の登録について >", href: "https://www.mercari.com/jp/help_center/article/423", class: "info-link"
-
+              = link_to "本人情報の登録について >", "https://www.mercari.com/jp/help_center/article/423", class: "info-link"
 = render "layouts/footer"
