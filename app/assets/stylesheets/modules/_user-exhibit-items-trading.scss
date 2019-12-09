@@ -1,4 +1,4 @@
-.exhibit__items {
+.exhibit__items__trading {
   width: calc(100% - 320px);
   float: right;
   background-color: $white;
@@ -22,7 +22,8 @@
       &__title--left {
         line-height: 74px;
         >a {
-          border-top: 2px solid #ea352d;
+          // border-top: 2px solid #ea352d;
+          background-color: whitesmoke;
           position: relative;
           display: block;
           color: #333;
@@ -40,8 +41,8 @@
       &__title--center {
         line-height: 74px;
         >a {
-          background-color: whitesmoke;
-          // border-top: 2px solid #ea352d;
+          // background-color: whitesmoke;
+          border-top: 2px solid #ea352d;
           position: relative;
           display: block;
           color: #333;
