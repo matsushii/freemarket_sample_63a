@@ -244,6 +244,7 @@
   background-color: $white;
   padding: 20px 40px;
   box-sizing: border-box;
+  &__container {
     &__header {
       height: 44px;
       padding: 10px;
@@ -252,7 +253,7 @@
     } 
     &__middle {
       height: 104px;
-      width: 620px;
+      width: 100%;
       margin-top: 8px;
       padding: 10px;
       border: 1px solid $icongray;
@@ -260,17 +261,18 @@
     }
     &__footer{
       height: 50px;
-      width: 620px;
+      width: 100%;
       border: 1px solid #aaaaaa;
       background-color: $gray;
       box-sizing: border-box;
-      span {
+      &--text {
         text-align: center;
         color: $white;
         font-size: 14px;  
       }
     }
   }
+}
 .link {
   height: 46px;
   margin: 8px 290px;

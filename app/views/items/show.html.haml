@@ -97,14 +97,15 @@
       .listing__item__change__box--resume
         = link_to '出品を再開する', resume_item_path(@item.id)
       .listing__item__change__box--delete
-        = link_to 'この商品を削除する', item_path(@item.id), method: "delete" 
+        = link_to 'この商品を削container__除する', item_path(@item.id), method: "delete" 
     
   .comments
-    .comments__header
-      相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
-    %textarea.comments__middle
-    %button.comments__footer
-      %span コメントする
+    .comments__container
+      .comments__container__header
+        相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+      %textarea.comments__container__middle
+      %button.comments__container__footer
+        %span.comments__container__footer--text コメントする
 
   .link
     .link__bar
