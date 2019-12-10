@@ -37,11 +37,14 @@
                   %span.require 必須
                 .cat-box__select
                   .top-cat 
-                    = f.select :condition, Item.conditions.keys, {prompt: '---'}, {class: "cat__select"}
+                    = f.select :condition, "", {prompt: '---'}, {class: "cat__select"}
+                    -# 仮置きです
                   .mid-cat
-                    = f.select :condition, Item.conditions.keys, {prompt: '---'},  {class: "cat__select"}
+                    = f.select :condition, "", {prompt: '---'}, {class: "cat__select"}
+                    -# 仮置きです
                   .bot-cat
-                    = f.select :condition, Item.conditions.keys, {prompt: '---'},  {class: "cat__select"}
+                    = f.select :condition, "", {prompt: '---'}, {class: "cat__select"}
+                    -# 仮置きです
               .size-box
                 .size-box__header-box
                   .size-box__header-box__label サイズ
