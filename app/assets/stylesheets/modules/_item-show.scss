@@ -309,16 +309,40 @@
   line-height: 82px;
   text-align: center;
   &__bar {
-    margin-top: 16px;
+    margin: 16px;
     font-size: 44px;
+    display: inline-flex;
     .facebook {
-      color: $facebook;
+      @include sns-icon();
+      .fab.fa-facebook-square {
+        color: $facebook;
+        position: absolute;
+        right: 7px; 
+      }
     }
     .twitter {
-      color: $twitter;
+      @include sns-icon();
+      .fab.fa-twitter {
+        color: $twitter;
+        position: absolute;
+        right: 0px; 
+      }
+    }
+    .line {
+      @include sns-icon();
+      .fab.fa-line {
+        color: $line;
+        position: absolute;
+        right: 0px; 
+      }
     }
     .pinterest {
-      color: $pinterest;
+      @include sns-icon();
+      .fab.fa-pinterest {
+        color: $pinterest;
+        position: absolute;
+        right: -5px; 
+      }
     }
   }
 }
