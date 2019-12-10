@@ -17,16 +17,16 @@
             %th 出品者
             %td
               = link_to "#{@item.user.nickname}", user_path(@item.user_id)
-              .evaluate__icon
-                .evaluate__icon__smile
-                  %i.fa.fa-smile-o
-                  80
-                .evaluate__icon__meh-o
-                  %i.fa.fa-meh-o
-                  50
-                .evaluate__icon__frown
-                  %i.fa.fa-frown-o
-                  30
+              -# .evaluate__icon
+              -#   .evaluate__icon__smile
+              -#     %i.fa.fa-smile-o
+              -#     80
+              -#   .evaluate__icon__meh-o
+              -#     %i.fa.fa-meh-o
+              -#     50
+              -#   .evaluate__icon__frown
+              -#     %i.fa.fa-frown-o
+              -#     30
           %tr
             %th カテゴリー
             %td
@@ -45,24 +45,24 @@
             %td 16cm ・ 16.5cm
           %tr
             %th 商品の状態
-            %td 未使用に近い
+            %td #{@item.condition}
           %tr
             %th 配送料の負担
-            %td 送料込み（出品者負担）
+            %td #{@item.shipping_fee}
           %tr
             %th 配送の方法
             %td らくらくメルカリ便
           %tr
             %th 配送元地域
-            %td= link_to '> 茨城県 ', root_path
+            %td #{@item.shipping_from}
           %tr
             %th 発送日の目安
-            %td 2~3日程度
+            %td #{@item.shipping_date}
 
       .item__price
         %span.item__price__bold ¥#{@item.price.to_s(:delimited)}円
         %span.item__price__tax (税込)
-        %span.item__price__fee 送料込み
+        %span.item__price__fee #{@item.shipping_fee}
     - unless @item.user_id == current_user.id  
       .item-buy-btn 
         .buy-text= link_to '購入画面に進む ', new_item_purchase_path(@item.id)
