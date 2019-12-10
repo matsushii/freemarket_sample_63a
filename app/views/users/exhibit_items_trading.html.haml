@@ -19,12 +19,19 @@
           %h3.exhibit__items__trading--container__li__title--right
             = link_to exhibit_items_sold_user_path(current_user) do
               売却済
-      .exhibit__items__trading--content
-        %ul.tab-content__notification
-          - @exhibit_items.each do |exhibit_items| 
-            %li.tab-content__notification__list
+
+      .exhibit__items__trading__notification
+        %ul.exhibit__items__trading__notification__content
+          - @exhibit_items.each do |exhibit_items|
+            %li.exhibit__items__trading__notification__cotent--list
               = link_to item_path(exhibit_items.id) do
-                %figure
-                .tab-content__notification__body
-                  = exhibit_items.name
+                .exhibit__items__trading__notification__content--product
+                  = image_tag exhibit_items.images.first, size: "48x48", class: "exhibit__items__trading__notification__content--product__image" 
+                  .exhibit__items__trading__notification__content--product__right
+                    %span.exhibit__items__trading__notification__content--product__right__text
+                      = exhibit_items.name
+                    .exhibit__items__trading__notification__content--product__right__status
+                      %span.exhibit__items__trading__notification__content--product__right__status__box
+                        #{exhibit_items.status}
+  = render "layouts/sell-btn"                      
 = render "layouts/footer"

@@ -72,13 +72,4 @@
       }
     }
   }
-  &--content {
-    %ul.tab-content__notification {
-      %li.tab-content__notification__list {
-        display: none;
-          %figure {}
-          .tab-content__notification__body {}
-      }
-    }
-  }
 }

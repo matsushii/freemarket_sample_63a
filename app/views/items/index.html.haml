@@ -38,9 +38,5 @@
                         = image_tag item.images.first, size: "180x180", class: "product__link__thumbnail__info--image"
                       %figcaption.product__caption
                         %span.product__caption--text #{item.name}
-  = link_to new_item_path do
-    .sell_btn
-      %p 出品
-      .sell_icon
-        %i.fa.fa-camera
+  = render "layouts/sell-btn"
 = render "layouts/footer"
