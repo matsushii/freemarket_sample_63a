@@ -129,31 +129,14 @@
   .item__boxes
     .item__boxes__header  
       = link_to "#{@item.user.nickname}さんのその他の商品", user_path(@item.user_id)
-    -# .item__boxes__main
-    -#   %ul.item__boxes__main__lists
-    -#     %li.item__boxes__main__lists__content
-    -#       .item__boxes__main__lists__content--image
-    -#       = image_tag @item.images.first, size: "231x180", class: "item__boxes__main__lists__content--image--size"
-    -#       .item__boxes__main__lists__content__lower
-    -#         .item__boxes__main__lists__content__lower--name #{@item.name}
-    -#         .item__boxes__main__lists__content__lower--price ¥#{@item.price.to_s(:delimited)}
-  .content__box__items
-    %ul.content__box__items__lists
-      - @items.each do |item|
-        %li.content__box__items__lists__list
-          .product 
-            = link_to item_path(item.id), class: "product--link" do
-              %figure.product__link__thumbnail
-                .product__link__thumbnail__info
-                  -# .hoge
-                  -#   %p SOLD
-                  %span.product__link__thumbnail__info--price
-                    ¥#{item.price.to_s(:delimited)}
-                  = image_tag item.images.first, size: "180x180", class: "product__link__thumbnail__info--image"
-                %figcaption.product__caption
-                  %span.product__caption--text #{item.name}  
-          
-          
+    .item__boxes__main
+      %ul.item__boxes__main__lists
+        %li.item__boxes__main__lists__content
+          .item__boxes__main__lists__content--image
+          = image_tag @item.images.first, size: "231x180", class: "item__boxes__main__lists__content--image--size"
+          .item__boxes__main__lists__content__lower
+            .item__boxes__main__lists__content__lower--name #{@item.name}
+            .item__boxes__main__lists__content__lower--price ¥#{@item.price.to_s(:delimited)}
   .item__boxes
     .item__boxes__header  
       = link_to 'ブランドその他商品', item_path
