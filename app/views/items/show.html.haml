@@ -119,23 +119,32 @@
         .link__bar__left--icon
           %i.fa.fa-angle-left
         .link__bar__left--text
-          = link_to ' 専用*9本', root_path
+          = link_to ' 専用*9本', item_path
       .link__bar__right
         .link__bar__right--text
-          = link_to 'レディーアップルシード コート 95 美品', root_path
+          = link_to 'レディーアップルシード コート 95 美品', item_path
         .link__bar__right--icon
           %i.fa.fa-angle-right
         
   .icons
     .icons__bar
-      %i.fab.fa-facebook-square
-      %i.fab.fa-twitter
-      %i.fab.fa-pinterest
+      = link_to "", class: "icons__bar--link" do
+        .facebook
+          %i.fab.fa-facebook-square
+      = link_to "", class: "icons__bar__link" do
+        .twitter
+          %i.fab.fa-twitter
+      = link_to "", class: "icons__bar__link" do
+        .line
+          %i.fab.fa-line
+      = link_to "", class: "icons__bar__link" do
+        .pinterest
+          %i.fab.fa-pinterest
 
   
   .item__boxes
     .item__boxes__header  
-      = link_to "#{@item.user.nickname}さんのその他の商品", user_path
+      = link_to "#{@item.user.nickname}さんのその他の商品", user_path(@item.user_id)
     .item__boxes__main
       %ul.item__boxes__main__lists
         %li.item__boxes__main__lists__content
