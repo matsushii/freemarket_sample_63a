@@ -144,7 +144,7 @@
   
   .item__boxes
     .item__boxes__header  
-      = link_to "#{@item.user.nickname}さんのその他の商品", user_path
+      = link_to "#{@item.user.nickname}さんのその他の商品", user_path(@item.user_id)
     .item__boxes__main
       %ul.item__boxes__main__lists
         %li.item__boxes__main__lists__content
