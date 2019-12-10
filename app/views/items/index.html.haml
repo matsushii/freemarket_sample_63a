@@ -20,9 +20,10 @@
         .content__box__header
           .content__box__header__title
             全アイテム一覧
-          .content__box__header__more
-            もっと見る
-            %i.fa.fa-chevron-right
+          = link_to  "" do 
+            .content__box__header__more
+              もっとみる  
+              %i.fa.fa-chevron-right
         .content__box__items
           %ul.content__box__items__lists
             - @items.each do |item|
