@@ -17,16 +17,6 @@
             %th 出品者
             %td
               = link_to "#{@item.user.nickname}", user_path(@item.user_id)
-              -# .evaluate__icon
-              -#   .evaluate__icon__smile
-              -#     %i.fa.fa-smile-o
-              -#     80
-              -#   .evaluate__icon__meh-o
-              -#     %i.fa.fa-meh-o
-              -#     50
-              -#   .evaluate__icon__frown
-              -#     %i.fa.fa-frown-o
-              -#     30
           %tr
             %th カテゴリー
             %td
@@ -63,11 +53,14 @@
         %span.item__price__bold ¥#{@item.price.to_s(:delimited)}円
         %span.item__price__tax (税込)
         %span.item__price__fee #{@item.shipping_fee}
-    - unless @item.user_id == current_user.id  
+    - if @item.user_id != current_user.id  
       .item-buy-btn 
         .buy-text= link_to '購入画面に進む ', new_item_purchase_path(@item.id)
       .item-description
-        %P #{@item.text}
+        %p #{@item.text}
+    - else 
+      .item-description
+        %p #{@item.text}
       .footer
         .footer__likes
           .footer__likes--icon
@@ -153,8 +146,6 @@
           .item__boxes__main__lists__content__lower
             .item__boxes__main__lists__content__lower--name #{@item.name}
             .item__boxes__main__lists__content__lower--price ¥#{@item.price.to_s(:delimited)}
-          
-          
   .item__boxes
     .item__boxes__header  
       = link_to 'ブランドその他商品', item_path

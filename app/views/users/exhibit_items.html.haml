@@ -26,11 +26,20 @@
               = link_to item_path(exhibit_items.id) do
                 .exhibit__items__notification__content--product
                   = image_tag exhibit_items.images.first, size: "48x48", class: "exhibit__items__notification__content--product__image" 
-                  .exhibit__items__notification__content--product__right
-                    %span.exhibit__items__notification__content--product__right__text
-                      = exhibit_items.name
-                    .exhibit__items__notification__content--product__right__status
-                      %span.exhibit__items__notification__content--product__right__status__box
-                        #{exhibit_items.status}
+                  
+                  - if exhibit_items.status == "出品中"
+                    .exhibit__items__notification__content--product__right
+                      %span.exhibit__items__notification__content--product__right__text
+                        = exhibit_items.name
+                      .exhibit__items__notification__content--product__right__status
+                        %span.exhibit__items__notification__content--product__right__status__box
+                          #{exhibit_items.status}
+                  - elsif exhibit_items.status == "停止中"
+                    .exhibit__items__notification__content--product__right
+                      %span.exhibit__items__notification__content--product__right__text
+                        = exhibit_items.name
+                      .exhibit__items__notification__content--product__right__status
+                        %span.exhibit__items__notification__content--product__right__status__box__gray
+                          #{exhibit_items.status}
   = render "layouts/sell-btn"
 = render "layouts/footer"
