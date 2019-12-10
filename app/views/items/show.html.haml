@@ -17,16 +17,6 @@
             %th 出品者
             %td
               = link_to "#{@item.user.nickname}", user_path(@item.user_id)
-              -# .evaluate__icon
-              -#   .evaluate__icon__smile
-              -#     %i.fa.fa-smile-o
-              -#     80
-              -#   .evaluate__icon__meh-o
-              -#     %i.fa.fa-meh-o
-              -#     50
-              -#   .evaluate__icon__frown
-              -#     %i.fa.fa-frown-o
-              -#     30
           %tr
             %th カテゴリー
             %td
@@ -63,9 +53,12 @@
         %span.item__price__bold ¥#{@item.price.to_s(:delimited)}円
         %span.item__price__tax (税込)
         %span.item__price__fee #{@item.shipping_fee}
-    - unless @item.user_id == current_user.id  
+    - if @item.user_id != current_user.id  
       .item-buy-btn 
         .buy-text= link_to '購入画面に進む ', new_item_purchase_path(@item.id)
+      .item-description
+        %P #{@item.text}
+    - else 
       .item-description
         %P #{@item.text}
       .footer
@@ -135,15 +128,30 @@
   
   .item__boxes
     .item__boxes__header  
-      = link_to "#{@item.user.nickname}さんのその他の商品", user_path
-    .item__boxes__main
-      %ul.item__boxes__main__lists
-        %li.item__boxes__main__lists__content
-          .item__boxes__main__lists__content--image
-          = image_tag @item.images.first, size: "231x180", class: "item__boxes__main__lists__content--image--size"
-          .item__boxes__main__lists__content__lower
-            .item__boxes__main__lists__content__lower--name #{@item.name}
-            .item__boxes__main__lists__content__lower--price ¥#{@item.price.to_s(:delimited)}
+      = link_to "#{@item.user.nickname}さんのその他の商品", user_path(@item.user_id)
+    -# .item__boxes__main
+    -#   %ul.item__boxes__main__lists
+    -#     %li.item__boxes__main__lists__content
+    -#       .item__boxes__main__lists__content--image
+    -#       = image_tag @item.images.first, size: "231x180", class: "item__boxes__main__lists__content--image--size"
+    -#       .item__boxes__main__lists__content__lower
+    -#         .item__boxes__main__lists__content__lower--name #{@item.name}
+    -#         .item__boxes__main__lists__content__lower--price ¥#{@item.price.to_s(:delimited)}
+  .content__box__items
+    %ul.content__box__items__lists
+      - @items.each do |item|
+        %li.content__box__items__lists__list
+          .product 
+            = link_to item_path(item.id), class: "product--link" do
+              %figure.product__link__thumbnail
+                .product__link__thumbnail__info
+                  -# .hoge
+                  -#   %p SOLD
+                  %span.product__link__thumbnail__info--price
+                    ¥#{item.price.to_s(:delimited)}
+                  = image_tag item.images.first, size: "180x180", class: "product__link__thumbnail__info--image"
+                %figcaption.product__caption
+                  %span.product__caption--text #{item.name}  
           
           
   .item__boxes
