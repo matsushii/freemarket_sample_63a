@@ -57,10 +57,10 @@
       .item-buy-btn 
         .buy-text= link_to '購入画面に進む ', new_item_purchase_path(@item.id)
       .item-description
-        %P #{@item.text}
+        %p #{@item.text}
     - else 
       .item-description
-        %P #{@item.text}
+        %p #{@item.text}
       .footer
         .footer__likes
           .footer__likes--icon
