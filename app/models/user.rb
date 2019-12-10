@@ -10,4 +10,6 @@ class User < ApplicationRecord
   
   accepts_nested_attributes_for :address, allow_destroy: true
   validates :nickname, :myoji_kanji, :namae_kanji, :myoji_kana, :namae_kana, :birthday, presence: true
+  validates :introduction, length: {maximum: 1000}
+  validates :nickname, length: {in: 1..20}
 end
