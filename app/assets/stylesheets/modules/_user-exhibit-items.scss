@@ -91,6 +91,16 @@
               border-radius: 2px;
               text-align: center;
             }
+            &__box__gray {
+              width:  50px;
+              padding: 0 6px;
+              display: block;
+              background-color: $gray;
+              color:  $white;
+              font-size: 12px;
+              border-radius: 2px;
+              text-align: center;
+            }
           }
         }
       }
