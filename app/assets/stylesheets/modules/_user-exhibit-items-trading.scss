@@ -81,4 +81,29 @@
       }
     }
   }
+  .exhibit__items__trading__notification {
+    &__content  {
+      &--product {
+        padding: 16px;
+        display: flex;
+        border-bottom: 2px solid $lightgray;
+        &__right  {
+          margin: 0 40px 0 20px;
+          &__status  {
+            margin-top: 5px;
+            &__box  {
+              width:  50px;
+              padding: 0 6px;
+              display: block;
+              background-color: $red;
+              color:  $white;
+              font-size: 12px;
+              border-radius: 2px;
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+  }
 }
