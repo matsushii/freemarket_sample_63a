@@ -21,11 +21,9 @@ Rails.application.routes.draw do
       get :exhibit_items_trading
       get :exhibit_items_sold
     end
-    resources :cards
+    resources :cards, only: [:new, :create]
   end
 
-  get 'cards/new'
-  
   resources :signup, only: [:index, :create] do
     collection do
       get  'step1'
