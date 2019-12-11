@@ -123,25 +123,4 @@
       }
     }
   }
-  .sell_btn{
-    height: 160px;
-    width: 160px;
-    border-radius: 50%;
-    bottom: 32px;
-    right: 32px;
-    background-color: $red;
-    position: fixed;
-    text-align: center;
-    p {
-      padding: 32px 0 0;
-      font-size: 22px;
-      color: white;
-    }
-    .sell_icon {
-      .fa-camera {
-        font-size: 60px;
-        color: white;
-      }
-    }
-  }
 }
