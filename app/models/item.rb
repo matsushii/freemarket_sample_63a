@@ -14,7 +14,7 @@ class Item < ApplicationRecord
       images.each do |image|
         if !image.content_type.in?(%('image/jpg image/jpeg image/png'))
           errors.add(:image, 'jpg/jpeg/pngファイルを添付してください')
-        else image.byte_size > 10.megabytes
+        elsif image.blob.byte_size > 10.megabytes
           errors.add(:image, '容量が大きすぎます')
         end
       end
