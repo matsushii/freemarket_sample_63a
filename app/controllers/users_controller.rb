@@ -19,7 +19,7 @@ class UsersController < ApplicationController
   end
 
   def purchased_trading_items
-    @purchased_trading_items = Purchase.all.order(created_at: "desc").limit(10)
+    @purchased_trading_items = Purchase.where(user_id: current_user.id).order(created_at: "desc").limit(10)
   end
 
   def exhibit_items
