@@ -45,7 +45,7 @@ class ItemsController < ApplicationController
     if @item = Item.find(params[:id])
     @item.status = 3
     @item.save
-    redirect_to item, notice: "商品の出品を停止しました"
+    redirect_to @item, notice: "商品の出品を停止しました"
     else
       render :show, alert: "停止に失敗しました"
     end

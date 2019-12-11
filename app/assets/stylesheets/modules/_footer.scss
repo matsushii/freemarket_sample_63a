@@ -35,8 +35,8 @@
   }
   .footer__lower__wrapper {
     height: 300px;
-    padding: 0 100px;
-    background-color: $black;
+    padding: 0 100px 40px;
+    background-color: $bgblack;
     .footer__lower {
       display: flex;
       &--mercari {
