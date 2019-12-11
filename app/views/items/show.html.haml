@@ -82,15 +82,14 @@
   
   - if @item.user_id == current_user.id && @item.status == "出品中"          
     .listing__item__change__box
-      = link_to edit_item_path(@item.id)
-      %P.listing__item__change__box--edit
-        商品を編集する
+      = link_to edit_item_path(@item.id) do
+        .listing__item__change__box--edit 商品を編集する
       %p.listing__item__change__box--text
         or
-      .listing__item__change__box--pause
-        = link_to '出品を停止する', pause_item_path(@item.id)
-      .listing__item__change__box--delete
-        = link_to 'この商品を削除する', item_path(@item.id), method: "delete" 
+      = link_to pause_item_path(@item.id) do
+        .listing__item__change__box--pause 出品を停止する
+      = link_to item_path(@item.id), method: "delete" do
+        .listing__item__change__box--delete この商品を削除する
   - elsif @item.user_id == current_user.id && @item.status == "停止中"          
     .listing__item__change__box
       .listing__item__change__box--edit
