@@ -1,0 +1,13 @@
+.signup-container
+  = render "signup-header"
+  %main.signup-container__main
+    %section.signup-container__main__container
+      %h2.signup-container__main__container__title 住所入力
+      = form_for @user, url: create_card_signup_index_path, method: :post, html: { class: "signup-container__main__container__form"} do |f|
+        .signup-container__main__container__form__content
+          = hidden_field_tag :current_step, 'step4'
+          = f.fields_for :card do |a|
+            .form-part
+              :plain
+                <script type="text/javascript" src="https://checkout.pay.jp" class="payjp-button" data-payjp= "3b2af2d309980321d4184814ecd6257e123d9cbe" data-key="pk_test_7a80698bf3309ecfeed80515" data-text="カードを追加する" data-submit-text="カードを追加して登録を完了する"></script>
+  = render "signup-footer"
