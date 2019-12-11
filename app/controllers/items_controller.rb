@@ -10,7 +10,7 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
   end
-  
+
   def create
     @item = Item.new(item_params)
     @item.status = 1
@@ -30,14 +30,16 @@ class ItemsController < ApplicationController
   end
 
   def update
-    item = Item.find(params[:id])
-    if item.user_id == current_user.id && item.update(item_params)
-      redirect_to item
+    if @item.user_id == current_user.id && @item.update(item_params)
+      params[:item][:images_blob_ids].each do |image_id|
+        @item.images.find(image_id).purge
+      end
+      redirect_to @item
     else
       render :edit
     end
   end
-  
+
   def pause
     if @item = Item.find(params[:id])
     @item.status = 3
@@ -47,7 +49,7 @@ class ItemsController < ApplicationController
       render :show
     end
   end
-  
+
   def resume
     if @item = Item.find(params[:id])
     @item.status = 1
@@ -96,8 +98,8 @@ class ItemsController < ApplicationController
       :shipping_from,
       :shipping_date,
       :shipping_fee,
+      :images_blob_ids,
       images: []
     ).merge(user_id: current_user.id)
   end
 end
-
