@@ -32,8 +32,10 @@ class ItemsController < ApplicationController
 
   def update
     if @item.user_id == current_user.id && @item.update(item_params)
-      params[:item][:images_blob_ids].each do |image_id|
-        @item.images.find(image_id).purge
+      if params[:item][:images_blob_ids].present? 
+        params[:item][:images_blob_ids].each do |image_id|
+          @item.images.find(image_id).purge
+        end
       end
       redirect_to @item, notice: "商品の編集が完了しました"
     else
