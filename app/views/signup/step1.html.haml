@@ -13,7 +13,9 @@
               %span.form-part__title__require 必須
             = f.text_field :nickname, placeholder: "例)ナオ太郎", class: "form-part__single-field"
             - if @user.errors.any?
-              = @user.errors[:nickname]
+              - @user.errors[:nickname].each do |message|
+                .error-message
+                  = message
           .form-part
             .form-part__title
               = f.label :email, {class: "form-part__title__label"} do
