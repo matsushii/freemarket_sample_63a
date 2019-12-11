@@ -106,23 +106,25 @@
             font-size: 16px; 
           }
     }
-    .item-buy-btn {
-      height: 60px;
-      margin-top: 16px;
-      cursor: pointer;
-      text-align: center;
-      background-color: $red;
-      a {
-        font-size: 24px;
-        line-height: 60px;
-        color: $white;
-        font-weight: 600;
+    .item__buy {
+      >a {
         text-decoration: none;
       }
-    } 
-    .item-description {
-      padding-top: 32px;
-      word-break: break-all;
+      &__btn {
+        height: 60px;
+        margin-top: 16px;
+        cursor: pointer;
+        text-align: center;
+        background-color: $red;
+        color: $white;
+        line-height: 60px;
+        font-size: 24px;
+        font-weight: 600;
+      } 
+      &__description {
+        padding-top: 32px;
+        word-break: break-all;
+      }
     }
     .footer {
       margin-top: 16px;
