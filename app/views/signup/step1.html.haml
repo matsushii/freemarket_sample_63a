@@ -13,7 +13,7 @@
               %span.form-part__title__require 必須
             = f.text_field :nickname, placeholder: "例)ナオ太郎", class: "form-part__single-field"
             - if @user.errors[:nickname].any?
-              %P.error.message ニックネームを入力してください
+              %P.error-message ニックネームを入力してください
           .form-part
             .form-part__title
               = f.label :email, {class: "form-part__title__label"} do
@@ -21,7 +21,7 @@
               %span.form-part__title__require 必須
             = f.email_field :email, autocomplete: "email", placeholder: "PC・携帯どちらでも可", class: "form-part__single-field"
             - if @user.errors[:email].any?
-              %P.error.message メールアドレスを入力してください
+              %P.error-message メールアドレスを入力してください
           .form-part
             .form-part__title
               = f.label :password, {class: "form-part__title__label"} do
@@ -29,7 +29,7 @@
               %span.form-part__title__require 必須
             = f.password_field :password, autocomplete: "new-password", placeholder: "7文字以上", class: "form-part__single-field"
             - if @user.errors[:password].any?
-              %P.error.message パスワードを入力してください
+              %P.error-message パスワードを入力してください
           .form-part
             .form-part__title
               = f.label :password_confirmation, {class: "form-part__title__label"} do
@@ -37,7 +37,7 @@
               %span.form-part__title__require 必須
             = f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "再度入力してください", class: "form-part__single-field"
             - if @user.errors[:password_confirmation].any?
-              %P.error.message パスワード（確認）を入力してください
+              %P.error-message パスワード（確認）を入力してください
           .form-part
             .form-part__title
               %span.form-part__title__label
@@ -51,8 +51,8 @@
               %span.form-part__title__require 必須
             = f.text_field :myoji_kanji, placeholder: "例)福田", class: "form-part__half-field"
             = f.text_field :namae_kanji, placeholder: "例)尚", class: "form-part__half-field"
-            - if @user.errors[:myoji_kanji]||[:namae].any?
-              %P.error.message お名前（全角）を入力してください
+            - if @user.errors[:myoji_kanji].any?
+              %P.error-message お名前（全角）を入力してください
           .form-part
             .form-part__title
               = f.label :myoji_kana, {class: "form-part__title__label"} do
@@ -60,8 +60,8 @@
               %span.form-part__title__require 必須
             = f.text_field :myoji_kana, placeholder: "例)フクダ", class: "form-part__half-field"
             = f.text_field :namae_kana, placeholder: "例)ナオ", class: "form-part__half-field"
-            - if @user.errors[:myoji_kana]||[:namae_kana].any?
-              %P.error.message お名前カナ（全角）を入力してください
+            - if @user.errors[:myoji_kana].any?
+              %P.error-message お名前カナ（全角）を入力してください
           .form-part
             .form-part__title
               = f.label :birthday, {class: "form-part__title__label"} do
