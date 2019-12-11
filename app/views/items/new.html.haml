@@ -16,70 +16,81 @@
               .upload-contents__container
                 .image-upload
                   .image-upload--btn
-                    = f.file_field :images, multiple: true
+                    = f.file_field :images, multiple: true, id: "item_images"
+                  - if @item.errors[:image].any?
+                    %p.error-message
+                      = @item.errors[:image].first
+                  .images-field
           .content__main__box__product
             .name-box
               = f.label "商品名", class: "name-box__label"
               %span.require 必須
-              = f.text_field :name, class: "name-box__filed", placeholder: "商品名（必須40文字まで）"
-              - if @item.errors.any?
-                = @item.errors.full_messages
-            .disc-box
-              = f.label "商品の説明", class: "disc-box__label"
+              = f.text_field :name, class: "name-box__field", placeholder: "商品名（必須40文字まで）"
+              - if @item.errors[:name].any?
+                %p.error-message 正しく入力してください
+            .name-box
+              = f.label "商品の説明", class: "name-box__label"
               %span.require 必須
-              = f.text_area :text, class: "disc-box__textarea", placeholder: "商品の説明（必須1000文字以内）"
-          .content__main__box__detail
+              = f.text_area :text, class: "name-box__textarea", rows: "5", placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"
+              - if @item.errors[:text].any?
+                %p.error-message 正しく入力してください
+          .content__main__box__details
             .side-label 商品の詳細
             .form-container
-              .cat-box
-                .cat-box__header-box
-                  .cat-box__header-box__label カテゴリー
-                  %span.require 必須
-                .cat-box__select
-                  .top-cat 
-                    = f.select :condition, "", {prompt: '---'}, {class: "cat__select"}
-                    -# 仮置きです
-                  .mid-cat
-                    = f.select :condition, "", {prompt: '---'}, {class: "cat__select"}
-                    -# 仮置きです
-                  .bot-cat
-                    = f.select :condition, "", {prompt: '---'}, {class: "cat__select"}
-                    -# 仮置きです
-              .size-box
-                .size-box__header-box
-                  .size-box__header-box__label サイズ
-                  %span.require 必須
-                = f.select :condition, "", {prompt: '---'}, {class: "size-box__select"}
-              -# 現在別ブランチにて実装中なので一旦コメントアウトしておきます
+              -# この後実装するので一旦コメントアウトしております
+              -# .form-box
+              -#   .form-box__header-box
+              -#     .form-box__header-box__label カテゴリー
+              -#     %span.require 必須
+              -#   .form-box__select
+              -#     .top-cat 
+              -#       = f.select :condition, Item.conditions.keys, {prompt: '---'}, {class: "cat__select"}
+              -#     .mid-cat
+              -#       = f.select :condition, Item.conditions.keys, {prompt: '---'},  {class: "cat__select"}
+              -#     .bot-cat
+              -#       = f.select :condition, Item.conditions.keys, {prompt: '---'},  {class: "cat__select"}
+              -# .size-box
+              -#   .size-box__header-box
+              -#     .size-box__header-box__label サイズ
+              -#     %span.require 必須
+              -#   = f.select :condition, Item.conditions.keys, {prompt: '---'}, {class: "size-box__select"}
               -# .brand-box
               -#   .brand-box__header-box
               -#     .brand-box__header-box__label ブランド
               -#     %span.arbitary 任意
               -#   .brand-box__form
               -#     = f.text_field :name ,class: "brand-field", placeholder: "例）シャネル" 
-              .status-box
-                .status-box__header-box
-                  = f.label "商品の状態", class: "status-box__header-box__label"
+              .form-box
+                .form-box__header-box
+                  = f.label "商品の状態", class: "form-box__header-box__label"
                   %span.require 必須
-                = f.select :condition, Item.conditions.keys, {prompt: '---'}, {class: "status-box__select"}
-          .content__main__box__delivery
+                = f.select :condition, Item.conditions.keys, {prompt: '---'}, {class: "form-box__select"}
+                - if @item.errors[:condition].any?
+                  %p.error-message 選択してください
+          .content__main__box__details
             .side-label 配送について
             .form-container
-              .burden-box
-                .burden-box__header-box
-                  = f.label "配送料の負担", class: "burden-box__header-box__label"
+              .form-box
+                .form-box__header-box
+                  = f.label "配送料の負担", class: "form-box__header-box__label"
                   %span.require 必須
-                = f.select :shipping_fee, Item.shipping_fees.keys, {prompt: '---'}, {class: "burden-box__select"}
-              .region-box 
-                .region-box__header-box
-                  = f.label "発送元の地域", class: "header-box__label"
+                = f.select :shipping_fee, Item.shipping_fees.keys, {prompt: '---'}, {class: "form-box__select"}
+                - if @item.errors[:shipping_fee].any?
+                  %p.error-message 選択してください
+              .form-box 
+                .form-box__header-box
+                  = f.label "発送元の地域", class: "form-box__header-box__label"
                   %span.require 必須
-                = f.select :shipping_from, Item.shipping_froms.keys, {prompt: '---'}, {class: "region-box__select"}
-              .days-box
-                .days-box__header-box
-                  = f.label "発送までの日数", class: "header-box__label"
+                = f.select :shipping_from, Item.shipping_froms.keys, {prompt: '---'}, {class: "form-box__select"}
+                - if @item.errors[:shipping_from].any?
+                  %p.error-message 選択してください
+              .form-box
+                .form-box__header-box
+                  = f.label "発送までの日数", class: "form-box__header-box__label"
                   %span.require 必須
-                = f.select :shipping_date, Item.shipping_dates.keys, {prompt: '---'}, {class: "days-box__select"}
+                = f.select :shipping_date, Item.shipping_dates.keys, {prompt: '---'}, {class: "form-box__select"}
+                - if @item.errors[:shipping_date].any?
+                  %p.error-message 選択してください
           .content__main__box__price
             .side-label 販売価格(300〜9,999,999)    
             .form-container
@@ -91,6 +102,8 @@
                   .price-box__right__yen  ¥
                   .price-box__right__field
                     = f.text_field :price, class: "price-field", placeholder: "（例）300" 
+                    - if @item.errors[:price].any?
+                      %p.error-message 正しく入力してください
               .fee
                 .fee__label
                   販売手数料(10%)
