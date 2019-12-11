@@ -15,8 +15,9 @@ class ItemsController < ApplicationController
     @item = Item.new(item_params)
     @item.status = 1
     if @item.save
-      redirect_to root_path
+      redirect_to root_path, notice: "商品の出品が完了しました"
     else
+      flash.now[:alert] = "出品に失敗しました"
       render :new
     end
   end
@@ -34,9 +35,9 @@ class ItemsController < ApplicationController
       params[:item][:images_blob_ids].each do |image_id|
         @item.images.find(image_id).purge
       end
-      redirect_to @item
+      redirect_to @item, notice: "商品の編集が完了しました"
     else
-      render :edit
+      render :edit, alert: "編集に失敗しました"
     end
   end
 
@@ -44,9 +45,9 @@ class ItemsController < ApplicationController
     if @item = Item.find(params[:id])
     @item.status = 3
     @item.save
-    redirect_to root_path
+    redirect_to item, notice: "商品の出品を停止しました"
     else
-      render :show
+      render :show, alert: "停止に失敗しました"
     end
   end
 
@@ -54,18 +55,18 @@ class ItemsController < ApplicationController
     if @item = Item.find(params[:id])
     @item.status = 1
     @item.save
-      redirect_to root_path
+      redirect_to item, notice: "商品の出品を再開しました"
     else
-      render :show
+      render :show, alert: "出品再開に失敗しました"
     end
   end
 
   def destroy
     item = Item.find(params[:id])
     if current_user.id == item.user_id && item.destroy
-      redirect_to root_path
+      redirect_to root_path, notice: "商品を削除しました"
     else
-      render :show
+      render :show, alert: "削除に失敗しました"
     end
   end
 
