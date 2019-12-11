@@ -20,9 +20,10 @@
         .content__box__header
           .content__box__header__title
             全アイテム一覧
-          .content__box__header__more
-            もっと見る
-            %i.fa.fa-chevron-right
+          = link_to  "" do 
+            .content__box__header__more
+              もっとみる  
+              %i.fa.fa-chevron-right
         .content__box__items
           %ul.content__box__items__lists
             - @items.each do |item|
@@ -31,16 +32,12 @@
                   = link_to item_path(item.id), class: "product--link" do
                     %figure.product__link__thumbnail
                       .product__link__thumbnail__info
-                        .hoge
-                          %p SOLD
+                        -# .hoge
+                        -#   %p SOLD
                         %span.product__link__thumbnail__info--price
                           ¥#{item.price.to_s(:delimited)}
                         = image_tag item.images.first, size: "180x180", class: "product__link__thumbnail__info--image"
                       %figcaption.product__caption
                         %span.product__caption--text #{item.name}
-  .sell_btn
-    = link_to new_item_path do
-      %p 出品
-      .sell_icon
-        %i.fa.fa-camera
+  = render "layouts/sell-btn"
 = render "layouts/footer"

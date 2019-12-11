@@ -1,4 +1,4 @@
-.purchased__trading__items {
+.exhibit__items__trading {
   width: calc(100% - 320px);
   float: right;
   background-color: $white;
@@ -22,6 +22,26 @@
       &__title--left {
         line-height: 74px;
         >a {
+          // border-top: 2px solid #ea352d;
+          background-color: whitesmoke;
+          position: relative;
+          display: block;
+          color: #333;
+          font-size: 16px;
+          line-height: 72px;
+          font-weight: bold;
+        }
+      }
+    }
+    &__li {
+      width: 50%;
+      text-align: center;
+      display: inline-block;
+      vertical-align: top;
+      &__title--center {
+        line-height: 74px;
+        >a {
+          // background-color: whitesmoke;
           border-top: 2px solid #ea352d;
           position: relative;
           display: block;
@@ -41,6 +61,7 @@
         line-height: 74px;
         >a {
           background-color: whitesmoke;
+          // border-top: 2px solid #ea352d;
           position: relative;
           display: block;
           color: #333;
@@ -51,7 +72,16 @@
       }
     }
   }
-  .purchaed__trading__items__notification {
+  &--content {
+    %ul.tab-content__notification {
+      %li.tab-content__notification__list {
+        display: none;
+          %figure {}
+          .tab-content__notification__body {}
+      }
+    }
+  }
+  .exhibit__items__trading__notification {
     &__content  {
       &--product {
         padding: 16px;

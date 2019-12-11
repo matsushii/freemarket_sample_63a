@@ -17,12 +17,13 @@ Rails.application.routes.draw do
       get :identification
       get :deliver_address
       get :purchased_trading_items
+      get :exhibit_items
+      get :exhibit_items_trading
+      get :exhibit_items_sold
     end
-    resources :cards
+    resources :cards, only: [:new, :create]
   end
 
-  get 'cards/new'
-  
   resources :signup, only: [:index, :create] do
     collection do
       get  'step1'

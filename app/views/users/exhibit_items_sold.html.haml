@@ -1,0 +1,31 @@
+= render "layouts/header"
+- breadcrumb :exhibit_items_sold
+= render "layouts/breadcrumbs"
+.background
+  .show-container.clearfix
+    = render "users/side"
+    %section.exhibit__items__sold
+      %h2.exhibit__items__sold--header 出品した商品
+      %ul.exhibit__items__sold--container
+        %li.exhibit__items__sold--container__li
+          %h3.exhibit__items__sold--container__li__title--left
+            = link_to exhibit_items_user_path(current_user) do
+              出品中
+        %li.exhibit__items__sold--container__li
+          %h3.exhibit__items__sold--container__li__title--center
+            = link_to exhibit_items_trading_user_path(current_user) do
+              取引中
+        %li.exhibit__items__sold--container__li
+          %h3.exhibit__items__sold--container__li__title--right
+            = link_to exhibit_items_sold_user_path(current_user) do
+              売却済
+      .exhibit__items__sold--content
+        %ul.tab-content__notification
+          - @exhibit_items.each do |exhibit_items| 
+            %li.tab-content__notification__list
+              = link_to item_path(exhibit_items.id) do
+                %figure
+                .tab-content__notification__body
+                  = exhibit_items.name
+  = render "layouts/sell-btn"
+= render "layouts/footer"

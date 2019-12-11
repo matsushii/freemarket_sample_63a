@@ -1,33 +1,45 @@
 = render "layouts/header"
--# - breadcrumb :logout
+- breadcrumb :exhibit_items
 = render "layouts/breadcrumbs"
 .background
   .show-container.clearfix
     = render "users/side"
     %section.exhibit__items
-      %h2.exhibit__items--header 購入した商品
+      %h2.exhibit__items--header 出品した商品
       %ul.exhibit__items--container
         %li.exhibit__items--container__li
           %h3.exhibit__items--container__li__title--left
-            = link_to user_path(current_user) do
+            = link_to exhibit_items_user_path(current_user) do
               出品中
         %li.exhibit__items--container__li
-          %h3.exhibit__items--container__li__title--right
-            = link_to user_path(current_user) do
+          %h3.exhibit__items--container__li__title--center
+            = link_to exhibit_items_trading_user_path(current_user) do
               取引中
         %li.exhibit__items--container__li
           %h3.exhibit__items--container__li__title--right
-            = link_to user_path(current_user) do
+            = link_to exhibit_items_sold_user_path(current_user) do
               売却済
-      .exhibit__items--content
-        %ul.tab-content__notification
-          - @exhibit_items.each do |exhibit_items| 
-            %li.tab-content__notification__list
-              = "『#{exhibit_items.item.name}』を購入しました。取引が完了しました"
-
-            
-            = link_to user_path(current_user) do
-              %figure
-              .tab-content__notification__body
-                -# 後日実装します....
+      .exhibit__items__notification
+        %ul.exhibit__items__notification__content
+          - @exhibit_items.each do |exhibit_items|
+            %li.exhibit__items__notification__cotent--list
+              = link_to item_path(exhibit_items.id) do
+                .exhibit__items__notification__content--product
+                  = image_tag exhibit_items.images.first, size: "48x48", class: "exhibit__items__notification__content--product__image" 
+                  
+                  - if exhibit_items.status == "出品中"
+                    .exhibit__items__notification__content--product__right
+                      %span.exhibit__items__notification__content--product__right__text
+                        = exhibit_items.name
+                      .exhibit__items__notification__content--product__right__status
+                        %span.exhibit__items__notification__content--product__right__status__box
+                          #{exhibit_items.status}
+                  - elsif exhibit_items.status == "停止中"
+                    .exhibit__items__notification__content--product__right
+                      %span.exhibit__items__notification__content--product__right__text
+                        = exhibit_items.name
+                      .exhibit__items__notification__content--product__right__status
+                        %span.exhibit__items__notification__content--product__right__status__box__gray
+                          #{exhibit_items.status}
+  = render "layouts/sell-btn"
 = render "layouts/footer"
