@@ -5,7 +5,6 @@ $(document).on('turbolinks:load', function() {
     $.each(files, function(i, file) {
       d = d.then(function(){return previewImage(file)});
     });
-    // $('#item_images').val('');
   })
 
   var previewImage = function(imageFile){
