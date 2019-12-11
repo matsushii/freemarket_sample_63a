@@ -55,16 +55,26 @@ class SignupController < ApplicationController
   end
 
   def save_step1_to_session
-    session[:user_params_afeter_step1] = user_params #step1で入力された情報を入れる
-    @user = User.new(session[:user_params_afeter_step1])
-    render '/signup/step1' unless @user.valid?
+    if params[:user].blank?
+      @user = User.new
+      render '/signup/step1'
+    else
+      session[:user_params_afeter_step1] = user_params #step1で入力された情報を入れる
+      @user = User.new(session[:user_params_afeter_step1])
+      render '/signup/step1' unless @user.valid?
+    end
   end
   
   def save_step2_to_session
-    session[:user_params_afeter_step2] = user_params #step2で入力された情報をいれる
-    session[:user_params_afeter_step2].merge!(session[:user_params_afeter_step1])
-    @user = User.new
-    render '/signup/step2' unless user_params[:phone_number].present?
+    if params[:user].blank?
+      @user = User.new
+      render '/signup/step1' # unless user_params[:phone_number].present?
+    else
+      session[:user_params_afeter_step2] = user_params #step2で入力された情報をいれる
+      session[:user_params_afeter_step2].merge!(session[:user_params_afeter_step1])
+      @user = User.new
+      render '/signup/step1' unless user_params[:phone_number].present?
+    end
   end
   
 end
