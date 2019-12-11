@@ -2,7 +2,8 @@
 
 .details
   .detail
-    .detail__header #{@item.name}
+    .detail__header 
+      = truncate @item.name, length:40
     .detail__body
       .detail__body--left 
         .items-photo__upper
@@ -97,7 +98,7 @@
       .listing__item__change__box--resume
         = link_to '出品を再開する', resume_item_path(@item.id)
       .listing__item__change__box--delete
-        = link_to 'この商品を削container__除する', item_path(@item.id), method: "delete" 
+        = link_to 'この商品を削除する', item_path(@item.id), method: "delete" 
     
   .comments
     .comments__container
@@ -145,7 +146,8 @@
           .item__boxes__main__lists__content--image
           = image_tag @item.images.first, size: "231x180", class: "item__boxes__main__lists__content--image--size"
           .item__boxes__main__lists__content__lower
-            .item__boxes__main__lists__content__lower--name #{@item.name}
+            .item__boxes__main__lists__content__lower--name 
+            = truncate(@item.name, length:22)
             .item__boxes__main__lists__content__lower--price ¥#{@item.price.to_s(:delimited)}
   .item__boxes
     .item__boxes__header  

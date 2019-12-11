@@ -19,7 +19,7 @@
         %ul.purchaed__trading__items__notification__content
           - @purchased_trading_items.each do |purchased_trading_items|
             %li.purchaed__trading__items__notification__cotent--list
-              = link_to item_path(purchased_trading_items.id) do
+              = link_to item_path(purchased_trading_items.item_id) do
                 .purchaed__trading__items__notification__content--product
                   = image_tag purchased_trading_items.item.images.first, size: "48x48", class: "purchased__trading__items__notification__content--product__image" 
                   .purchaed__trading__items__notification__content--product__right
