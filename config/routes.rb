@@ -26,11 +26,13 @@ Rails.application.routes.draw do
 
   resources :signup, only: [:index, :create] do
     collection do
-      get  'step1'
+      get  'step1' #ユーザー基本情報の入力
       get  'step2'
-      post 'step2'
-      get 'step3' #入力が全て完了
+      post 'step2' #電話番号の入力（SMS認証は未実装）
+      get  'step3'
       post 'step3' #入力が全て完了
+      get  'step4' #payjpでカードを登録する
+      post 'create_card' #payjpでカードを登録する
       get  'complete' #登録完了後
     end
   end
