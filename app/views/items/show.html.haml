@@ -9,7 +9,7 @@
         %ul.items-photo__lower__top
           %li.items-photo__lower__top__box
           - @item.images.each do |image|
-            = image_tag image,size: "60x60", class: "items-photo__lower__top__box--slide"
+            = image_tag image.variant(resize: "60x60"), class: "items-photo__lower__top__box--slide"
       .detail__body--right
         %table
           %tr
