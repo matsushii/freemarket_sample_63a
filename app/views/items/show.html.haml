@@ -85,7 +85,7 @@
       %p.listing__item__change__box--text
         or
       .listing__item__change__box--pause
-        = link_to '出品を停止する', pause_item_path(@item.id)
+        = link_to '出品を停止する', pause_item_path(@item.id), data: {turbolinks: false}
       .listing__item__change__box--delete
         = link_to 'この商品を削除する', item_path(@item.id), method: "delete" 
   - elsif @item.user_id == current_user.id && @item.status == "停止中"          
@@ -95,7 +95,7 @@
       %p.listing__item__change__box--text
         or
       .listing__item__change__box--resume
-        = link_to '出品を再開する', resume_item_path(@item.id)
+        = link_to '出品を再開する', resume_item_path(@item.id), data: {turbolinks: false}
       .listing__item__change__box--delete
         = link_to 'この商品を削container__除する', item_path(@item.id), method: "delete" 
     
