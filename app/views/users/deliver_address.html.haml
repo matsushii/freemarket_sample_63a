@@ -1,5 +1,5 @@
 = render "layouts/header"
-- breadcrumb :mypage
+- breadcrumb :deliver_address_user
 = render "layouts/breadcrumbs"
 .background
   .show-container.clearfix
@@ -9,36 +9,38 @@
       .show-container__main__container
         = form_with(model: @user, local: true) do |f|
           .main-contents
-            .main-contents__form-group
-              .main-contents__form-group__label お名前（全角）
-              %span.require 必須
-            = f.text_field :myoji_kanji, placeholder: "例)福田", class: "form-field-half", value: @user.myoji_kanji
-            = f.text_field :namae_kanji, placeholder: "例)尚", class: "form-field-half", value: @user.namae_kanji
-            .main-contents__form-group
-              .contents__form-group__label  お名前カナ（全角）
-              %span.require 必須
-            = f.text_field :myoji_kana, placeholder: "例)フクダ", class: "form-field-half", value: @user.myoji_kana
-            = f.text_field :namae_kana, placeholder: "例)ナオ", class: "form-field-half", value: @user.namae_kana
-            .main-contents__form-group
-              .contents__form-group__label 郵便番号
-              %span.require 必須
-            = f.text_field :name ,class: "form-field", placeholder: "例）1234567" , class: "form-field", value: @user.address.postal_code
-            .main-contents__form-group
-              .contents__form-group__label 都道府県
-              %span.require 必須
-            = f.select :prefecture, Address.prefectures.keys, {prompt: @user.address.prefecture}, class: "pre-select"
-            .main-contents__form-group
-              .contents__form-group__label 市区町村
-              %span.require 必須
-            = f.text_field :name ,class: "form-field", placeholder: "例）例)渋谷区南平台町", value: @user.address.city
-            .main-contents__form-group
-              .contents__form-group__label 番地
-              %span.require 必須
-            = f.text_field :name ,class: "form-field", placeholder: "例）1-1-1", value: @user.address.address
-            .main-contents__form-group
-              .contents__form-group__label 建物名
-              %span.arbitary 任意
-            = f.text_field :name ,class: "form-field", placeholder: "例）テックビル101", value: @user.address.building
-            .main-contents__btn
-              = f.submit "変更する", class: "main-contents__btn--red"
+            = f.fields_for :address do |a|
+              .main-contents__form-group
+                .main-contents__form-group__label お名前（全角）
+                %span.require 必須
+              = a.text_field :myoji_kanji, placeholder: "例)福田", class: "form-field-half", value: @user.myoji_kanji
+              = a.text_field :namae_kanji, placeholder: "例)尚", class: "form-field-half", value: @user.namae_kanji
+              .main-contents__form-group
+                .contents__form-group__label  お名前カナ（全角）
+                %span.require 必須
+              = a.text_field :myoji_kana, placeholder: "例)フクダ", class: "form-field-half", value: @user.myoji_kana
+              = a.text_field :namae_kana, placeholder: "例)ナオ", class: "form-field-half", value: @user.namae_kana
+              .main-contents__form-group
+                .contents__form-group__label 郵便番号
+                %span.require 必須
+              = a.text_field :postal_code ,class: "form-field", placeholder: "例）1234567" , class: "form-field", value: @user.address.postal_code
+              .main-contents__form-group
+                .contents__form-group__label 都道府県
+                %span.require 必須
+              = a.select :prefecture, Address.prefectures.keys, {prompt: @user.address.prefecture}, class: "pre-select"
+              .main-contents__form-group
+                .contents__form-group__label 市区町村
+                %span.require 必須
+              = a.text_field :city ,class: "form-field", placeholder: "例）例)渋谷区南平台町", value: @user.address.city
+              .main-contents__form-group
+                .contents__form-group__label 番地
+                %span.require 必須
+              = a.text_field :address ,class: "form-field", placeholder: "例）1-1-1", value: @user.address.address
+              .main-contents__form-group
+                .contents__form-group__label 建物名
+                %span.arbitary 任意
+              = a.text_field :building ,class: "form-field", placeholder: "例）テックビル101", value: @user.address.building
+              .main-contents__btn
+                = f.submit "変更する", class: "main-contents__btn--red"
+  = render "layouts/sell-btn"
 = render "layouts/footer"

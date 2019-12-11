@@ -2,13 +2,48 @@ crumb :root do
   link "メルカリ", root_path
 end
 
+crumb :username do
+  link "ユーザー情報", user_path
+  parent :root
+end
+
 crumb :mypage do
   link "マイページ", user_path(id: current_user.id)
   parent :root
 end
 
+crumb :exhibit_items do
+  link "出品した商品-出品中", exhibit_items_user_path(id: current_user.id)
+  parent :mypage
+end
+
+crumb :exhibit_items_trading do
+  link "出品した商品-取引中", exhibit_items_trading_user_path(id: current_user.id)
+  parent :mypage
+end
+
+crumb :exhibit_items_sold do
+  link "出品した商品-売却済み", exhibit_items_sold_user_path(id: current_user.id)
+  parent :mypage
+end
+
+crumb :purchased_trading_items_user do
+  link "購入した商品-取引中", purchased_trading_items_user_path(id: current_user.id)
+  parent :mypage
+end
+
 crumb :profile do
   link "プロフィール", edit_user_path(id: current_user.id)
+  parent :mypage
+end
+
+crumb :deliver_address_user do
+  link "発送元・お届け先住所変更", deliver_address_user_path(id: current_user.id)
+  parent :mypage
+end
+
+crumb :identification_user do
+  link "本人情報の登録", identification_user_path(id: current_user.id)
   parent :mypage
 end
 
@@ -17,10 +52,6 @@ crumb :logout do
   parent :mypage
 end
 
-crumb :username do
-  link "ユーザー情報", user_path
-  parent :root
-end
 # crumb :projects do
 #   link "Projects", projects_path
 # end
