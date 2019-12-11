@@ -8,7 +8,6 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-    -# -if flash[:notice] 
-    -#   = flash[:notice] 
-    = render 'layouts/notifications'
+    -if flash[:notice]  || flash[:alert]
+      = render 'layouts/notifications'
     = yield
