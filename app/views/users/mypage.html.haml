@@ -22,11 +22,11 @@
         %ul.mypage-tabs
           %li.mypage-tabs__li
             %h3.mypage-tabs__li__title
-              = link_to user_path(current_user) do
+              = link_to mypage_user_path(current_user) do
                 お知らせ
           %li.mypage-tabs__li
             %h3.mypage-tabs__li__title
-              = link_to user_path(current_user) do
+              = link_to mypage_user_path(current_user) do
                 やることリスト
         .tab-content
           %ul.tab-content__notification
