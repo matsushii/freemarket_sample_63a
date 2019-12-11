@@ -12,4 +12,6 @@ class User < ApplicationRecord
   validates :nickname, :myoji_kanji, :namae_kanji, :myoji_kana, :namae_kana, :birthday, presence: true
   validates :myoji_kana, presence: true,format: { with: /\A[\p{katakana}\p{blank}ー－]+\z/}
   validates :namae_kana, presence: true,format: { with: /\A[\p{katakana}\p{blank}ー－]+\z/}
+  validates :introduction, length: {maximum: 1000}
+  validates :nickname, length: {in: 1..20}
 end

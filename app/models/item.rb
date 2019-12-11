@@ -1,13 +1,28 @@
 class Item < ApplicationRecord
   belongs_to :user
   has_one :purchase
-  # jsを使った画像編集や削除の実装次第で今後使うかもしれないので残しておきますが、このブランチが
-  # has_many :images, dependent: :destroy
-  # accepts_nested_attributes_for :images, allow_destroy: true
   has_many_attached :images
 
-  validates :name, presence: true
-  
+  validates :name, presence: true, length: { in: 1..40}
+  validates :text, presence: true, length: { in: 1..1000}
+  validates :condition, :shipping_fee, :shipping_from, :shipping_date, presence: true
+  validates :price, presence: true, numericality: {greater_than_or_equal_to: 300}, numericality: {less_than_or_equal_to: 9999999}
+  validate  :image_presence
+
+  def image_presence
+    if images.attached?
+      images.each do |image|
+        if !image.content_type.in?(%('image/jpg image/jpeg image/png'))
+          errors.add(:image, 'jpg/jpeg/pngファイルを添付してください')
+        else image.byte_size > 10.megabytes
+          errors.add(:image, '容量が大きすぎます')
+        end
+      end
+    else
+      errors.add(:image, 'ファイルを添付してください')
+    end
+  end
+
   def self.search(search) 
     if search 
       Item.where('name LIKE ?', "%#{search}%")
