@@ -38,6 +38,7 @@
                           ¥#{item.price.to_s(:delimited)}
                         = image_tag item.images.first, size: "180x180", class: "product__link__thumbnail__info--image"
                       %figcaption.product__caption
-                        %span.product__caption--text #{item.name}
+                        %span.product__caption--text 
+                        = truncate(item.name, length:22)
   = render "layouts/sell-btn"
 = render "layouts/footer"

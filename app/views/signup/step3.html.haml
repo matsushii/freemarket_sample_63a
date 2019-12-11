@@ -13,32 +13,32 @@
                   郵便番号
                 %span.form-part__title__require 必須
               = a.text_field :postal_code, placeholder: "例)123-4567", class: "form-part__single-field"
-              - if @user.errors.any?
-                = @user.errors[:postal_code]
+              - if @user.errors[:postal_code].any?
+                %P.error-message 郵便番号を入力してください
             .form-part
               .form-part__title
                 = a.label :prefecture, {class: "form-part__title__label"} do
                   都道府県
                 %span.form-part__title__require 必須
               = a.select :prefecture, Address.prefectures.keys, {prompt: '選択してください'}, class: "form-part__single-field"
-              - if @user.errors.any?
-                = @user.errors[:prefecture]
+              - if @user.errors[:prefecture].any?
+                %P.error-message 都道府県を入力してください
             .form-part
               .form-part__title
                 = a.label :city, {class: "form-part__title__label"} do
                   市区町村
                 %span.form-part__title__require 必須
               = a.text_field :city, placeholder: "例)渋谷区南平台町", class: "form-part__single-field"
-              - if @user.errors.any?
-                = @user.errors[:city]
+              - if @user.errors[:city].any?
+                %P.error-message 市区町村を入力してください
             .form-part
               .form-part__title
                 = a.label :address, {class: "form-part__title__label"} do
                   番地
                 %span.form-part__title__require 必須
               = a.text_field :address, placeholder: "例)1-1-1", class: "form-part__single-field"
-              - if @user.errors.any?
-                = @user.errors[:address]
+              - if @user.errors[:address].any?
+                %P.error-message 番地を入力してください
             .form-part
               .form-part__title
                 = a.label :building, {class: "form-part__title__label"} do

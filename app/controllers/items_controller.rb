@@ -57,7 +57,7 @@ class ItemsController < ApplicationController
     if @item = Item.find(params[:id])
     @item.status = 1
     @item.save
-      redirect_to item, notice: "商品の出品を再開しました"
+      redirect_to @item, notice: "商品の出品を再開しました"
     else
       render :show, alert: "出品再開に失敗しました"
     end

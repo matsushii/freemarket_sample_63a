@@ -44,7 +44,7 @@ class SignupController < ApplicationController
       redirect_to step4_signup_index_path
       sign_in @user
     else
-      render '/signup/step1'
+      render '/signup/step3'
     end
   end
   
