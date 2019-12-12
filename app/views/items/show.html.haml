@@ -45,7 +45,8 @@
             %td らくらくメルカリ便
           %tr
             %th 配送元地域
-            %td #{@item.shipping_from}
+            %td 
+              = link_to "#{@item.shipping_from}", prefecture_item_path
           %tr
             %th 発送日の目安
             %td #{@item.shipping_date}
@@ -54,14 +55,22 @@
         %span.item__price__bold ¥#{@item.price.to_s(:delimited)}円
         %span.item__price__tax (税込)
         %span.item__price__fee #{@item.shipping_fee}
-    - if @item.user_id != current_user.id  
-      .item-buy-btn 
-        .buy-text= link_to '購入画面に進む ', new_item_purchase_path(@item.id)
-      .item-description
-        %p #{@item.text}
+    - if @item.user_id != current_user.id  && @item.status == "出品中"
+      = link_to new_item_purchase_path(@item.id), class: "item__buy" do 
+        .item__buy__btn 
+          %p.buy-text 購入画面に進む 
+        .item__buy__description
+          %p #{@item.text}
+    - elsif @item.status == "取引中"
+      .item__buy
+        .item__buy__btn 
+          %p.buy-text ご購入有難う御座いました
+        .item__buy__description
+          %p #{@item.text}
     - else 
-      .item-description
+      .item__buy__description
         %p #{@item.text}
+
       .footer
         .footer__likes
           .footer__likes--icon
@@ -81,14 +90,14 @@
   
   - if @item.user_id == current_user.id && @item.status == "出品中"          
     .listing__item__change__box
-      .listing__item__change__box--edit
-        = link_to '商品を編集する', edit_item_path(@item.id)
+      = link_to edit_item_path(@item.id) do
+        .listing__item__change__box--edit 商品を編集する
       %p.listing__item__change__box--text
         or
-      .listing__item__change__box--pause
-        = link_to '出品を停止する', pause_item_path(@item.id), data: {turbolinks: false}
-      .listing__item__change__box--delete
-        = link_to 'この商品を削除する', item_path(@item.id), method: "delete" 
+      = link_to pause_item_path(@item.id), data: {turbolinks: false} do
+        .listing__item__change__box--pause 出品を停止する
+      = link_to item_path(@item.id), method: "delete" do
+        .listing__item__change__box--delete この商品を削除する
   - elsif @item.user_id == current_user.id && @item.status == "停止中"          
     .listing__item__change__box
       .listing__item__change__box--edit
