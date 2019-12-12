@@ -94,7 +94,7 @@
         .listing__item__change__box--edit 商品を編集する
       %p.listing__item__change__box--text
         or
-      = link_to pause_item_path(@item.id) do
+      = link_to pause_item_path(@item.id), data: {turbolinks: false} do
         .listing__item__change__box--pause 出品を停止する
       = link_to item_path(@item.id), method: "delete" do
         .listing__item__change__box--delete この商品を削除する
@@ -105,7 +105,7 @@
       %p.listing__item__change__box--text
         or
       .listing__item__change__box--resume
-        = link_to '出品を再開する', resume_item_path(@item.id)
+        = link_to '出品を再開する', resume_item_path(@item.id), data: {turbolinks: false}
       .listing__item__change__box--delete
         = link_to 'この商品を削除する', item_path(@item.id), method: "delete" 
     
