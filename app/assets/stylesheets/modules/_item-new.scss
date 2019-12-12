@@ -19,11 +19,11 @@
         &__box {
           &__header {
             .main{
-            font-size: 22px;
-            font-weight: bold;
-            text-align: center;
-            line-height: 1.5;
-            padding: 32px 16px;
+              font-size: 22px;
+              font-weight: bold;
+              text-align: center;
+              line-height: 1.5;
+              padding: 32px 16px;
             }
           }
           &__upload {
@@ -141,27 +141,15 @@
                 &__select {
                   @include selector();
                 }
-
               }
-              .brand-box {
+              .brands-box {
                 &__header-box {
                   &__label {
-                    @include side-label();
+                    @include form-label();
                   }
-                  .arbitary {
-                    line-height: 16px;
-                    background-color: $icongray;
-                    margin: 0 0 0 8px;
-                    padding: 2px 4px;
-                    border-radius: 2px;
-                    font-size: 12px;
-                    color: $white;
-                  } 
                 }
-                &__form {
-                  .brand-field{
-                    @include single_field();
-                  }
+                &__select {
+                  @include selector();
                 }
               }
               .status-box {
@@ -192,6 +180,9 @@
               .form-box {
                 margin-top: 40px;
                 &__header-box {
+                  .arbitary {
+                    @include arbitary();  
+                  }
                   &__label {
                     font-weight: 600;
                     margin-top: 8px;

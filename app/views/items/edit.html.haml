@@ -60,12 +60,11 @@
               -#     .size-box__header-box__label サイズ
               -#     %span.require 必須
               -#   = f.select :condition, Item.conditions.keys, {prompt: '---'}, {class: "size-box__select"}
-              -# .brand-box
-              -#   .brand-box__header-box
-              -#     .brand-box__header-box__label ブランド
-              -#     %span.arbitary 任意
-              -#   .brand-box__form
-              -#     = f.text_field :name ,class: "brand-field", placeholder: "例）シャネル" 
+              .form-box
+                .form-box__header-box
+                  = f.label "ブランド", class: "form-box__header-box__label"
+                  %span.arbitary 任意
+                = f.collection_select :brand_id, @brands, :id, :name, {selected: @item.brand_id}, {class: "form-box__select"}
               .form-box
                 .form-box__header-box
                   = f.label "商品の状態", class: "form-box__header-box__label"
