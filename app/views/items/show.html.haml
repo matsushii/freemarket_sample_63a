@@ -45,7 +45,8 @@
             %td らくらくメルカリ便
           %tr
             %th 配送元地域
-            %td #{@item.shipping_from}
+            %td 
+              = link_to "#{@item.shipping_from}", prefecture_item_path
           %tr
             %th 発送日の目安
             %td #{@item.shipping_date}

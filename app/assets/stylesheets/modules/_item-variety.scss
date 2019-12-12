@@ -1,0 +1,84 @@
+.variety__content {
+  border-top: 20px;
+  margin: 0 auto;
+  width: 80%;
+  color: $black;
+  &__box {
+    padding: 42px 0 100px;
+    &__header {
+      margin-bottom: 16px;
+      display: flex;
+      justify-content: space-between;
+      font-weight: bold;
+      &__title {
+        font-size: 1.4rem;
+      }
+      &__more {
+        color: $lightblue;
+        font-size: 0.9rem;
+      }
+    }
+    &__items { 
+      width: 100%;
+      &__lists {
+        margin: -10px;
+        display: flex;
+        flex-wrap: wrap;
+        &__list {
+          box-sizing: border-box;
+          width: 20%;
+          .variety__product {
+            margin: 10px;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0,0,0,.18);
+            &__link {
+              width: 100%;
+              &__thumbnail {
+                margin: 0;
+                &__info {
+                  position: relative;
+                  .hoge {
+                    width: 0;
+                    height: 0;
+                    border-top: 40px solid $red;
+                    border-left: 40px solid $red;
+                    border-right: 40px solid transparent;
+                    border-bottom: 40px solid transparent;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    >p {
+                      margin: -20px 0 0 -35px;
+                      color: $white;
+                      transform: rotate(-45deg);
+                      font-weight: bold;
+                    }
+                  }
+                  &--price {
+                    position: absolute;
+                    bottom: 8px;
+                    padding: 2px 12px;
+                    border-radius: 0 14px 14px 0;
+                    color: $white;
+                    background: rgba(0,0,0,.4);
+                  }
+                  &--image {
+                    object-fit: cover;
+                  }
+                }
+              }
+            }
+            &__caption {
+              padding: 12px;
+              align-items: center;
+              background-color: $white;
+              &--text {
+                font-size: small;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
