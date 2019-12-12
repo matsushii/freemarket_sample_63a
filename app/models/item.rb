@@ -2,11 +2,12 @@ class Item < ApplicationRecord
   belongs_to :user
   has_one :purchase
   has_many_attached :images
+  has_many :brands
 
   validates :name, presence: true, length: { in: 1..40}
   validates :text, presence: true, length: { in: 1..1000}
   validates :condition, :shipping_fee, :shipping_from, :shipping_date, presence: true
-  validates :price, presence: true, numericality: {greater_than_or_equal_to: 300}, numericality: {less_than_or_equal_to: 9999999}
+  validates :price, presence: true, numericality: {greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999}
   validate  :image_presence
 
   def image_presence
