@@ -2,6 +2,7 @@ class ItemsController < ApplicationController
   before_action :redirect_to_login_page, except: [:index, :show]
   before_action :set_item, only: [:show, :edit, :update, :destroy]
   before_action :redirect_to_login_page, except: [:index]
+  before_action :set_brand, only: [:new, :show, :edit, :update, :destroy]
 
   def index
     @items = Item.where(status: 1).order(created_at: "desc").limit(10)
@@ -86,6 +87,10 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
   end
 
+  def set_brand
+    @brands = Brand.all
+  end
+
   def redirect_to_login_page
     unless user_signed_in?
       redirect_to new_user_session_path
@@ -97,6 +102,7 @@ class ItemsController < ApplicationController
       :name,
       :text,
       :price,
+      :brand_id,
       :condition,
       :shipping_from,
       :shipping_date,
