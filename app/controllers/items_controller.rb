@@ -1,7 +1,6 @@
 class ItemsController < ApplicationController
   before_action :redirect_to_login_page, except: [:index, :show]
-  before_action :set_item, only: [:show, :edit, :update, :destroy]
-  before_action :redirect_to_login_page, except: [:index]
+  before_action :set_item, only: [:show, :edit, :update, :destroy, :prefecture]
 
   def index
     @items = Item.where(status: 1).order(created_at: "desc").limit(10)
@@ -85,6 +84,10 @@ class ItemsController < ApplicationController
 
   def get_grandchildren
     @grandchildren = Category.find(params[:child_id]).children
+  end
+  
+  def prefecture
+    @items = Item.all.order(created_at: "desc")
   end
 
   private

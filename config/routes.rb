@@ -6,6 +6,7 @@ Rails.application.routes.draw do
       get :pause
       get :resume
       get :search
+      get :prefecture
     end
     collection do
       get :get_children, defaults: {format: 'json'}
