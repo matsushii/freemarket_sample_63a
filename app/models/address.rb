@@ -1,5 +1,8 @@
 class Address < ApplicationRecord
   belongs_to :user
+
+  validates :postal_code, :prefecture, :city, :address, presence: true
+
   enum prefecture: {
     北海道:1,
     青森県:2,

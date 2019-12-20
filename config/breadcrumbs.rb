@@ -52,6 +52,11 @@ crumb :logout do
   parent :mypage
 end
 
+crumb :prefecture do
+  link "出品元地域", prefecture_item_path
+  parent :root
+end
+
 # crumb :projects do
 #   link "Projects", projects_path
 # end

@@ -1,0 +1,27 @@
+= render "layouts/header"
+- breadcrumb :prefecture
+= render "layouts/breadcrumbs"
+.variety__content
+  .variety__content__box
+    .variety__content__box__header
+      .variety__content__box__header__title
+        #{@item.shipping_from}の商品の一覧
+      .variety__content__box__header__more
+        もっとみる  
+        %i.fa.fa-chevron-right
+    .variety__content__box__items
+      %ul.variety__content__box__items__lists
+        - @items.each do |item|
+          %li.variety__content__box__items__lists__list
+            .variety__product 
+              = link_to item_path(item.id), class: "product--link" do
+                %figure.variety__product__link__thumbnail
+                  .variety__product__link__thumbnail__info
+                    %span.variety__product__link__thumbnail__info--price
+                      ¥#{item.price.to_s(:delimited)}
+                    = image_tag item.images.first, size: "180x180", class: "product__link__thumbnail__info--image"
+                  %figcaption.variety__product__caption
+                    %span.variety__product__caption--text 
+                    = truncate(item.name, length:22)
+  = render "layouts/sell-btn"
+= render "layouts/footer"
