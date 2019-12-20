@@ -198,7 +198,12 @@
                   }
                 }
                 &__select {
-                  @include selector();
+                  .selector {
+                    @include selector();
+                  }
+                  .hidden {
+                  display: none;
+                  }
                 }
                 .error-message {
                   color: $red;
