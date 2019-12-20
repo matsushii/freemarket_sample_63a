@@ -7,6 +7,10 @@ Rails.application.routes.draw do
       get :resume
       get :search
     end
+    collection do
+      get :get_children, defaults: {format: 'json'}
+      get :get_grandchildren, defaults: {format: 'json'}
+    end
     resources :purchases, only: [:new, :create]
   end
 
