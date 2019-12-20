@@ -85,3 +85,4 @@ gem 'pry-rails'
 gem 'payjp'
 gem "gretel"
 gem 'font-awesome-sass'
+gem 'ancestry'
