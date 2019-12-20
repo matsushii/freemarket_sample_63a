@@ -26,7 +26,7 @@
                         = image_tag image, class: "image"
                         .images-field__image__delete
                           = f.check_box :images_blob_ids, {:multiple => true}, image.id, false
-                          = f.label :images_blob_ids, "削除する", class: "images-field__image__delete--message"
+                          = f.label "images_blob_ids_#{image.id}", "削除する", class: "images-field__image__delete--message"
           .content__main__box__product
             .name-box
               = f.label "商品名", class: "name-box__label"

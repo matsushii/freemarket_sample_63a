@@ -19,6 +19,12 @@
           font-size: 14px;
           text-align: center;
           position: relative;
+          .sold {
+            @include sold();
+          }
+          .stop {
+            @include stop();
+          }
           &--thumbnail {
             object-fit: contain;
           }
