@@ -9,6 +9,7 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
+    @parent_categories = Category.roots
   end
 
   def create
@@ -24,6 +25,7 @@ class ItemsController < ApplicationController
 
   def show
     @item_images = @item.images.limit(10)
+    @category = Category.find(@item.category_id)
   end
 
   def edit
@@ -77,6 +79,14 @@ class ItemsController < ApplicationController
     render :index
   end
 
+  def get_children
+    @children = Category.find(params[:parent_id]).children
+  end
+
+  def get_grandchildren
+    @grandchildren = Category.find(params[:child_id]).children
+  end
+
   private
   def redirect_to_login_page
     redirect_to new_user_session_path unless user_signed_in?
@@ -102,6 +112,7 @@ class ItemsController < ApplicationController
       :shipping_date,
       :shipping_fee,
       :images_blob_ids,
+      :category_id,
       images: []
     ).merge(user_id: current_user.id)
   end
