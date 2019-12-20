@@ -4,7 +4,8 @@
 @import "config/colors";
 @import "mixins/mixin-form";
 @import "mixins/mixin-header";
-@import "mixins/mixin-users";
+@import "mixins/mixin-user";
+@import "mixins/mixin-item";
 @import "modules/header";
 @import "modules/footer";
 @import "modules/devise-new-user";

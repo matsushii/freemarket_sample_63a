@@ -1,0 +1,36 @@
+@mixin sold() {
+  width: 0;
+  height: 0;
+  border-top: 40px solid $red;
+  border-left: 40px solid $red;
+  border-right: 40px solid transparent;
+  border-bottom: 40px solid transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  >p {
+    margin: -20px 0 0 -35px;
+    color: $white;
+    transform: rotate(-45deg);
+    font-weight: bold;
+  }
+}
+
+@mixin stop() {
+  width: 0;
+  height: 0;
+  border-top: 40px solid $gray;
+  border-left: 40px solid $gray;
+  border-right: 40px solid transparent;
+  border-bottom: 40px solid transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  >p {
+    width: 60px;
+    margin: -20px 0 0 -40px;
+    color: $white;
+    transform: rotate(-45deg);
+    font-weight: bold;
+  }
+}

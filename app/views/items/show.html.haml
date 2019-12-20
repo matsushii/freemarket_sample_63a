@@ -7,6 +7,12 @@
     .detail__body
       .detail__body--left 
         .items-photo__upper
+          - if @item.status == "取引中" || @item.status == "取引完了" 
+            .sold
+              %p SOLD
+          - if @item.status == "停止中"
+            .stop
+              %p 停止中
           = image_tag @item.images.first, size: "300x300", class: "items-photo__upper--thumbnail"
         %ul.items-photo__lower__top
           %li.items-photo__lower__top__box
@@ -21,12 +27,16 @@
           %tr
             %th カテゴリー
             %td
-              .top_cat
-              = link_to '> メンズ ', item_path
-              .middle_cat
-              = link_to '> トップス ', item_path
-              .bottom_cat
-              = link_to '> ポロシャツ ', item_path
+              .cat
+                - if @category.parent.parent.present?
+                  = link_to "" do
+                    = @category.parent.parent.name
+              .cat
+                = link_to "" do
+                  = @category.parent.name
+              .cat
+                = link_to "" do
+                  = @category.name
           %tr
             %th ブランド
             %td 

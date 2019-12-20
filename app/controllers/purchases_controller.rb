@@ -15,10 +15,10 @@ class PurchasesController < ApplicationController
       @card = Card.find_by(user_id: current_user.id)
       Payjp.api_key = 'sk_test_7e45cce1c3bf4742a63222c4'
       Payjp::Charge.create(
-      amount: @purchase.item.price,
-      customer: @card.customer_id, 
-      currency: 'jpy', 
-      )
+        amount: @purchase.item.price,
+        customer: @card.customer_id, 
+        currency: 'jpy', 
+        )
       @purchase.item.status = 2
       @purchase.item.save
       if @purchase.save
