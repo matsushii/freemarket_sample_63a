@@ -2,6 +2,7 @@ class Item < ApplicationRecord
   belongs_to :user
   has_one :purchase
   has_many_attached :images
+  belongs_to :category
 
   validates :name, presence: true, length: { in: 1..40}
   validates :text, presence: true, length: { in: 1..1000}
