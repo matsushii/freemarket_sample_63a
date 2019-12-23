@@ -1,0 +1,39 @@
+%ul.category-nav-parents
+  - @parent_categories.each do |parent|
+    %li.category-nav-parents__parent
+      = link_to root_path do
+        .category
+          = parent.name
+      %ul.category-nav-children
+        - parent.children.each do |child|
+          %li.category-nav-children__child
+            .category
+              = link_to "" do
+                = child.name
+            %ul.category-nav-grandchildren
+              - child.children.each do |grandchild|
+                %li.category-nav-grandchildren__grandchild
+                  .category
+                    = link_to "" do
+                      = grandchild.name
+
+-# .category-tag
+-#   .category-tag__list
+-#     .list-parent
+-#       - @parents.each do |parent|
+-#         .list-parent__text
+-#           = link_to category_path(parent) do
+-#             = parent.name
+-#           .list-child
+-#             - parent.children.each do |child|
+-#               .list-child__text
+-#                 = link_to category_path(child) do
+-#                   = child.name
+-#                 .list-grandchild
+-#                   - child.children.each do |grandchild|
+-#                     .list-grandchild__text
+-#                       = link_to category_path(grandchild) do
+-#                         = grandchild.name
+-#       .list-parent__text
+-#         = link_to categories_path do
+-#           カテゴリー一覧

@@ -11,24 +11,12 @@
           = submit_tag("Search", class: "container__top__form--search-btn--hidden")
     .container__bottom
       .container__bottom__left
-        .catogory-search
-          .catogory-search__link
+        .category-search
+          .category-search__link
             = link_to root_path do
               %i.fa.fa-list-ul
               カテゴリーから探す
-          .catogory-search__dropdown
-            %ul.gnav
-              %li
-                = link_to root_path do
-                  TOP categories
-                %ul
-                  %li
-                    = link_to root_path do
-                      Middle categories
-                    %ul
-                      %li
-                        = link_to root_path do
-                          bottom categories
+            = render "layouts/category-nav"
         .brand-search
           .brand-search__link
             = link_to root_path do
