@@ -4,5 +4,7 @@ class CategoriesController < ApplicationController
   end
 
   def show
+    @category = Category.find(params[:id])
+    @parent_categories = Category.roots
   end
 end
