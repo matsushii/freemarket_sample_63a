@@ -13,26 +13,26 @@
       .container__bottom__left
         .category-search
           .category-search__link
-            = link_to root_path do
+            = link_to categories_path do
               %i.fa.fa-list-ul
               カテゴリーから探す
             %ul.category-nav-parents
               - @parent_categories.each do |parent|
                 %li.category-nav-parents__parent
-                  = link_to root_path do
+                  = link_to category_path(parent) do
                     .category
                       = parent.name
                   %ul.category-nav-children
                     - parent.children.each do |child|
                       %li.category-nav-children__child
-                        .category
-                          = link_to "" do
+                        = link_to category_path(child) do
+                          .category
                             = child.name
                         %ul.category-nav-grandchildren
                           - child.children.each do |grandchild|
                             %li.category-nav-grandchildren__grandchild
-                              .category
-                                = link_to "" do
+                              = link_to category_path(grandchild) do
+                                .category
                                   = grandchild.name
         .brand-search
           .brand-search__link
