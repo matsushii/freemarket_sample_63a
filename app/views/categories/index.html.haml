@@ -1,0 +1,26 @@
+= render "layouts/header"
+.container
+  .contents
+    .content
+      .content__banner
+        カテゴリー一覧
+        .content__banner__cats
+          %ul.content__banner__cats__list
+            %li.content__banner__cats__list__tag
+              レディース
+            %li.content__banner__cats__list__tag
+              メンズ
+      - @parent_categories.each do |parent|
+        .content__box
+          .content__box__header
+            .content__box__header__title
+              = parent.name
+          .content__box__items
+            - parent.children.each do |child|
+              .child-category
+                = child.name
+              .grandchild-category
+                - child.children.each do |grandchild|
+                  = grandchild.name
+  = render "layouts/sell-btn"
+= render "layouts/footer"

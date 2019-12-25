@@ -41,4 +41,6 @@ Rails.application.routes.draw do
       get  'complete' #登録完了後
     end
   end
+
+  resources :categories, only: [:index, :show]
 end

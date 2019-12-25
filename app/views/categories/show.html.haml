@@ -1,0 +1,18 @@
+= render "layouts/header"
+.container
+  .contents
+    .content
+      .content__banner
+        = @category.name + "の商品一覧"
+      .content__box
+        .content__box__header
+          .content__box__header__title
+            カテゴリー詳細ページ
+          = link_to  "" do 
+            .content__box__header__more
+              もっとみる  
+              %i.fa.fa-chevron-right
+        .content__box__items
+          このページには指定したカテゴリを持つ商品を一覧表示し、商品をクリックすることで詳細ページに遷移することができます。
+  = render "layouts/sell-btn"
+= render "layouts/footer"

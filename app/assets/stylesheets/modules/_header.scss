@@ -68,14 +68,44 @@
         height: 100%;
         display: flex;  
         float: left;
-        .catogory-search {
+        .category-search {
           padding-right: 10px;
           line-height: 36px;
           display: flex;
           &__link {
             font-weight: bold;
+            position: relative;
             .fa-list-ul {
               color: $red;
+            }
+            .category-nav-parents{
+              display: none;
+              position: absolute;
+              z-index: 1000;
+              background-color: $lightgray;
+              &__parent {
+                width: 200px;
+                .category-nav-children {
+                  display: none;
+                  position: absolute;
+                  left: 200px;
+                  top: 0;
+                  background-color: $icongray;
+                  &__child {
+                    width: 200px;
+                    .category-nav-grandchildren {
+                      display: none;
+                      background-color: $lightgray;
+                      position: absolute;
+                      left: 200px;
+                      top: 0;
+                      &__grandchild {
+                        width: 300px;
+                      }
+                    }
+                  }
+                }
+              }
             }
           }
           &__dropdown {
