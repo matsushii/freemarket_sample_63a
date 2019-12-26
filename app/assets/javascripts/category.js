@@ -62,7 +62,7 @@ $(document).on('turbolinks:load', function(){
     });
     // select内のoptionを生成
     function createOption(category){
-      var option = '<option value="${category.id}">${category.name}</option>';
+      var option = `<option value="${category.id}">${category.name}</option>`;
       return option;
     }
   });

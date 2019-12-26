@@ -4,7 +4,6 @@ class ItemsController < ApplicationController
 
   def index
     @items = Item.where(status: 1).order(created_at: "desc").limit(10)
-    @parent_categories = Category.roots
   end
 
   def new
